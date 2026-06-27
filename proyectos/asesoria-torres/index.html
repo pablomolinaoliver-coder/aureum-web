@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asesoría Torres · Gestión fiscal, contable y laboral en Valencia</title>
+<meta name="description" content="Asesoría Torres en Valencia. Contabilidad, asesoría fiscal, gestión laboral, constitución de empresas y planificación fiscal para autónomos y pymes. Precio fijo, gestión 100% online, primera consulta gratis.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!--
+  Asesoría Torres — asesoría fiscal/contable/laboral. Corporativo moderno.
+  Tipografía: Plus Jakarta Sans (titulares) + Inter (texto). Iconografía Lucide-style SVG.
+  Animaciones: reveal on scroll + count-up. Accesibilidad: prefers-reduced-motion.
+  WhatsApp 666 654 321 · pre-mensaje de consulta gratuita.
+-->
+
+<style>
+:root{
+  --navy:#0C1F3F;
+  --navy-2:#091831;
+  --emerald:#B0894F;
+  --emerald-dark:#8f6f3e;
+  --emerald-lt:#F2E9D7;
+  --gold:#C2A36B;
+  --gold-dark:#A98A52;
+  --surface:#F8FAFC;
+  --white:#FFFFFF;
+  --text:#0F172A;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:1rem;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
+
+.tag{display:inline-block;font-family:'Inter',sans-serif;font-weight:500;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald);margin-bottom:14px}
+.sec-head{margin-bottom:56px}
+.sec-head.center{text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.5rem);font-weight:700;color:var(--text)}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+
+.ico{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.035em;padding:16px 32px;border-radius:6px;border:1px solid transparent;cursor:pointer;overflow:hidden;transition:transform .2s ease,background .25s ease,box-shadow .25s ease,color .25s ease,border-color .25s ease;white-space:nowrap}
+.btn .ico{width:19px;height:19px}
+.btn:active{transform:scale(.98)}
+/* refined gold sheen on hover */
+.btn-primary,.btn-white{}
+.btn-primary::after,.btn-white::after{content:"";position:absolute;top:0;left:-130%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .6s ease}
+.btn-primary:hover::after,.btn-white:hover::after{left:140%}
+.btn-primary{background:linear-gradient(180deg,#cdb079,#bd9c5e);color:var(--navy);box-shadow:0 6px 20px rgba(194,163,107,.32)}
+.btn-primary:hover{background:linear-gradient(180deg,#d6bb86,#c2a36b);transform:translateY(-2px);box-shadow:0 12px 30px rgba(194,163,107,.45)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(194,163,107,.12);border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--gold-dark);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.btn-block{width:100%}
+
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(12,31,63,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.16rem}
+.logo .mark{width:38px;height:38px;border-radius:9px;background:var(--emerald);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo .mark svg{width:22px;height:22px;stroke:#fff}
+.nav-links{display:flex;gap:30px;margin-left:auto;margin-right:32px}
+.nav-links a{color:#cbd5e1;font-weight:500;font-size:.96rem;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;display:flex;align-items:center;gap:8px}
+.nav-phone .ico{color:var(--emerald);width:20px;height:20px}
+.nav-phone:hover{color:var(--emerald)}
+.nav-cta{padding:0 22px;min-height:46px;font-size:.92rem}
+
+/* ---------- HERO ---------- */
+.hero{background:radial-gradient(700px 460px at 90% 0%, rgba(194,163,107,.16), transparent 60%),var(--navy);color:#fff;padding:70px 0}
+.hero .wrap{display:grid;grid-template-columns:55% 45%;gap:50px;align-items:center;min-height:calc(85vh - 74px - 140px)}
+.hero h1{font-size:clamp(2.4rem,5vw,3.75rem);font-weight:800;line-height:1.1}
+.hero .sub{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:460px;line-height:1.7;margin-top:22px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.trust-row{display:flex;flex-direction:column;gap:12px;margin-top:36px}
+.trust-row span{display:flex;align-items:center;gap:10px;font-size:.875rem;color:rgba(255,255,255,.75)}
+.trust-row .ico{width:18px;height:18px;color:var(--emerald);flex-shrink:0}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:460px;object-fit:cover;border-radius:16px;background:#13294a}
+.hero-media::after{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(160deg,rgba(12,31,63,.25),transparent 45%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+
+/* ---------- SERVICIOS ---------- */
+.servicios{background:var(--white);padding:96px 0}
+.serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.serv-row{display:flex;gap:24px;padding:28px 0;border-bottom:1px solid var(--border)}
+.serv-ico{width:48px;height:48px;border-radius:10px;background:var(--emerald-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.serv-ico .ico{width:22px;height:22px;color:var(--emerald)}
+.serv-row h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:1.125rem;color:var(--text)}
+.serv-row p{font-size:.9rem;color:var(--muted);line-height:1.6;margin-top:4px}
+
+/* ---------- POR QUÉ ---------- */
+.porque{background:var(--navy);color:#fff;padding:96px 0}
+.porque .sec-head h2{color:#fff}
+.porque .sec-head p{color:#94a3b8}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:920px;margin:0 auto}
+.why-item{display:flex;gap:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:30px;transition:transform .2s ease,background .2s ease}
+.why-item:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
+.why-icon{width:52px;height:52px;border-radius:12px;background:var(--emerald);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-icon .ico{width:26px;height:26px;color:#fff}
+.why-item h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.125rem;color:#fff;margin-bottom:8px}
+.why-item p{color:#94a3b8;font-size:.95rem}
+
+/* ---------- EQUIPO ---------- */
+.equipo{background:var(--surface);padding:96px 0}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+.team-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:38px;text-align:center;transition:transform .2s ease,box-shadow .2s ease}
+.team-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,23,42,.08)}
+.team-card img{width:160px;height:160px;border-radius:50%;object-fit:cover;margin:0 auto 22px;background:#e2e8f0}
+.team-card .name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.25rem;color:var(--text)}
+.team-card .role{font-weight:500;font-size:.8125rem;color:var(--emerald);margin-top:4px}
+.team-card .bio{font-size:.875rem;color:var(--muted);line-height:1.6;margin-top:14px}
+.team-quote{text-align:center;max-width:640px;margin:56px auto 0}
+.team-quote p{font-style:italic;font-size:1.125rem;color:var(--text);line-height:1.6}
+.team-quote cite{display:block;font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.9rem;color:var(--muted);margin-top:16px}
+
+/* ---------- RESEÑAS ---------- */
+.resenas{background:var(--white);padding:96px 0}
+.rating{display:inline-flex;align-items:center;gap:10px;margin-top:16px}
+.rating .stars{display:flex;gap:3px}
+.star{width:18px;height:18px;fill:var(--emerald)}
+.rating b{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text)}
+.rating span{font-size:.9rem;color:var(--muted)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px}
+.review .stars{display:flex;gap:3px;margin-bottom:16px}
+.review p{font-size:1rem;color:var(--text);margin-bottom:22px}
+.review .author{display:flex;align-items:center;gap:12px}
+.review .avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700}
+.review .meta b{display:block;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem}
+.review .meta span{color:var(--muted);font-size:.82rem}
+
+/* ---------- CONSULTA GRATUITA ---------- */
+.consulta{background:radial-gradient(620px 420px at 50% -10%, rgba(194,163,107,.18), transparent 60%),var(--navy);color:#fff;padding:80px 0}
+.consulta .inner{max-width:700px;margin:0 auto;text-align:center}
+.consulta h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,2.75rem);color:#fff}
+.consulta .sub{font-size:1rem;color:rgba(255,255,255,.85);margin-top:16px}
+.consulta form{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
+.consulta input,.consulta textarea{width:100%;border:none;border-radius:8px;padding:14px 16px;font-family:'Inter',sans-serif;font-size:1rem;color:var(--text);background:#fff}
+.consulta input::placeholder,.consulta textarea::placeholder{color:#94a3b8}
+.consulta input:focus,.consulta textarea:focus{outline:2px solid rgba(255,255,255,.6)}
+.consulta textarea{grid-column:1 / -1;min-height:110px;resize:vertical}
+.consulta .btn-white{grid-column:1 / -1;padding:16px}
+.consulta .wa-note{margin-top:22px;font-size:.9rem;color:rgba(255,255,255,.9)}
+.consulta .wa-note a{font-weight:700;text-decoration:underline}
+
+/* ---------- CONTACTO ---------- */
+.contacto{background:var(--surface);padding:96px 0}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.contacto-text h2{font-size:clamp(1.7rem,3.5vw,2.3rem);color:var(--text);margin-bottom:18px}
+.contacto-text p{color:var(--muted);margin-bottom:28px;max-width:420px}
+.contact-line{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.contact-line:last-child{border-bottom:none}
+.contact-line .ci{width:46px;height:46px;border-radius:10px;background:var(--emerald-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-line .ci .ico{width:22px;height:22px;color:var(--emerald)}
+.contact-line .ct{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:1.05rem;color:var(--text)}
+.contact-line .cs{color:var(--muted);font-size:.88rem}
+.contact-line a:hover .ct{color:var(--emerald)}
+.map-box{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 40px rgba(15,23,42,.1);min-height:380px}
+.map-box iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-2);color:#94a3b8;padding:60px 0 30px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand .logo{margin-bottom:12px}
+.footer-brand p{max-width:38ch;font-size:.92rem}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{font-weight:500;font-size:.95rem}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.85rem;color:#64748b;padding-top:24px;text-align:center}
+
+/* ---------- FLOATING WA ---------- */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:200;width:60px;height:60px;border-radius:50%;background:linear-gradient(180deg,#cdb079,#bd9c5e);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(194,163,107,.5);transition:transform .2s ease;animation:wa-pulse 2.8s infinite}
+.wa-float svg{width:32px;height:32px;fill:var(--navy)}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(194,163,107,.5)}70%{box-shadow:0 0 0 16px rgba(194,163,107,0)}100%{box-shadow:0 0 0 0 rgba(194,163,107,0)}}
+
+/* ---------- MOBILE BAR ---------- */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--navy);box-shadow:0 -2px 14px rgba(0,0,0,.35)}
+.mobile-bar a{flex:1;min-height:58px;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:#fff}
+.mobile-bar .ico{width:20px;height:20px}
+.mobile-bar .mb-call{background:var(--gold);color:var(--navy)}
+.mobile-bar .mb-wa{background:#13294a}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-media{order:-1}
+  .hero-media img{height:340px}
+  .serv-grid{grid-template-columns:1fr;gap:0}
+  .why-grid{grid-template-columns:1fr}
+}
+@media(max-width:820px){
+  .reviews-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr;max-width:420px}
+  .contacto-grid{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:600px){
+  .nav-cta{display:none}
+  .consulta form{grid-template-columns:1fr}
+  .hero-ctas .btn{width:100%}
+  .footer-top{flex-direction:column}
+  .wa-float{bottom:78px}
+  .mobile-bar{display:flex}
+  body{padding-bottom:58px}
+  .servicios,.porque,.equipo,.resenas,.consulta,.contacto{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON DEFS (Lucide-style) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-phone"><path class="ico" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></g>
+  <g id="i-check"><circle class="ico" cx="12" cy="12" r="9"/><path class="ico" d="M8.5 12.5l2.5 2.5 4.5-5"/></g>
+  <g id="i-bar"><path class="ico" d="M18 20V10M12 20V4M6 20v-6"/></g>
+  <g id="i-file"><path class="ico" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path class="ico" d="M14 2v6h6M8 13h8M8 17h6"/></g>
+  <g id="i-users"><path class="ico" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle class="ico" cx="9" cy="7" r="4"/><path class="ico" d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></g>
+  <g id="i-building"><rect class="ico" x="4" y="2" width="16" height="20" rx="1.5"/><path class="ico" d="M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/><path class="ico" d="M10 22v-3h4v3"/></g>
+  <g id="i-calendar"><rect class="ico" x="3" y="4" width="18" height="18" rx="2"/><path class="ico" d="M16 2v4M8 2v4M3 10h18"/></g>
+  <g id="i-trend"><path class="ico" d="M22 7l-8.5 8.5-5-5L2 17"/><path class="ico" d="M16 7h6v6"/></g>
+  <g id="i-clock"><circle class="ico" cx="12" cy="12" r="9"/><path class="ico" d="M12 7v5l3 2"/></g>
+  <g id="i-monitor"><rect class="ico" x="2" y="3" width="20" height="14" rx="2"/><path class="ico" d="M8 21h8M12 17v4"/></g>
+  <g id="i-dollar"><path class="ico" d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></g>
+  <g id="i-msg"><path class="ico" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></g>
+  <g id="i-pin"><path class="ico" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle class="ico" cx="12" cy="10" r="3"/></g>
+  <g id="i-mail"><rect class="ico" x="3" y="5" width="18" height="14" rx="2"/><path class="ico" d="M3 7l9 6 9-6"/></g>
+</defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="s-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.25.69-1.45 1.32-1.99 1.36-.53.05-1.03.24-3.48-.73-2.93-1.16-4.79-4.16-4.94-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1.01-2.41.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.59.84 2.04.91 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.74-.18 1.43z"/></symbol></svg>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-bar"/></svg></span>Asesoría Torres</a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Por qué nosotros</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+34666654321" class="nav-phone"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg>666 654 321</a>
+      <a href="#consulta" class="btn btn-primary nav-cta">Consulta gratis</a>
+    </div>
+  </div>
+</header>
+
+<!-- SECCIÓN 1 · HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-left">
+      <span class="tag">Asesoría fiscal · contable · laboral en Valencia</span>
+      <h1>Tu empresa en orden.<br>Sin complicaciones.</h1>
+      <p class="sub">Llevamos la contabilidad, los impuestos y las nóminas de tu negocio para que tú solo tengas que centrarte en crecer.</p>
+      <div class="hero-ctas">
+        <a href="#consulta" class="btn btn-primary">Solicitar consulta gratuita</a>
+        <a href="tel:+34666654321" class="btn btn-ghost"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg>666 654 321</a>
+      </div>
+      <div class="trust-row">
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>Más de 12 años asesorando empresas</span>
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>Autónomos y pymes</span>
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>Valencia y gestión 100% online</span>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Despacho moderno y limpio con portátil, ambiente profesional">
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2 · SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Servicios</span>
+      <h2>¿En qué te podemos ayudar?</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-bar"/></svg></div><div><h3>Contabilidad</h3><p>Llevanza completa mensual. Informes claros que te ayudan a entender la situación de tu negocio en todo momento.</p></div></div>
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-file"/></svg></div><div><h3>Asesoría fiscal</h3><p>IVA, IRPF, Impuesto de Sociedades y todos los modelos. Sin sorpresas con Hacienda.</p></div></div>
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-users"/></svg></div><div><h3>Gestión laboral</h3><p>Altas, bajas, nóminas y Seguridad Social. Todo en plazo y sin errores.</p></div></div>
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-building"/></svg></div><div><h3>Constitución de empresas</h3><p>Montamos tu SL o te damos de alta como autónomo, rápido y sin complicaciones burocráticas.</p></div></div>
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-calendar"/></svg></div><div><h3>Declaraciones periódicas</h3><p>Presentamos todos los modelos trimestrales y anuales. Nunca te quedas fuera de plazo.</p></div></div>
+      <div class="serv-row reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" class="ico"><use href="#i-trend"/></svg></div><div><h3>Planificación fiscal</h3><p>Reducimos tu carga fiscal de forma legal y eficiente. Anticipamos problemas antes de que ocurran.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3 · POR QUÉ -->
+<section class="porque" id="porque">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag">Por qué nosotros</span>
+      <h2>Una asesoría cercana y sin sorpresas</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg></div><div><h3>Atención personalizada</h3><p>Tendrás siempre el mismo asesor asignado. Nunca un call center.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-clock"/></svg></div><div><h3>Respuesta en 24 horas</h3><p>Resolvemos tus consultas fiscales y contables con rapidez real.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-monitor"/></svg></div><div><h3>Gestión 100% digital</h3><p>Todo se tramita de forma remota. Sin desplazamientos ni papeleos.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-dollar"/></svg></div><div><h3>Precio fijo sin sorpresas</h3><p>Cuota mensual cerrada. Lo que acordamos es lo que pagas siempre.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4 · EQUIPO -->
+<section class="equipo" id="equipo">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag">Tu equipo asesor</span>
+      <h2>Profesionales con los que cuentas cada día</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Ana Torres, socia directora y asesora fiscal">
+        <div class="name">Ana Torres</div>
+        <div class="role">Socia directora · Asesora Fiscal</div>
+        <p class="bio">Graduada en ADE por la Universidad de Valencia. Máster en Fiscalidad y Derecho Tributario. Más de 12 años asesorando a autónomos y pymes en Valencia.</p>
+      </div>
+      <div class="team-card reveal">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Miguel Ruiz, asesor contable y laboral">
+        <div class="name">Miguel Ruiz</div>
+        <div class="role">Asesor Contable y Laboral</div>
+        <p class="bio">Graduado en Ciencias Empresariales. Especialista en gestión laboral y contabilidad de pymes. 8 años trabajando junto a Ana en Asesoría Torres.</p>
+      </div>
+    </div>
+    <blockquote class="team-quote reveal">
+      <p>"Nuestra misión es que nunca tengas un susto con Hacienda y que puedas centrarte en lo importante: hacer crecer tu negocio."</p>
+      <cite>— Ana Torres, Socia directora</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- SECCIÓN 5 · RESEÑAS -->
+<section class="resenas">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag">Reseñas</span>
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="rating">
+        <span class="stars">
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </span>
+        <b>4.9/5</b><span>· valoración media en Google</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <article class="review reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Llevan mi empresa desde hace 6 años. Tranquilidad absoluta. Responden siempre en el día y el precio es muy competitivo."</p>
+        <div class="author"><div class="avatar">JA</div><div class="meta"><b>Juan A.</b><span>Propietario de restaurante · Valencia</span></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Me ayudaron a crear mi SL desde cero y desde entonces llevan toda mi gestión. No podría trabajar sin el apoyo de Asesoría Torres."</p>
+        <div class="author"><div class="avatar">RM</div><div class="meta"><b>Rosa M.</b><span>Autónoma · Paterna</span></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Por fin una asesoría que te explica las cosas de forma clara y sin tecnicismos innecesarios. Precio fijo y trato excelente desde el primer día."</p>
+        <div class="author"><div class="avatar">FC</div><div class="meta"><b>Fernando C.</b><span>Constructor · Valencia</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6 · CONSULTA GRATUITA -->
+<section class="consulta" id="consulta">
+  <div class="wrap">
+    <div class="inner reveal">
+      <h2>Primera consulta, completamente gratis</h2>
+      <p class="sub">Sin compromiso. Te analizamos la situación y te decimos exactamente qué necesitas y cuánto costaría.</p>
+      <form onsubmit="enviarConsulta(event)">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="tel" id="telefono" placeholder="Teléfono de contacto" required>
+        <input type="email" id="email" placeholder="Correo electrónico">
+        <input type="text" id="actividad" placeholder="Tu actividad (autónomo, SL, restaurante...)">
+        <textarea id="mensaje" placeholder="Cuéntanos brevemente tu situación" required></textarea>
+        <button type="submit" class="btn btn-white">Enviar consulta gratuita</button>
+      </form>
+      <p class="wa-note">O escríbenos directamente por WhatsApp: <a href="https://wa.me/34666654321?text=Hola%2C+me+gustar%C3%ADa+solicitar+una+consulta+gratuita+en+Asesor%C3%ADa+Torres" target="_blank" rel="noopener">666 654 321</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 7 · CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="contacto-grid">
+      <div class="contacto-text reveal">
+        <span class="tag">Contacto</span>
+        <h2>Hablemos de tu negocio</h2>
+        <p>Estamos en Valencia y trabajamos con clientes de toda España de forma 100% online. Elige el canal que prefieras.</p>
+        <a href="tel:+34666654321" class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg></span><div><div class="ct">666 654 321</div><div class="cs">Lun–Vie 9:00–18:00</div></div></a>
+        <a href="https://wa.me/34666654321?text=Hola%2C+me+gustar%C3%ADa+solicitar+una+consulta+gratuita+en+Asesor%C3%ADa+Torres" target="_blank" rel="noopener" class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-msg"/></svg></span><div><div class="ct">WhatsApp</div><div class="cs">Respuesta rápida</div></div></a>
+        <a href="mailto:hola@asesoriatorres.es" class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-mail"/></svg></span><div><div class="ct">hola@asesoriatorres.es</div><div class="cs">Te respondemos en 24h</div></div></a>
+        <div class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg></span><div><div class="ct">Valencia centro</div><div class="cs">Gestión presencial y online</div></div></div>
+      </div>
+      <div class="map-box reveal">
+        <iframe src="https://www.google.com/maps?q=Valencia,Espa%C3%B1a&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación · Valencia"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-bar"/></svg></span>Asesoría Torres</div>
+        <p>Asesoría Torres · Gestión fiscal, contable y laboral en Valencia</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#consulta">Consulta gratis</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2025 Asesoría Torres · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/34666654321?text=Hola%2C+me+gustar%C3%ADa+solicitar+una+consulta+gratuita+en+Asesor%C3%ADa+Torres" target="_blank" rel="noopener" class="wa-float" aria-label="Solicitar consulta por WhatsApp"><svg viewBox="0 0 24 24"><use href="#s-wa"/></svg></a>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="tel:+34666654321" class="mb-call"><svg viewBox="0 0 24 24" class="ico" style="stroke:#0C1F3F"><use href="#i-phone"/></svg>LLAMAR</a>
+  <a href="https://wa.me/34666654321?text=Hola%2C+me+gustar%C3%ADa+solicitar+una+consulta+gratuita+en+Asesor%C3%ADa+Torres" target="_blank" rel="noopener" class="mb-wa"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><use href="#s-wa"/></svg>WHATSAPP</a>
+</div>
+
+<script>
+/* Reveal on scroll */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){
+      if(x.isIntersecting){
+        var sib=Array.prototype.indexOf.call(x.target.parentNode.children,x.target);
+        setTimeout(function(){x.target.classList.add('in');},(sib%6)*80);
+        io.unobserve(x.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+/* Form → WhatsApp */
+function enviarConsulta(e){
+  e.preventDefault();
+  var n=document.getElementById('nombre').value.trim();
+  var t=document.getElementById('telefono').value.trim();
+  var em=document.getElementById('email').value.trim();
+  var ac=document.getElementById('actividad').value.trim();
+  var m=document.getElementById('mensaje').value.trim();
+  var msg='Hola, me gustaría solicitar una consulta gratuita en Asesoría Torres. Soy '+n+' (tel: '+t+(em?', email: '+em:'')+').'+(ac?' Actividad: '+ac+'.':'')+' '+m;
+  window.open('https://wa.me/34666654321?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>

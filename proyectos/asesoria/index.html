@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Avante Asesoría · Asesoría fiscal, contable y laboral | Cerca de ti</title>
+<meta name="description" content="Asesoría fiscal, contable y laboral para autónomos y pymes. Te lo explicamos claro, sin tecnicismos, y nos ocupamos de todo. Primera consulta gratuita." />
+<meta name="theme-color" content="#f5f7fb" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- epic-design skill · reveal-on-scroll, parallax, count-up, prefers-reduced-motion. Imágenes Unsplash. -->
+<style>
+:root{
+  --bg:#F5F7FB; --surface:#FFFFFF; --navy:#15315B; --blue:#3E6FB5; --blue-d:#2F5896; --sky:#EAF1FA;
+  --ink:#1C2940; --muted:#5E6B82; --line:#E3EAF4;
+  --maxw:1180px; --r:18px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Lora',serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.eyebrow{font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:15px 30px;border-radius:12px;font-weight:600;font-size:.95rem;cursor:pointer;border:1.5px solid transparent;transition:.35s var(--ease);will-change:transform}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 14px 30px -14px rgba(21,49,91,.6)}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-3px)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue-d);transform:translateY(-3px)}
+.btn svg{width:17px;height:17px}
+header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,46px);transition:.4s var(--ease)}
+header.scrolled{background:rgba(245,247,251,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-block:12px}
+.logo{font-family:'Lora',serif;font-weight:600;font-size:1.4rem;display:flex;align-items:center;gap:.5em;color:var(--navy)}
+.logo .b{width:36px;height:36px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:1.05rem;font-family:'Lora'}
+nav{display:flex;align-items:center;gap:28px}
+nav a.lnk{font-size:.92rem;font-weight:500;color:var(--muted);transition:.3s;position:relative}
+nav a.lnk:hover{color:var(--ink)}
+nav a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--blue);transition:.3s var(--ease)}
+nav a.lnk:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:25px;height:2px;background:var(--ink);transition:.3s}
+.hero{position:relative;padding-top:130px;padding-bottom:90px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:55vw;height:55vw;max-width:680px;border-radius:50%;background:radial-gradient(circle,rgba(62,111,181,.14),transparent 65%);top:-18%;right:-14%;z-index:0}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);margin:.25em 0 .4em}
+.hero h1 span{color:var(--blue)}
+.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--muted);max-width:46ch;margin-bottom:1.8em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:1.8rem}
+.hero-badges .b{display:flex;align-items:center;gap:.5em;font-size:.9rem;color:var(--muted);font-weight:500}
+.hero-badges svg{width:18px;height:18px;color:var(--blue);flex:none}
+.hero-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3.4;box-shadow:0 40px 80px -38px rgba(21,49,91,.4)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-card{position:absolute;right:18px;top:18px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 16px 34px -16px rgba(21,49,91,.35);display:flex;align-items:center;gap:10px;font-weight:600;font-size:.88rem}
+.hero-card svg{width:30px;height:30px;color:var(--blue)}
+section.block{padding-block:clamp(64px,8vw,116px)}
+.section-head{max-width:60ch;margin:0 auto 48px;text-align:center}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.25em 0}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:.4s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 26px 54px -28px rgba(21,49,91,.22);border-color:#cfdcef}
+.svc .ic{width:52px;height:52px;border-radius:13px;background:var(--sky);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.svc .ic svg{width:25px;height:25px}
+.svc h3{font-size:1.35rem;margin-bottom:.4em}
+.svc p{color:var(--muted);font-size:.95rem}
+.why{background:var(--navy);color:#fff}
+.why .section-head h2{color:#fff}.why .section-head p{color:rgba(255,255,255,.75)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:30px}
+.why-item .ic{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.1);color:#9DC0EC;display:grid;place-items:center;margin-bottom:16px}
+.why-item .ic svg{width:24px;height:24px}
+.why-item h3{font-size:1.3rem;margin-bottom:.4em;color:#fff}
+.why-item p{color:rgba(255,255,255,.74);font-size:.94rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding-top:50px}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;font-family:'Lora';font-size:2.2rem;color:var(--blue);opacity:.5}
+.step h3{font-size:1.2rem;margin-bottom:.3em}.step p{color:var(--muted);font-size:.94rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat .num{font-family:'Lora';font-size:clamp(2.4rem,4.5vw,3.4rem);color:var(--blue)}
+.stat .lbl{color:var(--muted);font-size:.92rem}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tst{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.tst .stars{color:#E6A93D;margin-bottom:10px}
+.tst p{font-family:'Lora';font-style:italic;font-size:1.15rem;color:var(--ink);margin-bottom:14px}
+.tst b{font-weight:600}.tst span{color:var(--muted);font-size:.85rem}
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:start}
+.cpoints{display:grid;gap:14px;margin-top:24px}
+.cpoints li{display:flex;gap:13px;align-items:center;list-style:none}
+.cpoints .ic{width:44px;height:44px;border-radius:12px;background:var(--sky);color:var(--blue);display:grid;place-items:center;flex:none}
+.cpoints .ic svg{width:21px;height:21px}
+form{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:grid;gap:15px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.82rem;color:var(--muted);font-weight:500}
+.field input,.field select,.field textarea{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px 15px;color:var(--ink);font-family:inherit;font-size:.96rem;transition:.3s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(62,111,181,.14)}
+.field textarea{resize:vertical;min-height:90px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-ok{display:none;background:rgba(62,111,181,.1);border:1px solid rgba(62,111,181,.35);color:var(--blue-d);padding:13px;border-radius:11px;font-size:.9rem}
+footer{background:var(--navy);color:rgba(255,255,255,.72);padding-block:48px 26px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:30px;margin-bottom:32px}
+.foot h4{color:#fff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.foot a,.foot p{display:block;color:rgba(255,255,255,.72);font-size:.93rem;padding:4px 0}
+.foot .logo{color:#fff}.foot .logo .b{background:rgba(255,255,255,.15)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.84rem}
+@media(max-width:900px){nav .lnk{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(245,247,251,.98);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk{display:block;font-size:1.4rem}.hero-grid{grid-template-columns:1fr;gap:38px}.svc-grid,.why-grid,.tst-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:32px 24px}.contact-grid{grid-template-columns:1fr;gap:34px}}
+@media(max-width:600px){.svc-grid,.why-grid,.tst-grid,.steps,.row2,.foot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a href="#" class="logo"><span class="b">A</span>Avante Asesoría</a>
+  <nav id="nav">
+    <a class="lnk" href="#servicios">Servicios</a>
+    <a class="lnk" href="#porque">Por qué nosotros</a>
+    <a class="lnk" href="#proceso">Cómo trabajamos</a>
+    <a class="btn btn-primary" href="#contacto" style="padding:11px 22px">Primera consulta gratis</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Asesoría fiscal · contable · laboral</span>
+      <h1 class="reveal d1">Tu negocio en orden, <span>y tú más tranquilo</span></h1>
+      <p class="lead reveal d2">Nos ocupamos de tus impuestos, tu contabilidad y tus nóminas, y te lo explicamos claro, sin tecnicismos. Para que tú te dediques a lo tuyo.</p>
+      <div class="hero-cta reveal d3">
+        <a href="#contacto" class="btn btn-primary">Habla con tu asesor
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+      <div class="hero-badges reveal">
+        <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Un asesor de confianza, no un robot</div>
+        <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Respuesta en menos de 24h</div>
+      </div>
+    </div>
+    <div class="hero-img reveal d1">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Asesor atendiendo a un cliente">
+      <div class="hero-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.5 1-6.3L3 8.9 9 8z"/></svg>4,9/5 · +300 clientes</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center">Servicios</span>
+      <h2 class="reveal d1">Todo lo que tu negocio necesita</h2>
+      <p class="reveal d2">Para autónomos, pymes y particulares. Elige lo que necesitas o déjalo todo en nuestras manos.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg></div><h3>Asesoría fiscal</h3><p>IVA, IRPF, impuesto de sociedades y planificación para que pagues lo justo, ni un euro de más.</p></div>
+      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div><h3>Contabilidad</h3><p>Llevamos tu contabilidad al día y te damos informes claros para que sepas siempre cómo va tu negocio.</p></div>
+      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 11h5M16 15h5"/></svg></div><h3>Laboral y nóminas</h3><p>Contratos, nóminas, seguros sociales y altas y bajas. Tu equipo, siempre en regla.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2"/></svg></div><h3>Autónomos y pymes</h3><p>Te acompañamos desde el primer día: alta, obligaciones y todo lo que necesitas para empezar tranquilo.</p></div>
+      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Constitución de empresas</h3><p>Creamos tu sociedad y te asesoramos sobre la mejor forma jurídica para tu proyecto.</p></div>
+      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div><h3>Renta y herencias</h3><p>Declaración de la renta, herencias y trámites con Hacienda, explicados de forma sencilla.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="porque">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center;color:#9DC0EC">Por qué nosotros</span>
+      <h2 class="reveal d1">Una asesoría que habla tu idioma</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 1 1-4-7.2"/><path d="M21 5l-9 9-3-3"/></svg></div><h3>Claro y sin tecnicismos</h3><p>Te explicamos las cosas como a una persona, no como a un experto fiscal. Siempre entenderás qué pasa con tu dinero.</p></div>
+      <div class="why-item reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.4 2.4 1.2 3.6.5 4.2L8.1 9.9a16 16 0 0 0 6 6l1.5-1.5c.6-.6 1.8.1 4.2.5a2 2 0 0 1 1.7 2z"/></svg></div><h3>Siempre el mismo asesor</h3><p>Hablas con una persona que conoce tu caso, no con un número de ticket. Cercanía de verdad.</p></div>
+      <div class="why-item reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.5 1-6.3L3 8.9 9 8z"/></svg></div><h3>Sin sorpresas</h3><p>Cuota mensual cerrada, sin extras escondidos. Sabes lo que pagas y lo que recibes a cambio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center">Cómo trabajamos</span>
+      <h2 class="reveal d1">Cambiarte de asesoría es fácil</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Nos conocemos</h3><p>Una primera reunión gratuita para entender tu negocio y tus necesidades.</p></div>
+      <div class="step reveal d1"><h3>Nos encargamos del cambio</h3><p>Hacemos todo el traspaso con tu antigua asesoría. Tú no tienes que mover un dedo.</p></div>
+      <div class="step reveal d2"><h3>Ponemos todo al día</h3><p>Revisamos tu situación y te avisamos de cualquier cosa importante.</p></div>
+      <div class="step reveal d3"><h3>Te acompañamos</h3><p>Cada mes nos ocupamos de todo y estamos a un mensaje de distancia.</p></div>
+    </div>
+    <div class="stats" style="margin-top:64px">
+      <div class="stat reveal"><div class="num" data-count="18" data-suffix="+">0</div><div class="lbl">Años de experiencia</div></div>
+      <div class="stat reveal d1"><div class="num" data-count="300" data-suffix="+">0</div><div class="lbl">Clientes que confían</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="24" data-suffix="h">0</div><div class="lbl">Tiempo de respuesta</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="4.9" data-decimal="true">0</div><div class="lbl">Valoración media</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="background:var(--bg);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center">Clientes</span>
+      <h2 class="reveal d1">Negocios que duermen tranquilos</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tst reveal"><div class="stars">★★★★★</div><p>«Por fin entiendo mis impuestos. Me lo explican con paciencia y siempre están disponibles.»</p><b>Nuria G.</b> <span>· autónoma</span></div>
+      <div class="tst reveal d1"><div class="stars">★★★★★</div><p>«El cambio de asesoría fue facilísimo, se encargaron de todo. Trato cercano y profesional.»</p><b>Talleres Vidal</b> <span>· pyme</span></div>
+      <div class="tst reveal d2"><div class="stars">★★★★★</div><p>«Llevo 6 años con ellos y nunca un susto. Saben lo que hacen y te tratan de maravilla.»</p><b>Roberto P.</b> <span>· comercio</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow reveal">Hablemos</span>
+      <h2 class="reveal d1" style="font-size:clamp(2rem,4.4vw,3rem);margin:.25em 0 .5em">Tu primera consulta es gratis</h2>
+      <p class="reveal d2" style="color:var(--muted)">Cuéntanos tu situación y te diremos, sin compromiso, cómo podemos ayudarte y cuánto costaría.</p>
+      <ul class="cpoints reveal d3">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>96 000 00 00</b><br><span style="color:var(--muted);font-size:.88rem">Lun–Vie · 9:00–18:00</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>hola@avanteasesoria.es</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10a8 8 0 1 0-16 0c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="3"/></svg></span>Av. del Ejemplo 30, Valencia</li>
+      </ul>
+    </div>
+    <form id="cform" novalidate class="reveal d2">
+      <div class="field"><label for="n">Nombre</label><input id="n" type="text" placeholder="Tu nombre" required></div>
+      <div class="row2">
+        <div class="field"><label for="t">Teléfono</label><input id="t" type="tel" placeholder="600 000 000" required></div>
+        <div class="field"><label for="perfil">Eres</label><select id="perfil"><option>Autónomo/a</option><option>Pyme / empresa</option><option>Particular</option><option>Voy a empezar</option></select></div>
+      </div>
+      <div class="field"><label for="m">¿En qué podemos ayudarte?</label><textarea id="m" placeholder="Cuéntanos brevemente tu situación"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="justify-content:center">Solicitar consulta gratuita</button>
+      <div class="form-ok" id="ok">✅ ¡Gracias! Te contactamos en menos de 24h.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#" class="logo"><span class="b">A</span>Avante Asesoría</a><p style="margin-top:12px;max-width:32ch">Asesoría fiscal, contable y laboral cercana para autónomos y pymes.</p></div>
+      <div><h4>Servicios</h4><a href="#servicios">Fiscal</a><a href="#servicios">Contable</a><a href="#servicios">Laboral y nóminas</a><a href="#servicios">Autónomos y pymes</a></div>
+      <div><h4>Contacto</h4><a href="tel:+34960000000">96 000 00 00</a><a href="mailto:hola@avanteasesoria.es">hola@avanteasesoria.es</a><p>Av. del Ejemplo 30, Valencia</p></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="y"></span> Avante Asesoría. Todos los derechos reservados.</span><span>Aviso legal · Privacidad</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.onclick=function(){nav.classList.toggle('open')};
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk'))nav.classList.remove('open')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target,dec=el.dataset.decimal==='true',end=+el.dataset.count,suf=el.dataset.suffix||'';var fmt=function(v){return dec?v.toFixed(1):Math.round(v).toLocaleString('es-ES')};if(reduced){el.textContent=fmt(end)+suf;cio.unobserve(el);return}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=fmt(end*e)+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(c){cio.observe(c)});
+  var f=document.getElementById('cform');f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}document.getElementById('ok').style.display='block';f.querySelector('button').textContent='Enviado ✓';f.reset()});
+})();
+</script>
+</body>
+</html>

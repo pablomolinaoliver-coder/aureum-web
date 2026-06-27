@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Aureum">
+  <circle cx="256" cy="256" r="252" fill="#2E261C"/>
+  <circle cx="256" cy="256" r="252" fill="none" stroke="#AE8B4C" stroke-width="8"/>
+  <text x="50%" y="53%" text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="500"
+        font-size="300" fill="#AE8B4C">A</text>
+</svg>

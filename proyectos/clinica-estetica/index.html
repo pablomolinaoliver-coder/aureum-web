@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière · Clínica de Medicina Estética | Tratamientos faciales y corporales</title>
+<meta name="description" content="Lumière, clínica de medicina estética. Tratamientos faciales, corporales y antiedad con tecnología médica certificada y un equipo titulado. Primera consulta gratuita." />
+<meta name="theme-color" content="#fbf8f5" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<!-- epic-design skill · técnicas: parallax depth, reveal-on-scroll, count-up, antes/después, prefers-reduced-motion. Imágenes: Unsplash (libres). -->
+<style>
+:root{
+  --bg:#FBF8F5; --surface:#FFFFFF; --blush:#F3EAE4; --nude:#E7D6CC;
+  --plum:#3B2B33; --plum-soft:#6E5A60; --rose:#C08A77; --rose-d:#A9715E;
+  --gold:#C2A06A; --muted:#8C7E80; --line:#ECE2DB;
+  --maxw:1180px; --r:20px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--bg);color:var(--plum);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.08;letter-spacing:.005em}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose);font-weight:500;display:inline-flex;align-items:center;gap:.7em}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:15px 30px;border-radius:100px;font-weight:500;font-size:.92rem;letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:.4s var(--ease);will-change:transform}
+.btn-primary{background:var(--plum);color:#fff;box-shadow:0 14px 32px -14px rgba(59,43,51,.6)}
+.btn-primary:hover{background:var(--rose-d);transform:translateY(-3px)}
+.btn-ghost{border-color:var(--nude);color:var(--plum)}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose-d);transform:translateY(-3px)}
+.btn svg{width:17px;height:17px}
+header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,4vw,46px);transition:.4s var(--ease)}
+header.scrolled{background:rgba(251,248,245,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-block:12px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:.3em}
+.logo b{color:var(--rose);font-weight:600}
+.logo span{font-family:'Jost';font-size:.54rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);align-self:flex-end;padding-bottom:6px}
+nav{display:flex;align-items:center;gap:30px}
+nav a.lnk{font-size:.88rem;color:var(--plum-soft);position:relative;transition:.3s}
+nav a.lnk:hover{color:var(--plum)}
+nav a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--rose);transition:.3s var(--ease)}
+nav a.lnk:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:25px;height:2px;background:var(--plum);transition:.3s}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero .layer{position:absolute;inset:0}
+.hero-bg{background:linear-gradient(110deg,rgba(251,248,245,.97) 0%,rgba(251,248,245,.8) 42%,rgba(251,248,245,.25) 100%),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;transform:scale(1.08);will-change:transform}
+.hero-glow{background:radial-gradient(50% 50% at 80% 30%,rgba(192,138,119,.18),transparent 70%)}
+.hero-inner{position:relative;z-index:3;max-width:680px;padding-top:90px}
+.hero h1{font-size:clamp(2.8rem,6.5vw,5rem);margin:.3em 0 .45em}
+.hero h1 i{color:var(--rose);font-weight:400}
+.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--plum-soft);max-width:46ch;margin-bottom:2.2em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.trust{background:var(--surface);border-block:1px solid var(--line)}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;padding-block:22px}
+.trust .item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--plum-soft)}
+.trust .item svg{width:20px;height:20px;color:var(--rose);flex:none}
+section.block{padding-block:clamp(70px,9vw,128px)}
+.section-head{max-width:60ch;margin:0 auto 54px;text-align:center}
+.section-head h2{font-size:clamp(2.2rem,4.8vw,3.6rem);margin:.25em 0}
+.section-head p{color:var(--plum-soft)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.45s var(--ease)}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(59,43,51,.28)}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .ph img{transform:scale(1.06)}
+.card .bd{padding:26px 26px 30px}
+.card h3{font-size:1.5rem;margin-bottom:.35em}
+.card p{color:var(--plum-soft);font-size:.95rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.split-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -40px rgba(59,43,51,.4)}
+.split-img img{width:100%;height:100%;object-fit:cover}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.feat svg{width:24px;height:24px;color:var(--rose);flex:none;margin-top:3px}
+.feat b{display:block;font-weight:500;color:var(--plum)}
+.feat span{color:var(--plum-soft);font-size:.95rem}
+.soft{background:var(--blush)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,3.8rem);color:var(--rose)}
+.stat .lbl{color:var(--plum-soft);font-size:.92rem}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.tst .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+.tst p{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plum);margin-bottom:16px}
+.tst b{font-weight:500} .tst span{color:var(--muted);font-size:.85rem}
+.cta{position:relative;text-align:center;background:var(--plum);color:#fff;overflow:hidden}
+.cta h2{font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;margin-bottom:.4em;max-width:18ch;margin-inline:auto}
+.cta p{color:rgba(255,255,255,.78);margin-bottom:1.8em}
+.cta .glow{position:absolute;width:60vw;height:60vw;max-width:600px;border-radius:50%;background:radial-gradient(circle,rgba(192,138,119,.4),transparent 65%);filter:blur(80px);bottom:-30%;left:50%;transform:translateX(-50%)}
+.cta .wrap{position:relative;z-index:2}
+footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:32px;margin-bottom:34px}
+.foot h4{font-family:'Jost';font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.foot a,.foot p{color:var(--plum-soft);font-size:.94rem;padding:4px 0;display:block}
+.foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:.84rem}
+@media(max-width:900px){nav .lnk{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(251,248,245,.98);backdrop-filter:blur(14px);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk{display:block;font-size:1.4rem}.svc-grid,.tst-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr;gap:34px}.split-img{max-width:440px;margin-inline:auto}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}}
+@media(max-width:600px){.svc-grid,.tst-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a href="#" class="logo">Lumi<b>è</b>re<span>Medicina Estética</span></a>
+  <nav id="nav">
+    <a class="lnk" href="#tratamientos">Tratamientos</a>
+    <a class="lnk" href="#seguridad">Por qué Lumière</a>
+    <a class="lnk" href="#resultados">Resultados</a>
+    <a class="lnk" href="#opiniones">Opiniones</a>
+    <a class="btn btn-primary" href="#contacto">Primera consulta gratis</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <div class="layer hero-bg" aria-hidden="true"></div>
+  <div class="layer hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Clínica de medicina estética · Valencia</span>
+    <h1 class="reveal d1">Tu belleza, en manos <i>médicas</i> de confianza</h1>
+    <p class="lead reveal d2">Tratamientos faciales, corporales y antiedad con tecnología certificada y un equipo médico titulado. Resultados naturales, con la seguridad de una clínica de verdad.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#contacto" class="btn btn-primary">Reserva tu valoración gratuita
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#tratamientos" class="btn btn-ghost">Ver tratamientos</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Equipo médico colegiado</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Productos y aparatología certificados</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.5 1-6.3L3 8.9 9 8z"/></svg>4,9/5 · +600 reseñas</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Primera consulta sin coste</div>
+  </div>
+</div>
+
+<section class="block" id="tratamientos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center">Nuestros tratamientos</span>
+      <h2 class="reveal d1">Cuidamos cada detalle de ti</h2>
+      <p class="reveal d2">Cada tratamiento comienza con un diagnóstico médico personalizado. Nada de protocolos genéricos: un plan pensado para ti.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Tratamiento facial"></div>
+        <div class="bd"><h3>Medicina facial</h3><p>Ácido hialurónico, bótox, mesoterapia y bioestimulación. Rejuvenecimiento natural, sin exageraciones.</p></div>
+      </article>
+      <article class="card reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=800&q=80" alt="Tratamiento corporal"></div>
+        <div class="bd"><h3>Remodelación corporal</h3><p>Radiofrecuencia, presoterapia y tratamientos reductores para una silueta tonificada.</p></div>
+      </article>
+      <article class="card reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80" alt="Láser estético"></div>
+        <div class="bd"><h3>Láser y aparatología</h3><p>Depilación láser de diodo, eliminación de manchas y rejuvenecimiento con tecnología de última generación.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1607008829749-c8051e1dd8d8?auto=format&fit=crop&w=800&q=80" alt="Cuidado de la piel"></div>
+        <div class="bd"><h3>Dermocosmética</h3><p>Peelings, hydrafacial y rutinas personalizadas para una piel luminosa todo el año.</p></div>
+      </article>
+      <article class="card reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Nutrición y bienestar"></div>
+        <div class="bd"><h3>Nutrición y bienestar</h3><p>Acompañamiento nutricional para que los resultados se mantengan y te sientas bien por dentro y por fuera.</p></div>
+      </article>
+      <article class="card reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1631730486784-23b15ca37e0f?auto=format&fit=crop&w=800&q=80" alt="Consulta médica estética"></div>
+        <div class="bd"><h3>Consulta médica</h3><p>Diagnóstico y plan personalizado con nuestro equipo médico. Tu primera valoración es gratuita.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block soft" id="seguridad">
+  <div class="wrap split">
+    <div class="split-img reveal">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Equipo médico de la clínica">
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">Por qué elegir Lumière</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.3em 0 .6em">La tranquilidad de ponerte en buenas manos</h2>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><b>Médicos colegiados</b><span>Cada tratamiento lo realiza o supervisa personal médico titulado.</span></div></div>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><b>Higiene y protocolos estrictos</b><span>Material de un solo uso y protocolos sanitarios certificados.</span></div></div>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><b>Resultados naturales</b><span>Realzamos tu belleza sin que se note. Nunca un resultado artificial.</span></div></div>
+      <div class="feat" style="border:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><b>Acompañamiento real</b><span>Seguimiento antes, durante y después. Siempre podrás contar con nosotros.</span></div></div>
+      <div style="margin-top:2rem"><a href="#contacto" class="btn btn-primary">Hablar con el equipo</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="resultados">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-count="15" data-suffix="+">0</div><div class="lbl">Años cuidando pieles</div></div>
+      <div class="stat reveal d1"><div class="num" data-count="12000" data-suffix="+">0</div><div class="lbl">Tratamientos realizados</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="98" data-suffix="%">0</div><div class="lbl">Pacientes que repiten</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="0" data-prefix="" data-suffix="€" data-text="Valoración gratis">0</div><div class="lbl">Tu primera consulta</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block soft" id="opiniones">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal" style="justify-content:center">Opiniones</span>
+      <h2 class="reveal d1">Pacientes que confían en nosotros</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tst reveal"><div class="stars">★★★★★</div><p>"Me sentí cuidada y segura en todo momento. El resultado es natural y justo lo que quería."</p><b>Marta R.</b> <span>· Tratamiento facial</span></div>
+      <div class="tst reveal d1"><div class="stars">★★★★★</div><p>"Profesionales de verdad. Te explican todo con calma y sin presión para venderte nada."</p><b>Lucía F.</b> <span>· Láser</span></div>
+      <div class="tst reveal d2"><div class="stars">★★★★★</div><p>"La clínica es preciosa y transmite muchísima confianza. Repetiré sin duda."</p><b>Carmen P.</b> <span>· Remodelación corporal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block cta" id="contacto">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center;color:var(--nude)">Da el primer paso</span>
+    <h2 class="reveal d1">Tu primera valoración es gratuita</h2>
+    <p class="reveal d2">Reserva una cita sin compromiso. Te escuchamos, te asesoramos y diseñamos un plan a tu medida.</p>
+    <div class="reveal d3" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="tel:+34960000000" class="btn btn-primary" style="background:#fff;color:var(--plum)">Llamar: 96 000 00 00</a>
+      <a href="https://wa.me/34960000000" class="btn btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#" class="logo" style="font-size:1.5rem">Lumi<b>è</b>re</a><p style="max-width:34ch;margin-top:10px">Clínica de medicina estética en Valencia. Belleza natural con seguridad médica.</p></div>
+      <div><h4>Clínica</h4><a href="#tratamientos">Tratamientos</a><a href="#seguridad">Por qué Lumière</a><a href="#opiniones">Opiniones</a></div>
+      <div><h4>Contacto</h4><p>Calle de Ejemplo 8, Valencia</p><a href="tel:+34960000000">96 000 00 00</a><a href="mailto:hola@lumiereclinica.es">hola@lumiereclinica.es</a></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="y"></span> Lumière Clínica Estética. Todos los derechos reservados.</span><span>Aviso legal · Privacidad</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.onclick=function(){nav.classList.toggle('open')};
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))nav.classList.remove('open')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;if(el.dataset.text){el.textContent=el.dataset.text;cio.unobserve(el);return;}var end=+el.dataset.count,suf=el.dataset.suffix||'',pre=el.dataset.prefix||'';if(reduced){el.textContent=pre+end+suf;cio.unobserve(el);return;}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(end*e).toLocaleString('es-ES')+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(c){cio.observe(c)});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electricista en Valencia · Urgencias el mismo día | Electricistas Martínez</title>
+<meta name="description" content="Electricista en Valencia. Electricistas certificados con REBT: instalaciones nuevas, reparación de averías, domótica, fotovoltaica y certificados eléctricos oficiales. Respuesta en 2 horas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  Sitio hermano de "Instalaciones García" (fontanero). Mantiene:
+  - Tipografía dual Space Grotesk (display) + Inter (texto)
+  - Iconografía SVG line-art (sin emojis)
+  - Reveal on scroll GPU-safe + prefers-reduced-motion
+  Cambios: sistema de color ámbar dorado (#CA8A04), hero 2 columnas con imagen,
+  contadores animados, secciones Servicios/Por qué/Stats/Sobre nosotros/Reseñas/Zona/Contacto.
+-->
+
+<style>
+:root{
+  --dark:#111827;
+  --dark-2:#0c121e;
+  --yellow:#CA8A04;
+  --yellow-dark:#a87404;
+  --yellow-lt:#FEF9C3;
+  --surface:#F9FAFB;
+  --white:#FFFFFF;
+  --text:#111827;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+  --wa-green:#25D366;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-0.02em}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--yellow);display:inline-block}
+.section-head{max-width:680px;margin:0 auto 56px;text-align:center}
+.section-head .eyebrow{justify-content:center}
+.section-title{font-size:clamp(1.9rem,4vw,2.7rem)}
+.section-sub{color:var(--muted);margin-top:14px;font-size:1.06rem}
+
+.ico{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;cursor:pointer;border:2px solid transparent;transition:transform .15s ease, background .2s ease, box-shadow .2s ease;white-space:nowrap}
+.btn .ico{width:20px;height:20px}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--yellow);color:#fff;box-shadow:0 8px 22px rgba(202,138,4,.32)}
+.btn-primary:hover{background:var(--yellow-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(202,138,4,.42)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:#fff;transform:translateY(-2px)}
+.btn-block{width:100%}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(17,24,39,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.16rem}
+.logo .mark{width:38px;height:38px;border-radius:9px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo .mark svg{width:22px;height:22px;stroke:#fff}
+.nav-links{display:flex;gap:30px;margin-left:auto;margin-right:32px}
+.nav-links a{color:#cbd5e1;font-weight:500;font-size:.96rem;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;display:flex;align-items:center;gap:8px}
+.nav-phone .ico{color:var(--yellow);width:20px;height:20px}
+.nav-phone:hover{color:var(--yellow)}
+.nav-cta{min-height:46px;padding:0 22px;font-size:.94rem}
+
+/* HERO — 2 columns */
+.hero{background:radial-gradient(800px 480px at 88% 0%, rgba(202,138,4,.16), transparent 60%),var(--dark);color:#fff;padding:72px 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;min-height:calc(100vh - 74px - 144px)}
+.hero h1{font-size:clamp(2.3rem,5vw,4.5rem);letter-spacing:-.03em}
+.hero h1 .accent{color:var(--yellow)}
+.hero p{font-size:clamp(1.05rem,2vw,1.25rem);color:#cbd5e1;max-width:52ch;margin:24px 0 34px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.trust-row{display:flex;flex-direction:column;gap:12px}
+.trust-row span{font-size:1rem;color:#e2e8f0;font-weight:500;display:flex;align-items:center;gap:10px}
+.trust-row .ico{width:20px;height:20px;color:var(--yellow);flex-shrink:0}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:520px;object-fit:cover;border-radius:18px;background:#1f2937}
+.hero-media::after{content:"";position:absolute;inset:0;border-radius:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.hero-badge{position:absolute;left:-18px;bottom:28px;background:#fff;color:var(--text);border-radius:14px;padding:16px 20px;box-shadow:0 18px 40px rgba(0,0,0,.3);display:flex;align-items:center;gap:13px}
+.hero-badge .hb-ic{width:46px;height:46px;border-radius:11px;background:var(--yellow-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-badge .hb-ic .ico{color:var(--yellow-dark)}
+.hero-badge b{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;display:block}
+.hero-badge span{color:var(--muted);font-size:.85rem}
+
+/* STATS */
+.stats{background:var(--yellow);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 24px}
+.stat{text-align:center}
+.stat .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1}
+.stat .l{font-size:.92rem;font-weight:500;opacity:.92;margin-top:6px}
+.stat+.stat{border-left:1px solid rgba(255,255,255,.28)}
+
+/* SERVICIOS */
+.servicios{background:var(--white);padding:96px 0}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:#fff;border:1px solid var(--border);border-radius:16px;padding:34px 30px;overflow:hidden;transition:transform .2s ease, box-shadow .25s ease, border-color .2s ease}
+.card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,24,39,.1);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card-icon{width:56px;height:56px;border-radius:12px;background:var(--yellow-lt);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.card-icon .ico{width:28px;height:28px;color:var(--yellow-dark);stroke-width:1.7}
+.card h3{font-size:1.24rem;margin-bottom:9px;color:var(--dark)}
+.card p{color:var(--muted);font-size:1rem}
+
+/* POR QUÉ */
+.porque{background:var(--dark);color:#fff;padding:96px 0}
+.porque .section-title{color:#fff}
+.porque .section-sub{color:#9ca3af}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:920px;margin:0 auto}
+.why-item{display:flex;gap:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;transition:transform .2s ease,background .2s ease}
+.why-item:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
+.why-icon{width:54px;height:54px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-icon .ico{width:28px;height:28px;color:#fff}
+.why-item h3{font-size:1.16rem;margin-bottom:8px;color:#fff}
+.why-item p{color:#9ca3af;font-size:.97rem}
+
+/* SOBRE NOSOTROS */
+.sobre{background:var(--surface);padding:96px 0}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.sobre-media img{width:100%;height:340px;object-fit:cover;border-radius:16px;background:#e5e7eb}
+.sobre-text h2{font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--dark);margin-bottom:18px}
+.sobre-text p{color:var(--muted);margin-bottom:16px}
+.sobre-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px}
+.sobre-gallery figure{border-radius:16px;overflow:hidden;position:relative}
+.sobre-gallery img{width:100%;height:240px;object-fit:cover;background:#e5e7eb;transition:transform .4s ease}
+.sobre-gallery figure:hover img{transform:scale(1.05)}
+.sobre-gallery figcaption{position:absolute;left:16px;bottom:14px;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.sobre-gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.5))}
+
+/* RESEÑAS */
+.resenas{background:var(--white);padding:96px 0}
+.rating-badge{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:12px 22px;margin-top:18px;box-shadow:0 6px 18px rgba(17,24,39,.06)}
+.rating-badge .stars{display:flex;gap:2px}
+.rating-badge b{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;color:var(--dark)}
+.rating-badge span{color:var(--muted);font-size:.95rem}
+.star{width:20px;height:20px;fill:#CA8A04}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:34px 30px}
+.quote-mark{font-family:'Space Grotesk',sans-serif;font-size:4rem;line-height:.6;color:rgba(202,138,4,.2);position:absolute;top:24px;right:26px}
+.review .stars{display:flex;gap:2px;margin-bottom:16px}
+.review p{color:var(--text);margin-bottom:22px;font-size:1.02rem;position:relative;z-index:1}
+.review .author{display:flex;align-items:center;gap:12px}
+.review .avatar{width:44px;height:44px;border-radius:50%;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.review .meta b{display:block;color:var(--dark);font-family:'Space Grotesk',sans-serif}
+.review .meta span{color:var(--muted);font-size:.88rem}
+
+/* ZONA */
+.zona{background:var(--surface);padding:96px 0}
+.zona-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.map-box{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 40px rgba(17,24,39,.1);min-height:380px}
+.map-box iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+.zona-text h2{font-size:clamp(1.7rem,3.5vw,2.3rem);color:var(--dark);margin-bottom:24px}
+.zona-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-bottom:26px;list-style:none}
+.zona-list li{padding:11px 14px;background:#fff;border:1px solid var(--border);border-radius:9px;font-weight:600;color:var(--dark);font-size:.97rem;display:flex;align-items:center;gap:9px}
+.zona-list .ico{width:17px;height:17px;color:var(--yellow);flex-shrink:0}
+.zona-note{background:var(--yellow-lt);border-left:4px solid var(--yellow);padding:16px 20px;border-radius:8px;color:var(--text);font-weight:500}
+
+/* CONTACTO */
+.contacto{background:var(--dark);color:#fff;padding:96px 0}
+.contacto .section-title{color:#fff}
+.contacto .section-sub{color:#9ca3af}
+.contacto-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px}
+.form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:38px}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:500;margin-bottom:8px;font-size:.93rem;color:#cbd5e1}
+.form-field input,.form-field textarea{width:100%;padding:15px 16px;border-radius:10px;border:1px solid #374151;background:var(--dark-2);color:#fff;font-family:inherit;font-size:1rem;min-height:54px;transition:border-color .2s}
+.form-field textarea{min-height:128px;resize:vertical}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#6b7280}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--yellow)}
+.contact-card{background:linear-gradient(160deg,var(--dark-2),#141c2c);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:38px}
+.contact-card h3{color:#fff;margin-bottom:26px;font-size:1.3rem}
+.contact-line{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.contact-line:last-child{border-bottom:none;padding-bottom:0}
+.contact-line .ci{width:46px;height:46px;border-radius:11px;background:rgba(202,138,4,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-line .ci .ico{width:22px;height:22px;color:var(--yellow)}
+.contact-line .ct{color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.06rem}
+.contact-line .cs{color:#9ca3af;font-size:.9rem}
+.contact-line a:hover .ct{color:var(--yellow)}
+
+/* FOOTER */
+footer{background:var(--dark-2);color:#9ca3af;padding:60px 0 30px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand .logo{margin-bottom:14px}
+.footer-brand p{max-width:34ch;font-size:.96rem}
+.footer-links{display:flex;gap:30px;flex-wrap:wrap}
+.footer-links a{font-weight:500;font-size:.97rem}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.86rem;color:#6b7280;padding-top:24px;text-align:center}
+
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:200;width:60px;height:60px;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(37,211,102,.5);transition:transform .2s ease;animation:wa-pulse 2.8s infinite}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* MOBILE BAR */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--dark);box-shadow:0 -2px 14px rgba(0,0,0,.35)}
+.mobile-bar a{flex:1;min-height:58px;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;color:#fff}
+.mobile-bar .ico{width:20px;height:20px}
+.mobile-bar .mb-call{background:var(--yellow)}
+.mobile-bar .mb-wa{background:var(--wa-green)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-media{order:-1}
+  .hero-media img{height:360px}
+}
+@media(max-width:820px){
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .zona-grid,.sobre-grid{grid-template-columns:1fr;gap:34px}
+  .contacto-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .nav-cta{display:none}
+  .cards-grid{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:26px 10px}
+  .stat:nth-child(3){border-left:none}
+  .zona-list,.sobre-gallery{grid-template-columns:1fr}
+  .hero-ctas .btn{width:100%}
+  .hero-badge{left:0}
+  .footer-top{flex-direction:column}
+  .wa-float{bottom:78px}
+  .mobile-bar{display:flex}
+  body{padding-bottom:58px}
+  .servicios,.porque,.resenas,.zona,.contacto,.sobre{padding:64px 0}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON DEFS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-phone"><path class="ico" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></g>
+  <g id="i-check"><path class="ico" d="M20 6 9 17l-5-5"/></g>
+  <g id="i-checkcircle"><circle class="ico" cx="12" cy="12" r="9"/><path class="ico" d="M8.5 12.5l2.5 2.5 4.5-5"/></g>
+  <g id="i-zap"><path class="ico" d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></g>
+  <g id="i-bulb"><path class="ico" d="M9 18h6M10 22h4"/><path class="ico" d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></g>
+  <g id="i-plug"><path class="ico" d="M9 2v6M15 2v6"/><path class="ico" d="M7 8h10v3a5 5 0 0 1-10 0V8z"/><path class="ico" d="M12 16v6"/></g>
+  <g id="i-settings"><circle class="ico" cx="12" cy="12" r="3"/><path class="ico" d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></g>
+  <g id="i-sun"><circle class="ico" cx="12" cy="12" r="4"/><path class="ico" d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g>
+  <g id="i-store"><path class="ico" d="M3 9l1.5-5h15L21 9"/><path class="ico" d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path class="ico" d="M4 9v11h16V9"/><path class="ico" d="M9 20v-6h6v6"/></g>
+  <g id="i-award"><circle class="ico" cx="12" cy="8" r="6"/><path class="ico" d="M8.2 13.5 7 22l5-3 5 3-1.2-8.5"/></g>
+  <g id="i-clip"><path class="ico" d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path class="ico" d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><path class="ico" d="M8 12h8M8 16h6"/></g>
+  <g id="i-clock"><circle class="ico" cx="12" cy="12" r="9"/><path class="ico" d="M12 7v5l3 2"/></g>
+  <g id="i-pin"><path class="ico" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle class="ico" cx="12" cy="10" r="3"/></g>
+</defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="s-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.25.69-1.45 1.32-1.99 1.36-.53.05-1.03.24-3.48-.73-2.93-1.16-4.79-4.16-4.94-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1.01-2.41.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.59.84 2.04.91 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.74-.18 1.43z"/></symbol></svg>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>Electricistas Martínez</a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Por qué nosotros</a>
+      <a href="#zona">Zona</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+34666123456" class="nav-phone"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg>666 123 456</a>
+      <a href="https://wa.me/34666123456?text=Hola%2C+necesito+un+electricista+en+Valencia" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Pedir presupuesto</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Servicio de electricidad · Valencia</span>
+      <h1>Electricista en Valencia. <span class="accent">Instalaciones y averías resueltas hoy.</span></h1>
+      <p>Electricistas certificados con REBT. Instalaciones nuevas, reparación de averías y certificados eléctricos oficiales en Valencia.</p>
+      <div class="hero-ctas">
+        <a href="tel:+34666123456" class="btn btn-primary"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg>Llamar: 666 123 456</a>
+        <a href="https://wa.me/34666123456?text=Hola%2C+necesito+un+electricista+en+Valencia" target="_blank" rel="noopener" class="btn btn-outline"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><use href="#s-wa"/></svg>WhatsApp</a>
+      </div>
+      <div class="trust-row">
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>Instaladores autorizados por Industria</span>
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>REBT certificado</span>
+        <span><svg viewBox="0 0 24 24" class="ico"><use href="#i-check"/></svg>Respuesta en 2 horas</span>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80" alt="Electricista en uniforme trabajando en un cuadro eléctrico">
+      <div class="hero-badge">
+        <span class="hb-ic"><svg viewBox="0 0 24 24" class="ico"><use href="#i-checkcircle"/></svg></span>
+        <div><b>+500 instalaciones</b><span>realizadas en Valencia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="n" data-count="12" data-suffix="+">0</div><div class="l">Años de experiencia</div></div>
+    <div class="stat reveal"><div class="n" data-count="500" data-suffix="+">0</div><div class="l">Instalaciones realizadas</div></div>
+    <div class="stat reveal"><div class="n" data-count="24" data-suffix="h">0</div><div class="l">Urgencias atendidas</div></div>
+    <div class="stat reveal"><div class="n" data-count="100" data-suffix="%">0</div><div class="l">Certificados emitidos</div></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2 class="section-title">¿Qué podemos hacer por ti?</h2>
+      <p class="section-sub">Soluciones eléctricas para hogares, comunidades y negocios en toda Valencia.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-zap"/></svg></div><h3>Reparación de averías</h3><p>Cuadros eléctricos, cortocircuitos, enchufes e interruptores. Resolvemos cualquier avería eléctrica en el día.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-bulb"/></svg></div><h3>Instalaciones nuevas</h3><p>Instalación eléctrica completa para obras y reformas. Certificado oficial incluido.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-plug"/></svg></div><h3>Puntos de luz y enchufes</h3><p>Instalamos o trasladamos puntos de luz y tomas de corriente donde los necesitas.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-settings"/></svg></div><h3>Automatismos y domótica</h3><p>Porteros automáticos, videoporteros y domótica básica. Instalación y programación completa.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-sun"/></svg></div><h3>Instalaciones fotovoltaicas</h3><p>Placas solares y autoconsumo para el hogar. Te asesoramos sobre subvenciones disponibles.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-store"/></svg></div><h3>Electricidad en locales</h3><p>Mantenimiento y reparación en locales comerciales, restaurantes e industrias. Disponibilidad flexible.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="porque" id="porque">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Por qué nosotros</span>
+      <h2 class="section-title">¿Por qué elegirnos?</h2>
+      <p class="section-sub">Profesionales homologados, trabajo certificado y precios sin sorpresas.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-zap"/></svg></div><div><h3>Instaladores autorizados</h3><p>Homologados por la Conselleria d'Industria de la Comunitat Valenciana.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-award"/></svg></div><div><h3>REBT certificado</h3><p>Emitimos certificados eléctricos oficiales válidos para seguros y alquileres.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-clip"/></svg></div><div><h3>Presupuesto cerrado</h3><p>Precio exacto antes de empezar. Sin costes sorpresa en ningún caso.</p></div></div>
+      <div class="why-item reveal"><div class="why-icon"><svg viewBox="0 0 24 24" class="ico"><use href="#i-clock"/></svg></div><div><h3>Urgencias el mismo día</h3><p>Disponibles para emergencias eléctricas de lunes a sábado.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="sobre-media reveal">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80" alt="Electricista profesional con sus herramientas">
+      </div>
+      <div class="sobre-text reveal">
+        <span class="eyebrow">Sobre nosotros</span>
+        <h2>Electricistas de confianza desde hace más de 12 años</h2>
+        <p>En Electricistas Martínez somos un equipo de profesionales autorizados por Industria con más de una década resolviendo instalaciones y averías en Valencia y su área metropolitana.</p>
+        <p>Trabajamos con materiales de primera calidad, dejamos cada instalación limpia y entregamos siempre el certificado eléctrico oficial. Tu seguridad y la de tu familia es lo primero.</p>
+      </div>
+    </div>
+    <div class="sobre-gallery">
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Instalación eléctrica moderna en una vivienda">
+        <figcaption>Instalaciones en vivienda</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Instalación de placas solares en tejado">
+        <figcaption>Fotovoltaica y autoconsumo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="resenas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Reseñas</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <div class="rating-badge">
+        <span class="stars">
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </span>
+        <b>4.9/5</b><span>en Google</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Vino el mismo día que llamé. Dos horas después tenía el cuadro eléctrico nuevo. Trabajo impecable y precio muy justo."</p>
+        <div class="author"><div class="avatar">PS</div><div class="meta"><b>Pedro Sánchez</b><span>Valencia</span></div></div>
+      </div>
+      <div class="review reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Instalé enchufes y puntos de luz en toda la casa en un día. Muy limpios durante el trabajo y el acabado perfecto."</p>
+        <div class="author"><div class="avatar">LT</div><div class="meta"><b>Laura Torres</b><span>Paterna</span></div></div>
+      </div>
+      <div class="review reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars"><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>"Me certificaron la instalación del local para el seguro. Rapidísimos y el papeleo completamente en orden."</p>
+        <div class="author"><div class="avatar">AV</div><div class="meta"><b>Antonio Vidal</b><span>Burjassot</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONA -->
+<section class="zona" id="zona">
+  <div class="wrap">
+    <div class="zona-grid">
+      <div class="map-box reveal">
+        <iframe src="https://www.google.com/maps?q=Valencia,Espa%C3%B1a&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de cobertura · Valencia"></iframe>
+      </div>
+      <div class="zona-text reveal">
+        <span class="eyebrow">Zona de cobertura</span>
+        <h2>Cubrimos Valencia y alrededores</h2>
+        <ul class="zona-list">
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Valencia capital</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Burjassot</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Mislata</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Torrent</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Paterna</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Manises</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Alboraia</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Xirivella</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Quart de Poblet</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>Picanya</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>L'Horta Sud</li>
+          <li><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg>L'Horta Nord</li>
+        </ul>
+        <div class="zona-note">¿Tu zona no aparece? <strong>Llámanos y lo comprobamos.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">Pide tu presupuesto gratis</h2>
+      <p class="section-sub">Cuéntanos qué necesitas y te respondemos lo antes posible.</p>
+    </div>
+    <div class="contacto-grid">
+      <form class="form-card reveal" onsubmit="enviarConsulta(event)">
+        <div class="form-field"><label for="nombre">Nombre completo</label><input type="text" id="nombre" placeholder="Tu nombre" required></div>
+        <div class="form-field"><label for="telefono">Teléfono</label><input type="tel" id="telefono" placeholder="600 000 000" required></div>
+        <div class="form-field"><label for="problema">Describe el trabajo</label><textarea id="problema" placeholder="Cuéntanos qué necesitas..." required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar consulta</button>
+      </form>
+      <div class="contact-card reveal">
+        <h3>Contacto directo</h3>
+        <a href="tel:+34666123456" class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-phone"/></svg></span><div><div class="ct">666 123 456</div><div class="cs">Llámanos ahora</div></div></a>
+        <a href="https://wa.me/34666123456?text=Hola%2C+necesito+un+electricista+en+Valencia" target="_blank" rel="noopener" class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--yellow)"><use href="#s-wa"/></svg></span><div><div class="ct">WhatsApp</div><div class="cs">Respuesta rápida</div></div></a>
+        <div class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-clock"/></svg></span><div><div class="ct">Lun–Sáb 8:00–20:00</div><div class="cs">Urgencias el mismo día</div></div></div>
+        <div class="contact-line"><span class="ci"><svg viewBox="0 0 24 24" class="ico"><use href="#i-pin"/></svg></span><div><div class="ct">Valencia y área metropolitana</div><div class="cs">Desplazamiento incluido en presupuesto</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>Electricistas Martínez</div>
+        <p>Tu electricista de confianza en Valencia</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#zona">Zona de cobertura</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2025 Electricistas Martínez · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/34666123456?text=Hola%2C+necesito+un+electricista+en+Valencia" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24"><use href="#s-wa"/></svg></a>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="tel:+34666123456" class="mb-call"><svg viewBox="0 0 24 24" class="ico" style="stroke:#fff"><use href="#i-phone"/></svg>LLAMAR</a>
+  <a href="https://wa.me/34666123456?text=Hola%2C+necesito+un+electricista+en+Valencia" target="_blank" rel="noopener" class="mb-wa"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><use href="#s-wa"/></svg>WHATSAPP</a>
+</div>
+
+<script>
+/* Reveal on scroll */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+/* Animated counters */
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nums=document.querySelectorAll('[data-count]');
+  function run(el){
+    var target=+el.dataset.count, suf=el.dataset.suffix||'', dur=1400, t0=null;
+    if(reduce){el.textContent=target+suf;return;}
+    function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min((ts-t0)/dur,1);
+      var val=Math.floor((1-Math.pow(1-p,3))*target);
+      el.textContent=val+suf;
+      if(p<1)requestAnimationFrame(step);else el.textContent=target+suf;
+    }
+    requestAnimationFrame(step);
+  }
+  if(!('IntersectionObserver' in window)){nums.forEach(run);return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}});},{threshold:.5});
+  nums.forEach(function(n){io.observe(n);});
+})();
+
+/* Form → WhatsApp */
+function enviarConsulta(e){
+  e.preventDefault();
+  var n=document.getElementById('nombre').value.trim();
+  var t=document.getElementById('telefono').value.trim();
+  var p=document.getElementById('problema').value.trim();
+  var msg='Hola, soy '+n+' (tel: '+t+'). Necesito un electricista en Valencia: '+p;
+  window.open('https://wa.me/34666123456?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>

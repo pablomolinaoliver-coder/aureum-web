@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fontanería Ríos · Fontanero en Valencia | Urgencias y presupuesto cerrado</title>
+<meta name="description" content="Fontanero profesional en Valencia. Fugas, calentadores, desatascos y reformas de baño. Urgencias el mismo día, precio cerrado y 2 años de garantía." />
+<meta name="theme-color" content="#142a45" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- epic-design skill · reveal-on-scroll, parallax, count-up, prefers-reduced-motion. Imágenes Unsplash. -->
+<style>
+:root{
+  --navy:#142A45; --blue:#2C74C9; --blue-d:#205AA3; --bg:#F3F6FA; --surface:#fff;
+  --text:#16263A; --muted:#5C6E84; --line:#E1E9F2; --ok:#1FA37A;
+  --maxw:1180px; --r:16px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.02em}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:15px 28px;border-radius:12px;font-weight:700;font-size:.95rem;cursor:pointer;border:2px solid transparent;transition:.35s var(--ease);will-change:transform}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 14px 30px -12px rgba(44,116,201,.6)}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-3px)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--navy);border-color:#fff}
+.btn svg{width:18px;height:18px}
+header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,4vw,46px);transition:.4s var(--ease)}
+header.scrolled{background:rgba(20,42,69,.95);backdrop-filter:blur(12px);padding-block:11px}
+.logo{font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:.5em}
+.logo .dot{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center}
+.logo .dot svg{width:20px;height:20px;color:#fff}
+nav{display:flex;align-items:center;gap:28px}
+nav a.lnk{font-size:.92rem;font-weight:600;color:rgba(255,255,255,.85);transition:.3s}
+nav a.lnk:hover{color:#fff}
+.tel-cta{display:inline-flex;align-items:center;gap:.5em;font-weight:800;color:#fff}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:25px;height:2px;background:#fff;transition:.3s}
+.hero{position:relative;min-height:96svh;display:flex;align-items:center;overflow:hidden;background:var(--navy);color:#fff}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,42,69,.96) 0%,rgba(20,42,69,.82) 45%,rgba(20,42,69,.45) 100%),url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;transform:scale(1.06);will-change:transform}
+.hero-inner{position:relative;z-index:3;max-width:660px;padding-top:90px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);margin:.3em 0 .4em}
+.hero h1 span{color:#7FB2EE}
+.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:rgba(255,255,255,.82);max-width:48ch;margin-bottom:2em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-badges{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.16)}
+.hero-badges .b{display:flex;align-items:center;gap:.5em;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.9)}
+.hero-badges svg{width:18px;height:18px;color:#7FB2EE}
+section.block{padding-block:clamp(64px,8vw,116px)}
+.section-head{max-width:60ch;margin-bottom:48px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.25em 0}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.4s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px -26px rgba(20,42,69,.32);border-color:#cfe0f3}
+.svc .ic{width:52px;height:52px;border-radius:13px;background:#EAF2FC;color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:1.25rem;margin-bottom:.4em}
+.svc p{color:var(--muted);font-size:.95rem}
+.why{background:var(--navy);color:#fff}
+.why .section-head h2{color:#fff}.why .section-head p{color:rgba(255,255,255,.75)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why-item .n{font-size:2.4rem;font-weight:800;color:#7FB2EE;line-height:1}
+.why-item h3{font-size:1.15rem;margin:.5em 0 .3em}
+.why-item p{color:rgba(255,255,255,.72);font-size:.93rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.step{position:relative;padding-left:64px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;font-weight:800;display:grid;place-items:center;font-size:1.2rem}
+.step h3{font-size:1.2rem;margin-bottom:.3em}.step p{color:var(--muted);font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat .num{font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:800;color:var(--blue)}
+.stat .lbl{color:var(--muted);font-size:.92rem}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tst{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.tst .stars{color:#F5A623;margin-bottom:10px}
+.tst p{margin-bottom:14px}.tst b{font-weight:700}.tst span{color:var(--muted);font-size:.85rem}
+.cta{background:linear-gradient(120deg,var(--blue),var(--blue-d));color:#fff;text-align:center}
+.cta h2{color:#fff;font-size:clamp(2rem,4.4vw,3rem);margin-bottom:.4em}
+.cta p{color:rgba(255,255,255,.86);margin-bottom:1.6em}
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding-block:48px 26px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:30px;margin-bottom:32px}
+.foot h4{color:#fff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.foot a,.foot p{display:block;color:rgba(255,255,255,.7);font-size:.93rem;padding:4px 0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.84rem}
+.call-float{position:fixed;right:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:.5em;padding:14px 22px;border-radius:100px;background:var(--blue);color:#fff;font-weight:700;box-shadow:0 14px 32px -10px rgba(44,116,201,.7)}
+.call-float svg{width:20px;height:20px}
+@media(max-width:900px){nav .lnk,.tel-cta{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(20,42,69,.98);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk,nav.open .tel-cta{display:block;font-size:1.3rem}.svc-grid,.steps,.tst-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:32px 24px}}
+@media(max-width:600px){.svc-grid,.steps,.tst-grid,.why-grid,.foot{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a href="#" class="logo"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h6V4l4 4 8-3-2 6 2 6-8-3-4 4v-4H3z"/></svg></span>Fontanería Ríos</a>
+  <nav id="nav">
+    <a class="lnk" href="#servicios">Servicios</a>
+    <a class="lnk" href="#porque">Por qué nosotros</a>
+    <a class="lnk" href="#proceso">Cómo trabajamos</a>
+    <a class="tel-cta" href="tel:+34960000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>96 000 00 00</a>
+    <a class="btn btn-primary" href="#contacto" style="padding:11px 20px">Presupuesto gratis</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal" style="color:#7FB2EE">Fontanero en Valencia · 20 años de oficio</span>
+    <h1 class="reveal d1">Tu fontanero de confianza, <span>cuando lo necesitas</span></h1>
+    <p class="lead reveal d2">Fugas, calentadores, desatascos y reformas de baño. Vamos el mismo día, te damos el precio antes de empezar y lo dejamos bien a la primera.</p>
+    <div class="hero-cta reveal d3">
+      <a href="tel:+34960000000" class="btn btn-primary">Llamar ahora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+      <a href="#contacto" class="btn btn-ghost">Pedir presupuesto</a>
+    </div>
+    <div class="hero-badges reveal">
+      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Urgencias el mismo día</div>
+      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Precio cerrado por escrito</div>
+      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>2 años de garantía</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal" style="justify-content:center">Servicios</span>
+      <h2 class="reveal d1">Lo que resolvemos</h2>
+      <p class="reveal d2">Sin rodeos: estos son los trabajos que hacemos cada día.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/></svg></div><h3>Fugas y averías</h3><p>Detección y reparación de fugas de agua, tuberías y humedades. Rápido y sin romper de más.</p></div>
+      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M12 14v3"/></svg></div><h3>Calentadores y termos</h3><p>Instalación, reparación y mantenimiento de calentadores, termos y calderas de todas las marcas.</p></div>
+      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M7 7v13M17 7v13M10 11h4"/></svg></div><h3>Desatascos</h3><p>Tuberías, fregaderos, inodoros y bajantes. Con cámara de inspección si hace falta.</p></div>
+      <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M7 12V6a2 2 0 0 1 4 0"/></svg></div><h3>Baños y reformas</h3><p>Cambio de bañera por plato de ducha, alicatado, sanitarios y reformas completas de baño.</p></div>
+      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M8 8h8l-1 6H9zM10 14v6M14 14v6"/></svg></div><h3>Grifería y sanitarios</h3><p>Sustitución de grifos, cisternas, inodoros y lavabos. Adiós a goteos y averías.</p></div>
+      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h3>Detección de fugas</h3><p>Localizamos fugas ocultas con tecnología, sin obras innecesarias. Tú solo pagas lo justo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="porque">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal" style="justify-content:center;color:#7FB2EE">Por qué nosotros</span>
+      <h2 class="reveal d1">Trabajo bien hecho, sin sorpresas</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="n">01</div><h3>Vamos rápido</h3><p>Atendemos urgencias el mismo día y cumplimos la hora que te damos.</p></div>
+      <div class="why-item reveal d1"><div class="n">02</div><h3>Precio cerrado</h3><p>Te decimos lo que cuesta antes de empezar. Lo que firmamos es lo que pagas.</p></div>
+      <div class="why-item reveal d2"><div class="n">03</div><h3>Técnicos propios</h3><p>Nada de subcontratas. Profesionales con oficio y trato cercano.</p></div>
+      <div class="why-item reveal d3"><div class="n">04</div><h3>Garantía real</h3><p>2 años de garantía por escrito en todas nuestras reparaciones.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="proceso">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal" style="justify-content:center">Cómo trabajamos</span>
+      <h2 class="reveal d1">Tres pasos y listo</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Nos llamas</h3><p>Cuéntanos qué pasa por teléfono o WhatsApp. Te orientamos al momento.</p></div>
+      <div class="step reveal d1"><h3>Vamos y valoramos</h3><p>Vemos la avería y te damos un precio cerrado antes de tocar nada.</p></div>
+      <div class="step reveal d2"><h3>Lo dejamos perfecto</h3><p>Reparamos, limpiamos y te damos garantía por escrito. Sin sorpresas.</p></div>
+    </div>
+    <div class="stats" style="margin-top:64px">
+      <div class="stat reveal"><div class="num" data-count="20" data-suffix="+">0</div><div class="lbl">Años de oficio</div></div>
+      <div class="stat reveal d1"><div class="num" data-count="9000" data-suffix="+">0</div><div class="lbl">Avisos atendidos</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="2" data-suffix="h">0</div><div class="lbl">Tiempo medio de llegada</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="4.9" data-decimal="true">0</div><div class="lbl">Valoración media</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal" style="justify-content:center">Opiniones</span>
+      <h2 class="reveal d1">Lo que dicen los vecinos</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tst reveal"><div class="stars">★★★★★</div><p>"Tenía una fuga un domingo y vinieron en una hora. Precio justo y todo limpio."</p><b>Antonio M.</b> <span>· Benimaclet</span></div>
+      <div class="tst reveal d1"><div class="stars">★★★★★</div><p>"Me cambiaron la bañera por ducha en dos días. Trabajo impecable y trato cercano."</p><b>Pilar S.</b> <span>· Ruzafa</span></div>
+      <div class="tst reveal d2"><div class="stars">★★★★★</div><p>"Por fin un fontanero serio: te dice el precio antes y lo cumple. Recomendable 100%."</p><b>Javier L.</b> <span>· Campanar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block cta" id="contacto">
+  <div class="wrap">
+    <h2 class="reveal">¿Tienes una avería? Te ayudamos hoy mismo</h2>
+    <p class="reveal d1">Llámanos o escríbenos por WhatsApp. Presupuesto sin compromiso.</p>
+    <div class="reveal d2" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="tel:+34960000000" class="btn btn-light">Llamar: 96 000 00 00</a>
+      <a href="https://wa.me/34960000000" class="btn btn-ghost">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#" class="logo"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h6V4l4 4 8-3-2 6 2 6-8-3-4 4v-4H3z"/></svg></span>Fontanería Ríos</a><p style="margin-top:12px;max-width:32ch">Fontanero profesional en Valencia y alrededores. Urgencias, reparaciones y reformas de baño.</p></div>
+      <div><h4>Servicios</h4><a href="#servicios">Fugas y averías</a><a href="#servicios">Calentadores</a><a href="#servicios">Desatascos</a><a href="#servicios">Reformas de baño</a></div>
+      <div><h4>Contacto</h4><a href="tel:+34960000000">96 000 00 00</a><a href="mailto:info@fontaneriarios.es">info@fontaneriarios.es</a><p>Valencia y área metropolitana</p></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="y"></span> Fontanería Ríos. Todos los derechos reservados.</span><span>Aviso legal · Privacidad</span></div>
+  </div>
+</footer>
+<a class="call-float" href="tel:+34960000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Llamar</a>
+
+<script>
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.onclick=function(){nav.classList.toggle('open')};
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk'))nav.classList.remove('open')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target,dec=el.dataset.decimal==='true',end=+el.dataset.count,suf=el.dataset.suffix||'';var fmt=function(v){return dec?v.toFixed(1):Math.round(v).toLocaleString('es-ES')};if(reduced){el.textContent=fmt(end)+suf;cio.unobserve(el);return}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=fmt(end*e)+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(c){cio.observe(c)});
+})();
+</script>
+</body>
+</html>

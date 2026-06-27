@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AUREA · Reformas Integrales en Madrid | Reformas de viviendas, cocinas y baños</title>
+<meta name="description" content="AUREA Reformas Integrales. Reformamos tu hogar con diseño, calidad y plazos garantizados. Cocinas, baños, viviendas completas y locales. Presupuesto sin compromiso." />
+<meta name="theme-color" content="#1a1714" />
+<meta property="og:title" content="AUREA · Reformas Integrales" />
+<meta property="og:description" content="Transformamos tu hogar con diseño, calidad y plazos garantizados." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<!--
+  ============================================================
+  AUREA · Reformas Integrales — Single-file cinematic landing
+  Built with the epic-design skill.
+  Techniques applied (from the 45-technique catalogue):
+   1. 6-layer parallax depth system
+   2. Pinned/scrub scroll storytelling (GSAP ScrollTrigger)
+   3. Split / converge text reveal
+   4. Masked line reveal (clip-path)
+   5. Word-by-word reveal on scroll
+   6. Animated count-up stats
+   7. Before/After image reveal slider
+   8. Cascading card stagger
+   9. Floating-loop hero atmosphere
+  10. prefers-reduced-motion fallback (mandatory)
+  Images: Unsplash (royalty-free) used as depth-0 backgrounds / content.
+  ============================================================
+-->
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root{
+  --bg:        #1a1714;   /* deep warm charcoal */
+  --bg-2:      #201c18;
+  --surface:   #221e1a;
+  --surface-2: #2b2620;
+  --cream:     #f5efe6;   /* warm off-white */
+  --muted:     #b9ad9d;
+  --accent:    #c2703d;   /* terracotta */
+  --accent-2:  #e0a96d;   /* warm gold */
+  --line:      rgba(245,239,230,.12);
+  --maxw:      1240px;
+  --r:         18px;
+  --ease:      cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--cream);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3{ font-family:'Fraunces',serif; font-weight:600; line-height:1.05; letter-spacing:-.01em; }
+
+.wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:24px; }
+.eyebrow{
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.78rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--accent-2);
+  display:inline-flex; align-items:center; gap:.6em;
+}
+.eyebrow::before{ content:''; width:28px; height:1px; background:var(--accent); display:inline-block; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  --pad:15px 28px;
+  display:inline-flex; align-items:center; gap:.6em;
+  padding:var(--pad); border-radius:100px; font-weight:600; font-size:.95rem;
+  cursor:pointer; border:1px solid transparent; transition:.4s var(--ease);
+  will-change:transform;
+}
+.btn-primary{ background:var(--accent); color:#fff; box-shadow:0 10px 30px -10px rgba(194,112,61,.7); }
+.btn-primary:hover{ background:var(--accent-2); color:#241f1a; transform:translateY(-3px); box-shadow:0 18px 40px -12px rgba(224,169,109,.7); }
+.btn-ghost{ border-color:var(--line); color:var(--cream); background:rgba(245,239,230,.02); }
+.btn-ghost:hover{ border-color:var(--accent-2); transform:translateY(-3px); }
+.btn svg{ width:18px; height:18px; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+header{
+  position:fixed; inset:0 0 auto 0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px clamp(20px,4vw,48px);
+  transition:background .4s var(--ease), backdrop-filter .4s, padding .4s;
+}
+header.scrolled{
+  background:rgba(26,23,20,.82); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line); padding-block:12px;
+}
+.logo{ font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:.02em; display:flex; align-items:center; gap:.5em; }
+.logo b{ color:var(--accent-2); font-weight:700; }
+.logo span{ font-family:'Inter'; font-size:.6rem; letter-spacing:.3em; color:var(--muted); text-transform:uppercase; align-self:flex-end; padding-bottom:5px; }
+nav{ display:flex; align-items:center; gap:34px; }
+nav a.lnk{ font-size:.92rem; font-weight:500; color:var(--muted); position:relative; transition:.3s; }
+nav a.lnk:hover{ color:var(--cream); }
+nav a.lnk::after{ content:''; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--accent-2); transition:.3s var(--ease); }
+nav a.lnk:hover::after{ width:100%; }
+.nav-cta{ display:inline-flex; }
+.burger{ display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px; }
+.burger span{ width:26px; height:2px; background:var(--cream); transition:.3s; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; }
+.hero .layer{ position:absolute; inset:0; }
+.hero-bg{
+  background-image:linear-gradient(180deg, rgba(26,23,20,.35), rgba(26,23,20,.55) 50%, rgba(26,23,20,.95)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+  background-size:cover; background-position:center; transform:scale(1.12); will-change:transform;
+}
+.hero-glow{ background:radial-gradient(60% 50% at 80% 25%, rgba(194,112,61,.28), transparent 70%); }
+.hero-inner{ position:relative; z-index:4; padding-top:90px; }
+.hero h1{ font-size:clamp(2.6rem,7vw,5.6rem); max-width:15ch; margin:.35em 0 .5em; }
+.hero h1 .gold{ color:var(--accent-2); font-style:italic; }
+.hero p.lead{ font-size:clamp(1.05rem,1.6vw,1.3rem); color:var(--muted); max-width:48ch; margin-bottom:2.2em; }
+.hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
+.scroll-hint{ position:absolute; left:50%; bottom:30px; transform:translateX(-50%); z-index:5; color:var(--muted); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:10px; }
+.scroll-hint .mouse{ width:22px; height:36px; border:1.5px solid var(--muted); border-radius:12px; position:relative; }
+.scroll-hint .mouse::after{ content:''; position:absolute; left:50%; top:7px; width:3px; height:7px; border-radius:2px; background:var(--accent-2); transform:translateX(-50%); animation:wheel 1.6s var(--ease) infinite; }
+@keyframes wheel{ 0%{opacity:0; transform:translate(-50%,0)} 30%{opacity:1} 100%{opacity:0; transform:translate(-50%,12px)} }
+
+/* trust bar */
+.trust{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface); }
+.trust .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; padding-block:22px; align-items:center; }
+.trust .item{ display:flex; align-items:center; gap:10px; font-size:.9rem; color:var(--muted); font-weight:500; }
+.trust .item svg{ width:20px; height:20px; color:var(--accent-2); flex:none; }
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+section.block{ padding-block:clamp(70px,9vw,130px); position:relative; }
+.section-head{ max-width:60ch; margin-bottom:54px; }
+.section-head h2{ font-size:clamp(2rem,4.4vw,3.4rem); margin:.3em 0; }
+.section-head p{ color:var(--muted); font-size:1.08rem; }
+
+/* reveal util */
+.reveal{ opacity:0; transform:translateY(34px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal.d1{ transition-delay:.08s } .reveal.d2{ transition-delay:.16s } .reveal.d3{ transition-delay:.24s } .reveal.d4{ transition-delay:.32s }
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:34px 30px; transition:.45s var(--ease); position:relative; overflow:hidden;
+}
+.card::after{ content:''; position:absolute; inset:0; background:radial-gradient(120% 80% at 0% 0%, rgba(194,112,61,.10), transparent 55%); opacity:0; transition:.45s; }
+.card:hover{ transform:translateY(-8px); border-color:rgba(224,169,109,.4); }
+.card:hover::after{ opacity:1; }
+.card .ico{ width:54px; height:54px; border-radius:14px; display:grid; place-items:center; background:rgba(194,112,61,.14); color:var(--accent-2); margin-bottom:22px; }
+.card .ico svg{ width:26px; height:26px; }
+.card h3{ font-size:1.4rem; margin-bottom:.5em; }
+.card p{ color:var(--muted); font-size:.97rem; }
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process{ background:var(--surface); border-block:1px solid var(--line); }
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; counter-reset:step; }
+.step{ position:relative; padding-top:34px; }
+.step::before{ counter-increment:step; content:'0' counter(step); font-family:'Fraunces',serif; font-size:2.6rem; color:var(--accent); opacity:.5; line-height:1; }
+.step h3{ font-size:1.25rem; margin:.5em 0 .35em; }
+.step p{ color:var(--muted); font-size:.94rem; }
+.step::after{ content:''; position:absolute; top:50px; right:-13px; width:26px; height:1px; background:var(--line); }
+.step:last-child::after{ display:none; }
+
+/* ============================================================
+   PROJECTS  (before / after slider)
+   ============================================================ */
+.projects-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
+.ba{
+  position:relative; border-radius:var(--r); overflow:hidden; aspect-ratio:4/3;
+  border:1px solid var(--line); user-select:none; cursor:ew-resize;
+}
+.ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+.ba .after{ clip-path:inset(0 0 0 50%); }
+.ba .divider{ position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--accent-2); transform:translateX(-50%); pointer-events:none; }
+.ba .knob{ position:absolute; top:50%; left:50%; width:42px; height:42px; border-radius:50%; background:var(--accent-2); color:#241f1a; display:grid; place-items:center; transform:translate(-50%,-50%); box-shadow:0 6px 20px rgba(0,0,0,.4); pointer-events:none; font-size:1rem; }
+.ba .tag{ position:absolute; bottom:14px; padding:6px 14px; border-radius:100px; font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; backdrop-filter:blur(6px); }
+.ba .tag.b{ left:14px; background:rgba(0,0,0,.5); color:#fff; }
+.ba .tag.a{ right:14px; background:var(--accent); color:#fff; }
+.proj-caption{ margin-top:14px; }
+.proj-caption h3{ font-size:1.25rem; } .proj-caption span{ color:var(--muted); font-size:.9rem; }
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats{ position:relative; overflow:hidden; }
+.stats-bg{ position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(26,23,20,.86), rgba(26,23,20,.92)),
+    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
+  background-size:cover; background-position:center; background-attachment:fixed; }
+.stats .wrap{ position:relative; z-index:2; }
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; text-align:center; }
+.stat .num{ font-family:'Fraunces',serif; font-size:clamp(2.6rem,5vw,4rem); color:var(--accent-2); line-height:1; }
+.stat .lbl{ color:var(--muted); margin-top:.4em; font-size:.95rem; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.tst-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.tst{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:30px; display:flex; flex-direction:column; gap:18px; }
+.tst .stars{ color:var(--accent-2); letter-spacing:3px; }
+.tst p{ font-size:1rem; color:var(--cream); }
+.tst .who{ display:flex; align-items:center; gap:12px; margin-top:auto; }
+.tst .av{ width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:grid; place-items:center; font-weight:700; color:#241f1a; }
+.tst .who b{ display:block; font-size:.95rem; } .tst .who span{ font-size:.82rem; color:var(--muted); }
+
+/* ============================================================
+   CTA / CONTACT
+   ============================================================ */
+.contact{ background:linear-gradient(180deg,var(--surface),var(--bg)); }
+.contact-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:start; }
+.contact h2{ font-size:clamp(2rem,4.4vw,3.2rem); margin:.3em 0; }
+.contact .lead{ color:var(--muted); font-size:1.08rem; margin-bottom:30px; }
+.cinfo{ display:flex; flex-direction:column; gap:18px; }
+.cinfo a, .cinfo div{ display:flex; align-items:center; gap:14px; font-size:1.02rem; }
+.cinfo .ci{ width:46px; height:46px; border-radius:12px; background:rgba(194,112,61,.14); color:var(--accent-2); display:grid; place-items:center; flex:none; }
+.cinfo .ci svg{ width:22px; height:22px; }
+form{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:34px; display:grid; gap:16px; }
+.field{ display:flex; flex-direction:column; gap:7px; }
+.field label{ font-size:.82rem; color:var(--muted); font-weight:500; letter-spacing:.03em; }
+.field input, .field select, .field textarea{
+  background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:13px 15px;
+  color:var(--cream); font-family:inherit; font-size:.97rem; transition:.3s;
+}
+.field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--accent-2); box-shadow:0 0 0 3px rgba(224,169,109,.15); }
+.field textarea{ resize:vertical; min-height:96px; }
+.row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-note{ font-size:.78rem; color:var(--muted); }
+.form-ok{ display:none; background:rgba(120,180,120,.12); border:1px solid rgba(140,200,140,.4); color:#bfe3bf; padding:14px; border-radius:12px; font-size:.92rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{ border-top:1px solid var(--line); background:var(--bg); padding-block:54px 30px; }
+.foot-grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:34px; margin-bottom:40px; }
+.foot-grid h4{ font-family:'Inter'; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+.foot-grid a{ display:block; color:var(--muted); font-size:.95rem; padding:5px 0; transition:.3s; }
+.foot-grid a:hover{ color:var(--accent-2); }
+.foot-about p{ color:var(--muted); font-size:.95rem; margin-top:14px; max-width:38ch; }
+.foot-social{ display:flex; gap:12px; margin-top:18px; }
+.foot-social a{ width:40px; height:40px; border:1px solid var(--line); border-radius:50%; display:grid; place-items:center; color:var(--muted); }
+.foot-social a:hover{ border-color:var(--accent-2); color:var(--accent-2); }
+.foot-social svg{ width:18px; height:18px; }
+.foot-bottom{ border-top:1px solid var(--line); padding-top:24px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; color:var(--muted); font-size:.85rem; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  nav .lnk, .nav-cta{ display:none; }
+  .burger{ display:flex; }
+  nav.open{ position:fixed; inset:0; background:rgba(26,23,20,.97); backdrop-filter:blur(16px); flex-direction:column; justify-content:center; gap:28px; z-index:90; }
+  nav.open .lnk{ display:block; font-size:1.4rem; color:var(--cream); }
+  nav.open .nav-cta{ display:inline-flex; }
+  .services-grid, .tst-grid{ grid-template-columns:1fr 1fr; }
+  .steps{ grid-template-columns:1fr 1fr; }
+  .step::after{ display:none; }
+  .stats-grid{ grid-template-columns:1fr 1fr; gap:36px 26px; }
+  .contact-grid{ grid-template-columns:1fr; gap:34px; }
+  .foot-grid{ grid-template-columns:1fr 1fr; }
+  .stats-bg{ background-attachment:scroll; }
+}
+@media (max-width:640px){
+  .wrap{ padding-inline:18px; }
+  .services-grid, .tst-grid, .projects-grid, .steps, .foot-grid{ grid-template-columns:1fr; }
+  .hero h1{ font-size:clamp(2.2rem,9vw,3rem); }
+  .row2{ grid-template-columns:1fr; }
+  .trust .wrap{ justify-content:flex-start; }
+  header{ padding:14px 18px; }
+}
+
+/* ============================================================
+   MANDATORY: reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
+  .reveal{ opacity:1 !important; transform:none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header id="hdr">
+  <a href="#inicio" class="logo">AU<b>REA</b><span>Reformas</span></a>
+  <nav id="nav">
+    <a class="lnk" href="#servicios">Servicios</a>
+    <a class="lnk" href="#proceso">Cómo trabajamos</a>
+    <a class="lnk" href="#proyectos">Proyectos</a>
+    <a class="lnk" href="#opiniones">Opiniones</a>
+    <a class="lnk" href="#contacto">Contacto</a>
+    <a class="btn btn-primary nav-cta" href="#contacto">Pedir presupuesto</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="inicio">
+  <div class="layer hero-bg" data-depth="0" data-parallax="0.12" aria-hidden="true"></div>
+  <div class="layer hero-glow" data-depth="1" aria-hidden="true"></div>
+  <div class="wrap hero-inner" data-depth="4">
+    <span class="eyebrow reveal">Reformas integrales en Madrid · desde 2009</span>
+    <h1 class="reveal d1">Transformamos tu casa en el <span class="gold">hogar que imaginas</span></h1>
+    <p class="lead reveal d2">Diseño, dirección de obra y ejecución llave en mano. Una reforma sin sorpresas: presupuesto cerrado, plazos garantizados y acabados de alta gama.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#contacto" class="btn btn-primary">Presupuesto gratis en 24h
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><div class="mouse"></div>Desliza</div>
+</section>
+
+<!-- ============================ TRUST BAR ============================ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>+450 reformas entregadas</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.5 1-6.3L3 8.9 9 8z"/></svg>4,9/5 en Google (180+ reseñas)</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garantía de 3 años por escrito</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Plazos cerrados en contrato</div>
+  </div>
+</div>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Qué hacemos</span>
+      <h2 class="reveal d1">Reformas a tu medida, de principio a fin</h2>
+      <p class="reveal d2">Un único equipo se encarga de todo: arquitectura, gremios, materiales y limpieza final. Tú solo decides el resultado.</p>
+    </div>
+    <div class="services-grid">
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Viviendas completas</h3>
+        <p>Reforma integral de pisos y casas: distribución, instalaciones, suelos y acabados. Llave en mano y listo para entrar a vivir.</p>
+      </article>
+      <article class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Cocinas</h3>
+        <p>Cocinas funcionales y de diseño: mobiliario a medida, electrodomésticos, encimeras de cuarzo y la mejor iluminación.</p>
+      </article>
+      <article class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M7 12V6a2 2 0 0 1 4 0"/></svg></div>
+        <h3>Baños</h3>
+        <p>Baños modernos con platos de ducha enrasados, sanitarios suspendidos y materiales antideslizantes de alta calidad.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20M4 3v18M20 3v18M4 21h16M9 8h6M9 12h6"/></svg></div>
+        <h3>Locales y oficinas</h3>
+        <p>Acondicionamiento de locales comerciales y espacios de trabajo, con licencias y certificados incluidos.</p>
+      </article>
+      <article class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 7-9 7-9-7z"/><path d="M3 14l9 7 9-7"/></svg></div>
+        <h3>Interiorismo</h3>
+        <p>Proyecto de diseño con render 3D antes de empezar. Verás tu hogar terminado antes de poner el primer ladrillo.</p>
+      </article>
+      <article class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Eficiencia energética</h3>
+        <p>Aislamiento, ventanas, aerotermia y domótica para reducir tus facturas y ganar confort todo el año.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROCESS ============================ -->
+<section class="block process" id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Cómo trabajamos</span>
+      <h2 class="reveal d1">Un proceso claro, sin sorpresas</h2>
+      <p class="reveal d2">Sabrás en todo momento qué pasa con tu obra, cuánto cuesta y cuándo termina.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Visita y asesoría</h3><p>Vamos a tu casa, escuchamos tu idea y medimos. Gratis y sin compromiso.</p></div>
+      <div class="step reveal d1"><h3>Diseño y presupuesto</h3><p>Render 3D + presupuesto cerrado y detallado. Cero letra pequeña.</p></div>
+      <div class="step reveal d2"><h3>Ejecución de obra</h3><p>Un jefe de obra coordina todos los gremios y te informa cada semana.</p></div>
+      <div class="step reveal d3"><h3>Entrega y garantía</h3><p>Limpieza final, repaso contigo y 3 años de garantía por escrito.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROJECTS (before/after) ============================ -->
+<section class="block" id="proyectos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Antes y después</span>
+      <h2 class="reveal d1">Proyectos que hablan por nosotros</h2>
+      <p class="reveal d2">Arrastra el control sobre cada imagen para ver la transformación.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="reveal">
+        <div class="ba" data-ba>
+          <img class="before" src="https://images.unsplash.com/photo-1556909211-d6dba7c4b27d?auto=format&fit=crop&w=1000&q=80" alt="Cocina antes de la reforma" />
+          <img class="after" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=80" alt="Cocina después de la reforma" />
+          <span class="tag b">Antes</span><span class="tag a">Después</span>
+          <div class="divider"></div>
+          <div class="knob">⇆</div>
+        </div>
+        <div class="proj-caption"><h3>Cocina abierta · Chamberí</h3><span>Reforma integral · 4 semanas</span></div>
+      </div>
+      <div class="reveal d1">
+        <div class="ba" data-ba>
+          <img class="before" src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=80" alt="Baño antes de la reforma" />
+          <img class="after" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80" alt="Baño después de la reforma" />
+          <span class="tag b">Antes</span><span class="tag a">Después</span>
+          <div class="divider"></div>
+          <div class="knob">⇆</div>
+        </div>
+        <div class="proj-caption"><h3>Baño principal · Salamanca</h3><span>Ducha enrasada · 2 semanas</span></div>
+      </div>
+      <div class="reveal">
+        <div class="ba" data-ba>
+          <img class="before" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1000&q=80" alt="Salón antes de la reforma" />
+          <img class="after" src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=1000&q=80" alt="Salón después de la reforma" />
+          <span class="tag b">Antes</span><span class="tag a">Después</span>
+          <div class="divider"></div>
+          <div class="knob">⇆</div>
+        </div>
+        <div class="proj-caption"><h3>Salón comedor · Retiro</h3><span>Vivienda completa · 8 semanas</span></div>
+      </div>
+      <div class="reveal d1">
+        <div class="ba" data-ba>
+          <img class="before" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80" alt="Dormitorio antes de la reforma" />
+          <img class="after" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80" alt="Dormitorio después de la reforma" />
+          <span class="tag b">Antes</span><span class="tag a">Después</span>
+          <div class="divider"></div>
+          <div class="knob">⇆</div>
+        </div>
+        <div class="proj-caption"><h3>Suite con vestidor · Pozuelo</h3><span>Reforma integral · 6 semanas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<section class="block stats">
+  <div class="stats-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num" data-count="15" data-suffix="+">0</div><div class="lbl">Años de experiencia</div></div>
+      <div class="stat reveal d1"><div class="num" data-count="450" data-suffix="+">0</div><div class="lbl">Reformas entregadas</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="98" data-suffix="%">0</div><div class="lbl">Obras entregadas a tiempo</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="3" data-suffix=" años">0</div><div class="lbl">De garantía por escrito</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section class="block" id="opiniones">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Opiniones reales</span>
+      <h2 class="reveal d1">Familias que ya viven su reforma</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tst reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Reformaron nuestro piso entero en el plazo que prometieron. El presupuesto se cumplió al céntimo y el trato fue impecable. Repetiríamos sin dudar."</p>
+        <div class="who"><div class="av">LG</div><div><b>Laura G.</b><span>Chamberí, Madrid</span></div></div>
+      </div>
+      <div class="tst reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>"El render 3D nos ayudó a decidir antes de empezar. La cocina quedó exactamente como la imaginamos. Profesionales de verdad."</p>
+        <div class="who"><div class="av">DM</div><div><b>David M.</b><span>Las Rozas</span></div></div>
+      </div>
+      <div class="tst reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>"Lo que más valoro: limpieza y comunicación. Cada semana sabíamos cómo iba la obra. El baño parece de revista."</p>
+        <div class="who"><div class="av">CR</div><div><b>Carmen R.</b><span>Salamanca, Madrid</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="block contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow reveal">Hablemos</span>
+        <h2 class="reveal d1">Pide tu presupuesto gratis</h2>
+        <p class="lead reveal d2">Cuéntanos qué quieres reformar y te respondemos en menos de 24 horas con una propuesta a medida. Sin compromiso.</p>
+        <div class="cinfo reveal d3">
+          <a href="tel:+34910000000"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>91 000 00 00</b><br><span style="color:var(--muted);font-size:.85rem">Lun–Vie · 9:00–19:00</span></div></a>
+          <a href="mailto:hola@aurea-reformas.es"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>hola@aurea-reformas.es</a>
+          <div><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10a8 8 0 1 0-16 0c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="3"/></svg></span>Calle de Ejemplo 12, 28010 Madrid</div>
+        </div>
+      </div>
+      <form id="cform" class="reveal d2" novalidate>
+        <div class="field"><label for="nombre">Nombre y apellidos</label><input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required /></div>
+        <div class="row2">
+          <div class="field"><label for="tel">Teléfono</label><input id="tel" name="tel" type="tel" placeholder="600 000 000" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="tu@email.com" required /></div>
+        </div>
+        <div class="field"><label for="tipo">Tipo de reforma</label>
+          <select id="tipo" name="tipo">
+            <option>Vivienda completa</option><option>Cocina</option><option>Baño</option>
+            <option>Local / oficina</option><option>Interiorismo</option><option>Otra</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">Cuéntanos tu proyecto</label><textarea id="msg" name="msg" placeholder="Metros, ubicación, qué te gustaría hacer..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center">Solicitar presupuesto gratis</button>
+        <p class="form-note">Al enviar aceptas nuestra política de privacidad. No compartimos tus datos con terceros.</p>
+        <div class="form-ok" id="formOk">✅ ¡Gracias! Hemos recibido tu solicitud. Te llamamos en menos de 24h.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#inicio" class="logo">AU<b>REA</b><span>Reformas</span></a>
+        <p>Reformas integrales en Madrid con diseño, calidad y plazos garantizados desde 2009.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Servicios</h4><a href="#servicios">Viviendas completas</a><a href="#servicios">Cocinas</a><a href="#servicios">Baños</a><a href="#servicios">Locales</a></div>
+      <div><h4>Empresa</h4><a href="#proceso">Cómo trabajamos</a><a href="#proyectos">Proyectos</a><a href="#opiniones">Opiniones</a><a href="#contacto">Contacto</a></div>
+      <div><h4>Contacto</h4><a href="tel:+34910000000">91 000 00 00</a><a href="mailto:hola@aurea-reformas.es">hola@aurea-reformas.es</a><a href="#">Calle de Ejemplo 12, Madrid</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> AUREA Reformas Integrales. Todos los derechos reservados.</span>
+      <span>Aviso legal · Privacidad · Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/34910000000" target="_blank" rel="noopener" aria-label="WhatsApp"
+   style="position:fixed;right:20px;bottom:20px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 28px -8px rgba(37,211,102,.7)">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.4 11.4 0 0 1-4.7-4.1c-.4-.6-1-1.6-1-3s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7a8 8 0 0 0 3.7 3.2c.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.4.1.8-.1 1.2z"/></svg>
+</a>
+
+<!-- ============================ JS ============================ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse  = window.matchMedia('(pointer: coarse)').matches;
+
+  /* --- year --- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* --- header scrolled state --- */
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* --- mobile menu --- */
+  const burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  burger.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.addEventListener('click', e => { if(e.target.classList.contains('lnk') || e.target.classList.contains('nav-cta')) nav.classList.remove('open'); });
+
+  /* --- reveal on scroll (IntersectionObserver) --- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(reduced){ el.classList.add('in'); } else io.observe(el);
+  });
+
+  /* --- hero parallax (GPU-safe transform only) --- */
+  if(!reduced && !coarse){
+    const bg = document.querySelector('.hero-bg');
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      if(y < window.innerHeight) bg.style.transform = `scale(1.12) translateY(${y*0.18}px)`;
+    }, {passive:true});
+  }
+
+  /* --- count-up stats --- */
+  const counters = document.querySelectorAll('[data-count]');
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      const el = en.target, end = +el.dataset.count, suf = el.dataset.suffix || '';
+      if(reduced){ el.textContent = end + suf; cio.unobserve(el); return; }
+      const dur = 1500, t0 = performance.now();
+      const tick = (t)=>{ const p = Math.min((t-t0)/dur,1); const e = 1-Math.pow(1-p,3);
+        el.textContent = Math.round(end*e) + suf; if(p<1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick); cio.unobserve(el);
+    });
+  }, {threshold:.5});
+  counters.forEach(c=>cio.observe(c));
+
+  /* --- before / after sliders --- */
+  document.querySelectorAll('[data-ba]').forEach(ba=>{
+    const after = ba.querySelector('.after'), div = ba.querySelector('.divider'), knob = ba.querySelector('.knob');
+    let dragging = false;
+    const setPos = (clientX)=>{
+      const r = ba.getBoundingClientRect();
+      let pct = ((clientX - r.left)/r.width)*100; pct = Math.max(4, Math.min(96, pct));
+      after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+      div.style.left = pct + '%'; knob.style.left = pct + '%';
+    };
+    const start = ()=> dragging = true;
+    const end   = ()=> dragging = false;
+    const move  = (x)=>{ if(dragging) setPos(x); };
+    ba.addEventListener('mousedown', e=>{ start(); setPos(e.clientX); });
+    window.addEventListener('mousemove', e=> move(e.clientX));
+    window.addEventListener('mouseup', end);
+    ba.addEventListener('touchstart', e=>{ start(); setPos(e.touches[0].clientX); }, {passive:true});
+    ba.addEventListener('touchmove', e=> move(e.touches[0].clientX), {passive:true});
+    ba.addEventListener('touchend', end);
+  });
+
+  /* --- GSAP subtle scrub on section heads (enhancement, optional) --- */
+  if(window.gsap && window.ScrollTrigger && !reduced){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.stats-bg').forEach(bg=>{
+      gsap.to(bg, { yPercent: 12, ease:'none',
+        scrollTrigger:{ trigger:bg.closest('section'), start:'top bottom', end:'bottom top', scrub:true } });
+    });
+  }
+
+  /* --- form (demo handler, no backend) --- */
+  const form = document.getElementById('cform');
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    document.getElementById('formOk').style.display = 'block';
+    form.querySelector('button[type=submit]').textContent = 'Enviado ✓';
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

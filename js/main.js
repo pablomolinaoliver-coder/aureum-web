@@ -26,17 +26,16 @@
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
+    const setMenu = (open) => {
+      nav.classList.toggle('open', open);
       toggle.classList.toggle('open', open);
+      if (header) header.classList.toggle('menu-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
-    });
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+    toggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
     nav.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.classList.remove('open');
-        document.body.style.overflow = '';
-      })
+      a.addEventListener('click', () => setMenu(false))
     );
   }
 

@@ -106,13 +106,33 @@
     if (href === path) a.classList.add('active');
   });
 
-  /* ---- Formulario: preseleccionar pack según ?servicio= en la URL ---- */
-  const servicioParam = new URLSearchParams(location.search).get('servicio');
-  if (servicioParam) {
-    const target = document.querySelector(
-      `input[name="Packs de interés"][value="${servicioParam.replace(/"/g, '\\"')}"]`
-    );
-    if (target) target.checked = true;
+  /* ---- Formulario: preseleccionar producto(s) según ?servicio= en la URL ---- */
+  const servicioParams = new URLSearchParams(location.search).getAll('servicio');
+  if (servicioParams.length) {
+    // Mapa de valores antiguos/genéricos al producto concreto del formulario
+    const mapa = {
+      'Sitio Web': 'Web Esencial',
+      'Gestión de Redes Sociales': 'RRSS Activa',
+      'Automatización con IA': 'Plan Crecimiento',
+      'Perfil de Google Business': 'Plan Visibilidad'
+    };
+    let primero = null;
+    servicioParams.forEach((p) => {
+      const val = mapa[p] || p;
+      const target = document.querySelector(
+        `input[name="Packs de interés"][value="${val.replace(/"/g, '\\"')}"]`
+      );
+      if (target) {
+        target.checked = true;
+        if (!primero) primero = target;
+      }
+    });
+    // Lleva al usuario a la lista para que vea lo marcado y pueda añadir más
+    if (primero) {
+      setTimeout(() => {
+        primero.closest('fieldset')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      }, 150);
+    }
   }
 
   /* ---- Formulario: campo "Otros" del sector (toggle) ---- */

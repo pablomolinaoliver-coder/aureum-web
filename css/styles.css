@@ -612,6 +612,53 @@ body:has(.hero.svc-hero) .site-header:not(.scrolled) .nav-toggle span,
 body:has(#main-content > section.on-dark:first-child) .site-header:not(.scrolled) .nav-toggle span{background:var(--hueso)}
 
 /* =============================================================
+   TARIFAS — tarjetas de precio (webs, planes y niveles RRSS)
+   ============================================================= */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,26px);align-items:stretch}
+.tier{position:relative;background:#FFFDF8;border:1px solid var(--linea);border-radius:var(--radius);
+  padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.tier.featured{border-color:var(--oro);box-shadow:0 0 0 1px var(--oro),var(--shadow)}
+.tier .flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--oro);color:var(--petroleo);font-family:var(--font-body);font-weight:700;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.4em 1em;border-radius:100px;white-space:nowrap}
+.tier h3{color:var(--petroleo);margin-bottom:.15rem;font-size:1.35rem}
+.tier .for{font-size:.9rem;color:var(--salvia);margin-bottom:1.2rem;min-height:2.6em}
+.tier .amt{font-family:var(--font-head);font-weight:700;font-size:clamp(2rem,3.4vw,2.6rem);
+  color:var(--petroleo);line-height:1;letter-spacing:-.02em}
+.tier .amt small{font-size:1rem;color:var(--salvia);font-weight:500}
+.tier .amt-note{font-size:.82rem;color:#4A4238;margin-top:.35rem;font-weight:500}
+.tier ul{display:grid;gap:.55rem;margin:1.2rem 0 1.6rem;padding-top:1.2rem;border-top:1px solid var(--linea)}
+.tier ul li{font-size:.93rem;color:var(--carbon);padding-left:1.6em;position:relative}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--oro);font-weight:700}
+.tier .btn{margin-top:auto;width:100%}
+.tier-note{text-align:center;font-size:.88rem;color:#4A4238;margin-top:1.8rem;max-width:70ch;margin-inline:auto}
+.on-dark .tier-note,.on-teal .tier-note{color:rgba(250,250,248,.92)}
+.on-dark .tier-note a,.on-teal .tier-note a{color:var(--oro-soft)!important;text-decoration:underline}
+@media (max-width:980px){.tier-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+
+/* Botón ghost legible sobre heros oscuros de servicio (p. ej. «Ver qué incluye») */
+.svc-hero .hero-actions .btn-ghost{color:var(--hueso);border-color:rgba(244,237,224,.5)}
+.svc-hero .hero-actions .btn-ghost:hover{color:var(--oro-soft);border-color:var(--oro)}
+
+/* Fuente de datos en desplegables y artículos */
+.faq .src{display:block;font-size:.8rem;color:var(--salvia);margin-top:.5rem;font-style:italic}
+.faq .src a{color:var(--teal);text-decoration:underline}
+
+/* Enlaces legales del footer */
+.footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footer-legal a{font-size:.85rem;color:rgba(250,250,248,.5);text-decoration:underline;transition:color .25s}
+.footer-legal a:hover{color:var(--hueso)}
+
+/* Página legal — texto simple */
+.legal-body{max-width:760px;margin-inline:auto;padding-top:150px;padding-bottom:clamp(48px,7vw,90px)}
+.legal-body h1{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1.6rem}
+.legal-body h2{font-size:1.3rem;margin:2rem 0 .7rem;color:var(--petroleo)}
+.legal-body p,.legal-body li{color:var(--carbon);font-size:1rem;line-height:1.75;margin-bottom:1rem}
+.legal-body ul{list-style:disc;margin-left:1.3rem}
+
+/* =============================================================
    PROYECTOS / Diseños web — tarjetas con captura en vivo
    ============================================================= */
 .work-card .media{aspect-ratio:16/10;background:var(--crema-2)}

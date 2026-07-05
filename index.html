@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..500&display=swap"></noscript>
-<link rel="preload" as="image" href="assets/imagen1.webp" type="image/webp">
+<link rel="preload" as="image" imagesrcset="assets/imagen1-sm.webp 820w, assets/imagen1.webp 1600w" imagesizes="100vw">
 <link rel="stylesheet" href="css/styles.css?v=5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" sizes="any" type="image/png">
@@ -91,7 +91,7 @@
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <div class="hero-bg" data-parallax="0.15">
-    <picture><source srcset="assets/imagen1.webp" type="image/webp"><img src="assets/imagen1.jpg" alt="" loading="eager" onerror="this.remove()"></picture>
+    <picture><source srcset="assets/imagen1-sm.webp 820w, assets/imagen1.webp 1600w" sizes="100vw" type="image/webp"><img src="assets/imagen1.jpg" alt="" loading="eager" onerror="this.remove()"></picture>
   </div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container">

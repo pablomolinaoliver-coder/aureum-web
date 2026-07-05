@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/servicio-automatizacion-ia.html", "destination": "/servicio-web.html#planes", "permanent": true },
+    { "source": "/en/servicio-automatizacion-ia.html", "destination": "/en/servicio-web.html#planes", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

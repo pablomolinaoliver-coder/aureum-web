@@ -376,7 +376,13 @@ section{padding-block:clamp(72px,11vw,140px)}
 .faq summary::after{content:"+";position:absolute;right:0;top:1rem;font-size:1.5rem;color:var(--oro);
   transition:transform .3s var(--ease);font-weight:400}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 2.4rem 1.4rem 0;font-size:1rem}
+.faq details p{padding:0 2.4rem 1.4rem 0;font-size:1rem;color:var(--salvia)}
+/* Legibilidad de los desplegables (FAQ / Saber más) sobre cualquier fondo */
+.on-dark .faq summary,.on-teal .faq summary{color:var(--hueso)}
+.on-dark .faq details p,.on-teal .faq details p{color:rgba(250,250,248,.86)}
+.on-dark .faq details,.on-teal .faq details{border-color:var(--linea-dark)}
+.on-dark .faq .src,.on-teal .faq .src{color:rgba(250,250,248,.62)}
+.on-dark .faq .src a,.on-teal .faq .src a{color:var(--oro-soft)}
 
 /* =============================================================
    FORMULARIO / CONTACTO
@@ -654,6 +660,13 @@ body:has(#main-content > section.on-dark:first-child) .site-header:not(.scrolled
   .svc-grid.grid-3{grid-template-columns:repeat(2,1fr)}
   .tier-grid.cols-2{grid-template-columns:1fr;max-width:480px}
 }
+/* Niveles que entran deslizándose (planes de Redes y Google Business) */
+.tier-grid.slide-tiers .tier{opacity:0;transform:translateX(46px) translateY(16px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.tier-grid.slide-tiers .tier.in{opacity:1;transform:none}
+.tier-grid.slide-tiers .tier:nth-child(1){transition-delay:0s}
+.tier-grid.slide-tiers .tier:nth-child(2){transition-delay:.13s}
+.tier-grid.slide-tiers .tier:nth-child(3){transition-delay:.26s}
+@media (prefers-reduced-motion:reduce){.tier-grid.slide-tiers .tier{opacity:1;transform:none;transition:none}}
 @media (max-width:720px){
   .svc-grid.grid-3,.svc-grid.grid-2,.stats.cols-3{grid-template-columns:1fr}
 }

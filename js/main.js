@@ -179,7 +179,9 @@
             body: JSON.stringify(data)
           });
         } else {
-          res = await fetch(form.action, {
+          // FormSubmit: usar el endpoint AJAX (/ajax/) para recibir respuesta JSON fiable
+          const ajaxUrl = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+          res = await fetch(ajaxUrl, {
             method: 'POST',
             body: fd,
             headers: { Accept: 'application/json' }
@@ -197,7 +199,7 @@
         }
       } catch (err) {
         if (btn) { btn.disabled = false; btn.innerHTML = original; }
-        alert('No se ha podido enviar el formulario. Escríbenos a hola@aureumdigital.studio o por WhatsApp.');
+        alert('No se ha podido enviar el formulario. Escríbenos a info@aureumdigitalstudio.com o por WhatsApp al +34 662 196 797.');
       }
     });
   }

@@ -37,22 +37,27 @@ header.scrolled{background:rgba(251,248,245,.86);backdrop-filter:blur(14px);bord
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:.3em}
 .logo b{color:var(--rose);font-weight:600}
 .logo span{font-family:'Jost';font-size:.54rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);align-self:flex-end;padding-bottom:6px}
-nav{display:flex;align-items:center;gap:30px}
-nav a.lnk{font-size:.88rem;color:var(--plum-soft);position:relative;transition:.3s}
-nav a.lnk:hover{color:var(--plum)}
-nav a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--rose);transition:.3s var(--ease)}
-nav a.lnk:hover::after{width:100%}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+nav{position:fixed;top:0;right:0;height:100%;width:min(370px,86vw);background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:88px 34px 40px;transform:translateX(105%);transition:transform .55s var(--ease);z-index:120;box-shadow:-30px 0 60px -30px rgba(59,43,51,.3)}
+nav.open{transform:none}
+nav a.lnk{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--plum);transition:.3s}
+nav a.lnk:hover{color:var(--rose-d)}
+nav .btn{margin-top:8px}
+.nav-close{position:absolute;top:24px;right:26px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--plum);cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease)}
+.nav-close:hover{border-color:var(--rose);color:var(--rose-d);transform:rotate(90deg)}
+.nav-close svg{width:20px;height:20px}
+.nav-overlay{position:fixed;inset:0;background:rgba(59,43,51,.4);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s var(--ease);z-index:110}
+.nav-overlay.open{opacity:1;visibility:visible}
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:100}
 .burger span{width:25px;height:2px;background:var(--plum);transition:.3s}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
 .hero .layer{position:absolute;inset:0}
-.hero-bg{background:linear-gradient(110deg,rgba(251,248,245,.97) 0%,rgba(251,248,245,.8) 42%,rgba(251,248,245,.25) 100%),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;transform:scale(1.08);will-change:transform}
-.hero-glow{background:radial-gradient(50% 50% at 80% 30%,rgba(192,138,119,.18),transparent 70%)}
-.hero-inner{position:relative;z-index:3;max-width:680px;padding-top:90px}
+.hero-bg{background:linear-gradient(180deg,rgba(251,248,245,.7) 0%,rgba(251,248,245,.72) 45%,rgba(251,248,245,.9) 100%),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;transform:scale(1.08);will-change:transform}
+.hero-glow{background:radial-gradient(55% 50% at 50% 35%,rgba(192,138,119,.16),transparent 70%)}
+.hero-inner{position:relative;z-index:3;max-width:720px;margin-inline:auto;padding-top:90px;text-align:center;display:flex;flex-direction:column;align-items:center}
 .hero h1{font-size:clamp(2.8rem,6.5vw,5rem);margin:.3em 0 .45em}
-.hero h1 i{color:var(--rose);font-weight:400}
-.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--plum-soft);max-width:46ch;margin-bottom:2.2em}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero h1 i{color:var(--rose-d);font-weight:400}
+.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--plum-soft);max-width:48ch;margin:0 auto 2.2em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .trust{background:var(--surface);border-block:1px solid var(--line)}
 .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;padding-block:22px}
 .trust .item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--plum-soft)}
@@ -99,7 +104,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
 .foot h4{font-family:'Jost';font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .foot a,.foot p{color:var(--plum-soft);font-size:.94rem;padding:4px 0;display:block}
 .foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:.84rem}
-@media(max-width:900px){nav .lnk{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(251,248,245,.98);backdrop-filter:blur(14px);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk{display:block;font-size:1.4rem}.svc-grid,.tst-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr;gap:34px}.split-img{max-width:440px;margin-inline:auto}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}}
+@media(max-width:900px){.svc-grid,.tst-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr;gap:34px}.split-img{max-width:440px;margin-inline:auto}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}}
 @media(max-width:600px){.svc-grid,.tst-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
 </style>
@@ -107,15 +112,17 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
 <body>
 <header id="hdr">
   <a href="#" class="logo">Lumi<b>è</b>re<span>Medicina Estética</span></a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
   <nav id="nav">
+    <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="lnk" href="#tratamientos">Tratamientos</a>
     <a class="lnk" href="#seguridad">Por qué Lumière</a>
     <a class="lnk" href="#resultados">Resultados</a>
     <a class="lnk" href="#opiniones">Opiniones</a>
     <a class="btn btn-primary" href="#contacto">Primera consulta gratis</a>
   </nav>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero">
   <div class="layer hero-bg" aria-hidden="true"></div>
@@ -150,27 +157,27 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
     </div>
     <div class="svc-grid">
       <article class="card reveal">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Tratamiento facial"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Tratamiento facial" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/facial,skincare,spa'"></div>
         <div class="bd"><h3>Medicina facial</h3><p>Ácido hialurónico, bótox, mesoterapia y bioestimulación. Rejuvenecimiento natural, sin exageraciones.</p></div>
       </article>
       <article class="card reveal d1">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=800&q=80" alt="Tratamiento corporal"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=800&q=80" alt="Tratamiento corporal" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/spa,massage,wellness'"></div>
         <div class="bd"><h3>Remodelación corporal</h3><p>Radiofrecuencia, presoterapia y tratamientos reductores para una silueta tonificada.</p></div>
       </article>
       <article class="card reveal d2">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80" alt="Láser estético"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80" alt="Láser estético" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/laser,skincare,clinic'"></div>
         <div class="bd"><h3>Láser y aparatología</h3><p>Depilación láser de diodo, eliminación de manchas y rejuvenecimiento con tecnología de última generación.</p></div>
       </article>
       <article class="card reveal">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1607008829749-c8051e1dd8d8?auto=format&fit=crop&w=800&q=80" alt="Cuidado de la piel"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1607008829749-c8051e1dd8d8?auto=format&fit=crop&w=800&q=80" alt="Cuidado de la piel" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/skincare,face,beauty'"></div>
         <div class="bd"><h3>Dermocosmética</h3><p>Peelings, hydrafacial y rutinas personalizadas para una piel luminosa todo el año.</p></div>
       </article>
       <article class="card reveal d1">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Nutrición y bienestar"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Nutrición y bienestar" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/wellness,healthy,spa'"></div>
         <div class="bd"><h3>Nutrición y bienestar</h3><p>Acompañamiento nutricional para que los resultados se mantengan y te sientas bien por dentro y por fuera.</p></div>
       </article>
       <article class="card reveal d2">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1631730486784-23b15ca37e0f?auto=format&fit=crop&w=800&q=80" alt="Consulta médica estética"></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1631730486784-23b15ca37e0f?auto=format&fit=crop&w=800&q=80" alt="Consulta médica estética" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/doctor,clinic,consultation'"></div>
         <div class="bd"><h3>Consulta médica</h3><p>Diagnóstico y plan personalizado con nuestro equipo médico. Tu primera valoración es gratuita.</p></div>
       </article>
     </div>
@@ -180,7 +187,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
 <section class="block soft" id="seguridad">
   <div class="wrap split">
     <div class="split-img reveal">
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Equipo médico de la clínica">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Equipo médico de la clínica" onerror="this.onerror=null;this.src='https://loremflickr.com/800/600/doctor,clinic,team'">
     </div>
     <div class="reveal d1">
       <span class="eyebrow">Por qué elegir Lumière</span>
@@ -249,14 +256,6 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:50px 28px}
   document.getElementById('y').textContent=new Date().getFullYear();
   var hdr=document.getElementById('hdr');
   addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
-  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
-  burger.onclick=function(){nav.classList.toggle('open')};
-  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))nav.classList.remove('open')});
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
-  var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;if(el.dataset.text){el.textContent=el.dataset.text;cio.unobserve(el);return;}var end=+el.dataset.count,suf=el.dataset.suffix||'',pre=el.dataset.prefix||'';if(reduced){el.textContent=pre+end+suf;cio.unobserve(el);return;}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(end*e).toLocaleString('es-ES')+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});
-  document.querySelectorAll('[data-count]').forEach(function(c){cio.observe(c)});
-})();
-</script>
-</body>
-</html>
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav'),navOverlay=document.getElementById('navOverlay'),navClose=document.getElementById('navClose');
+  function openNav(){nav.classList.add('open');navOverlay.classList.add('open');document.body.style.overflow='hidden'}
+  function closeNav(){nav.classList.remove('open');navOverlay.classList.remove('open');d

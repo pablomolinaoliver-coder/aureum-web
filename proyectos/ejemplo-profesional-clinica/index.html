@@ -1,177 +1,401 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Clínica Dental Aria | Dentista en Valencia - Primera visita gratis</title><meta name="description" content="Clínica dental en Valencia con tecnología de vanguardia y trato cercano. Implantes, ortodoncia invisible y estética dental. Primera visita y diagnóstico gratis."><meta name="keywords" content="clínica dental Valencia, dentista Valencia, implantes dentales Valencia, ortodoncia invisible Valencia, primera visita gratis"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230F3A4A'/><text x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%2312A0AE' text-anchor='middle'>A</text></svg>"><meta property="og:type" content="website"><meta property="og:title" content="Clínica Dental Aria | Dentista en Valencia - Primera visita gratis"><meta property="og:description" content="Clínica dental en Valencia con tecnología de vanguardia y trato cercano. Implantes, ortodoncia invisible y estética dental. Primera visita y diagnóstico gratis."><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Clínica Dental Aria","image":"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80","telephone":"+34 963 222 333","address":{"@type":"PostalAddress","streetAddress":"Av. del Reino de València 25","addressLocality":"Valencia","postalCode":"46022","addressCountry":"ES"},"priceRange":"€€","openingHours":["Mo-Fr 09:00-20:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"327"}}</script><style>
-:root{--gold:#12A0AE;--dark:#0F3A4A;--cream:#F1F8FA;--ink:#22343b;--muted:#6f8189;--line:#d9e8ec;--disp:'Poppins';--body:'Inter';}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--body),sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px}
-h1,h2,h3,h4{font-family:var(--disp),serif;font-weight:600;line-height:1.14;color:var(--dark)}
-a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 22px}
-.eyebrow{font-family:var(--body);letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--gold);font-weight:600}
-section{padding:78px 0}
-.sec-head{text-align:center;max-width:680px;margin:0 auto 46px}
-.sec-head h2{font-size:2.6rem;margin:10px 0 12px}
-.sec-head p{color:var(--muted)}
-.btn{display:inline-block;padding:15px 30px;border-radius:3px;font-weight:600;letter-spacing:.06em;font-size:.84rem;text-transform:uppercase;transition:.25s;cursor:pointer;border:1px solid var(--gold);font-family:var(--body)}
-.btn-gold{background:var(--gold);color:#fff} .btn-gold:hover{background:transparent;color:var(--gold)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)} .btn-ghost:hover{background:#fff;color:var(--dark);border-color:#fff}
-.btn-dark{background:var(--dark);color:#fff;border-color:var(--dark)} .btn-dark:hover{background:transparent;color:var(--dark)}
-header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;padding:20px 0}
-header.nav.solid{background:rgba(255,255,255,.97);box-shadow:0 2px 24px rgba(0,0,0,.08);padding:12px 0}
-.nav-in{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--disp),serif;font-size:1.6rem;font-weight:700;color:#fff;letter-spacing:.03em}
-.logo small{display:block;font-family:var(--body);font-size:.5rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-top:-2px}
-header.solid .logo{color:var(--dark)}
-.links{display:none;align-items:center;gap:28px}
-.links a{color:#fff;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;font-family:var(--body)}
-header.solid .links a{color:var(--ink)}
-.links a.cta{color:#fff;background:var(--gold);padding:11px 20px;border-radius:3px}
-.links a:hover{color:var(--gold)} header.solid .links a.cta{color:#fff}
-.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
-.burger span{width:26px;height:2px;background:#fff;transition:.3s} header.solid .burger span{background:var(--dark)}
-.mobile{position:fixed;inset:0;background:var(--dark);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateX(100%);transition:.35s}
-.mobile.open{transform:translateX(0)}
-.mobile a{color:#fff;font-family:var(--disp),serif;font-size:1.8rem}
-.mobile a.cta{font-family:var(--body);font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--gold);padding:12px 26px;color:var(--gold)}
-.mclose{position:absolute;top:24px;right:26px;font-size:2rem;color:#fff;background:none;border:0;cursor:pointer}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:var(--dark)}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
-.hero-ov{position:absolute;inset:0;z-index:1}
-.hero-in{position:relative;z-index:2;padding:100px 20px;max-width:840px}
-.hero-in h1{color:#fff;font-size:clamp(2.8rem,8.5vw,5.4rem);font-weight:700;letter-spacing:.01em}
-.hero-in .sub{font-family:var(--body);letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;margin:8px 0 22px;color:rgba(255,255,255,.9)}
-.hero-in .claim{font-family:var(--disp),serif;font-size:1.5rem;margin-bottom:32px;color:rgba(255,255,255,.95)}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
-.split{display:grid;gap:40px;align-items:center}
-.split img{width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:4px}
-.about-txt p{color:var(--muted);margin-bottom:16px}
-.stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
-.stat b{font-family:var(--disp),serif;font-size:2.3rem;color:var(--gold);display:block;line-height:1}
-.stat span{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
-.dark-sec{background:var(--dark);color:#fff} .dark-sec h2,.dark-sec h3,.dark-sec h4{color:#fff} .dark-sec .sec-head p{color:rgba(255,255,255,.72)}
-.tint{background:var(--line)}
-.acc{max-width:820px;margin:0 auto 14px;border:1px solid var(--line);background:#fff;border-radius:4px;overflow:hidden}
-.dark-sec .acc{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
-.acc>summary{list-style:none;cursor:pointer;padding:20px 26px;font-family:var(--disp),serif;font-size:1.4rem;color:var(--dark);display:flex;justify-content:space-between;align-items:center}
-.dark-sec .acc>summary{color:#fff}
-.acc>summary::-webkit-details-marker{display:none}
-.acc>summary .pl{color:var(--gold);font-size:1.5rem;transition:.3s} .acc[open]>summary .pl{transform:rotate(45deg)}
-.acc-body{padding:0 26px 22px}
-.row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px dashed var(--line)}
-.dark-sec .row{border-color:rgba(255,255,255,.12)}
-.row .rn{font-weight:600} .row .rd{color:var(--muted);font-size:.86rem} .dark-sec .row .rd{color:rgba(255,255,255,.6)}
-.row .rp{font-family:var(--disp),serif;font-size:1.25rem;color:var(--gold);white-space:nowrap}
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.gal a{overflow:hidden;border-radius:3px;background:var(--line)} .gal img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;transition:.5s} .gal img:hover{transform:scale(1.06)}
-.cards{display:grid;gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:30px;text-align:center}
-.dark-sec .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
-.card .ic{width:52px;height:52px;border-radius:50%;background:var(--line);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--disp);font-size:1.5rem;font-weight:700}
-.card .n{font-family:var(--disp),serif;font-size:1.45rem;margin-bottom:8px}
-.card .p{color:var(--muted);font-size:.92rem} .dark-sec .card .p{color:rgba(255,255,255,.7)}
-.card .pr{font-family:var(--disp),serif;font-size:1.5rem;color:var(--gold);margin-top:12px}
-.steps{display:grid;gap:22px;counter-reset:s}
-.step{text-align:center;padding:10px}
-.step .sn{font-family:var(--disp);font-size:2.4rem;color:var(--gold);line-height:1}
-.step h4{margin:8px 0 6px;font-size:1.3rem} .step p{color:var(--muted);font-size:.9rem}
-.dark-sec .step p{color:rgba(255,255,255,.7)}
-.team{display:grid;gap:24px}
-.member{text-align:center} .member img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;margin-bottom:14px;background:var(--line)}
-.member .mn{font-family:var(--disp),serif;font-size:1.35rem} .member .mr{color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}
-.band{position:relative;color:#fff;text-align:center;background:var(--dark)}
-.band-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28}
-.band-in{position:relative;z-index:2;padding:88px 20px;max-width:660px;margin:0 auto}
-.band-in h2{color:#fff;font-size:2.6rem;margin-bottom:14px} .band-in p{color:rgba(255,255,255,.85);margin-bottom:26px}
-.loc{display:grid;gap:34px}
-.hrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line)} .hrow b{font-weight:600} .hrow span{color:var(--muted)}
-.map-embed{width:100%;min-height:340px;border:0;border-radius:4px;filter:grayscale(.15)}
-.form{max-width:660px;margin:0 auto;display:grid;gap:16px}
-.form .fr{display:grid;gap:16px;grid-template-columns:1fr}
-.form input,.form select,.form textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:3px;font-family:var(--body);font-size:1rem;background:#fff;color:var(--ink)}
-.form label{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:-8px}
-.form button{justify-self:center;margin-top:6px} .note{text-align:center;color:var(--muted);font-size:.84rem;margin-top:12px}
-.quotes{display:grid;gap:22px}
-.quote{background:#fff;border:1px solid var(--line);border-radius:4px;padding:28px}
-.tint .quote{background:var(--cream)}
-.quote .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px}
-.quote p{font-family:var(--disp),serif;font-size:1.2rem;color:var(--dark);margin-bottom:14px;line-height:1.4}
-.quote .who{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-.posts{display:grid;gap:26px}
-.post-card{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
-.post-card img{width:100%;height:210px;object-fit:cover;background:var(--line)}
-.post-card .pc{padding:24px;display:flex;flex-direction:column;flex:1}
-.post-card .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.post-card h3{font-size:1.4rem;margin-bottom:10px} .post-card p{color:var(--muted);font-size:.92rem;flex:1}
-.post-card .rd{margin-top:14px;color:var(--gold);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
-.article{max-width:760px;margin:0 auto} .article h1{font-size:2.7rem;margin:14px 0 18px}
-.article p{margin-bottom:18px;color:var(--ink)} .article h2{font-size:1.8rem;margin:30px 0 12px} .article img{border-radius:4px;margin:24px 0}
-.plist{display:grid;gap:24px}
-.pcard{background:#fff;border:1px solid var(--line);border-radius:5px;overflow:hidden;transition:.25s}
-.pcard:hover{box-shadow:0 14px 34px rgba(0,0,0,.12);transform:translateY(-3px)}
-.pcard .im{position:relative;height:220px;background:var(--line)} .pcard .im img{width:100%;height:100%;object-fit:cover}
-.pcard .price{position:absolute;left:0;bottom:0;background:var(--gold);color:#fff;padding:7px 15px;font-family:var(--disp),serif;font-size:1.25rem}
-.pcard .badge{position:absolute;top:12px;right:12px;background:var(--dark);color:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:3px}
-.pcard .pcc{padding:22px} .pcard .pcc h3{font-size:1.35rem} .pcard .loc-t{color:var(--muted);font-size:.86rem;margin-top:3px}
-.pcard .feat{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink);font-size:.82rem;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
-.filters{display:grid;grid-template-columns:1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:5px;padding:20px;margin-bottom:34px}
-.spec{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
-.spec div{background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:14px 16px}
-.spec b{display:block;font-family:var(--disp),serif;font-size:1.3rem;color:var(--dark)} .spec span{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.agent{background:var(--dark);color:#fff;border-radius:5px;padding:26px;text-align:center} .agent h4{color:#fff;font-size:1.3rem} .agent p{color:rgba(255,255,255,.8);font-size:.9rem;margin:6px 0 16px}
-footer{background:var(--dark);color:rgba(255,255,255,.8);padding:64px 0 26px}
-.foot-grid{display:grid;gap:34px;grid-template-columns:1fr}
-footer h4{color:#fff;font-size:1.5rem;margin-bottom:14px} footer .fl{color:var(--gold);font-size:.55rem;letter-spacing:.32em;text-transform:uppercase}
-footer a:hover{color:var(--gold)} footer p{font-size:.92rem;margin-bottom:8px}
-.foot-bot{border-top:1px solid rgba(255,255,255,.14);margin-top:40px;padding-top:20px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.5)}
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 -4px 20px rgba(0,0,0,.14)}
-.sticky-cta a{padding:15px;text-align:center;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-family:var(--body)}
-.sticky-cta .c1{background:var(--dark);color:#fff} .sticky-cta .c2{background:var(--gold);color:#fff}
-.wa-float{position:fixed;right:16px;bottom:74px;z-index:41;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25)} .wa-float svg{width:28px;height:28px;fill:#fff}
-.logo{display:flex;align-items:center}
-.mono{display:inline-flex;width:34px;height:34px;min-width:34px;border:1.6px solid var(--gold);color:var(--gold);align-items:center;justify-content:center;border-radius:50%;font-size:1rem;margin-right:11px;font-weight:700;font-family:var(--disp),serif}
-.card .ic svg{width:26px;height:26px;stroke:var(--gold);fill:none}
-.feat3{display:grid;gap:18px}
-.fitem{display:flex;gap:15px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:5px;padding:22px}
-.dark-sec .fitem{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
-.fitem .fi{width:46px;height:46px;min-width:46px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center} .fitem .fi svg{width:23px;height:23px;stroke:var(--gold);fill:none}
-.fitem h4{font-size:1.15rem;margin-bottom:3px} .fitem p{color:var(--muted);font-size:.88rem} .dark-sec .fitem p{color:rgba(255,255,255,.7)}
-.mcard{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;text-align:left}
-.dark-sec .mcard{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
-.mcard .mi{height:190px;background:var(--line);overflow:hidden} .mcard .mi img{width:100%;height:100%;object-fit:cover;transition:.5s} .mcard:hover .mi img{transform:scale(1.05)}
-.mcard .mb{padding:26px} .mcard .mb .mic{width:48px;height:48px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:14px} .mcard .mb .mic svg{width:24px;height:24px;stroke:var(--gold);fill:none}
-.mcard h3{font-size:1.3rem;margin-bottom:8px} .mcard p{color:var(--muted);font-size:.9rem}
-.mcard .mpr{font-family:var(--disp),serif;font-size:1.3rem;color:var(--gold);margin-top:12px}
-@media(min-width:768px){
- .feat3{grid-template-columns:repeat(3,1fr)}
- .links{display:flex} .burger{display:none}
- .split{grid-template-columns:1fr 1fr} .split.rev>div:first-child{order:2}
- .gal{grid-template-columns:repeat(4,1fr)}
- .cards{grid-template-columns:repeat(3,1fr)} .cards.c4{grid-template-columns:repeat(4,1fr)}
- .steps{grid-template-columns:repeat(4,1fr)} .team{grid-template-columns:repeat(3,1fr)} .team.t4{grid-template-columns:repeat(4,1fr)}
- .quotes{grid-template-columns:repeat(3,1fr)} .posts{grid-template-columns:repeat(3,1fr)}
- .loc{grid-template-columns:1fr 1fr} .foot-grid{grid-template-columns:2fr 1fr 1fr}
- .form .fr.two{grid-template-columns:1fr 1fr} .form .fr.three{grid-template-columns:1fr 1fr 1fr}
- .plist{grid-template-columns:repeat(3,1fr)} .filters{grid-template-columns:repeat(4,1fr) auto;align-items:end}
- .spec{grid-template-columns:repeat(4,1fr)}
- .sticky-cta,.wa-float{display:none}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clínica Dental Aria · Dentista en Valencia | Primera visita gratis</title>
+<meta name="description" content="Clínica dental en Valencia con tecnología 3D y trato cercano. Implantes, ortodoncia invisible y estética dental sin dolor. Primera visita y diagnóstico gratis." />
+<meta name="theme-color" content="#0c7c88" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Clínica Dental Aria · Dentista en Valencia" />
+<meta property="og:description" content="Odontología de confianza en Valencia. Primera visita y diagnóstico gratis." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%230c7c88'/><text x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23fff' text-anchor='middle'>A</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Clínica Dental Aria","telephone":"+34 963 222 333","address":{"@type":"PostalAddress","streetAddress":"Av. del Reino de València 25","addressLocality":"Valencia","postalCode":"46022","addressCountry":"ES"},"priceRange":"€€","openingHours":["Mo-Fr 09:00-20:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"327"}}</script>
+<!-- Rediseño Aureum · clínica dental: paleta clínica cálida, Outfit + Inter, botones píldora, reveal-on-scroll, menú lateral con X, mobile-first. Imágenes Unsplash con fallback. -->
+<style>
+:root{
+  --bg:#F6FAFB; --surface:#FFFFFF; --mint:#E9F5F6; --mint-2:#DCEEF0;
+  --ink:#123039; --soft:#5C747C; --teal:#12A0AE; --teal-d:#0C7C88; --navy:#0F3A47;
+  --gold:#C9A24B; --line:#E3EDEF; --line-2:#EAF2F3;
+  --maxw:1160px; --r:18px; --ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 26px 60px -34px rgba(15,58,71,.5);
 }
-</style></head><body><header class="nav"><div class="wrap nav-in">
-<a href="index.html" class="logo"><span class="mono">A</span><span>Clínica Dental Aria<small>Odontología · Valencia</small></span></a>
-<nav class="links"><a href="index.html">Inicio</a><a href="tratamientos.html">Tratamientos</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a class="cta" href="contacto.html">Pedir cita</a></nav>
-<button class="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button></div></header>
-<div class="mobile" id="mob"><button class="mclose" onclick="toggleMenu()">&times;</button><a href="index.html">Inicio</a><a href="tratamientos.html">Tratamientos</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a class="cta" href="contacto.html">Pedir cita</a></div><section class="hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=80')"></div><div class="hero-ov" style="background:linear-gradient(180deg,rgba(15,58,74,.55),rgba(15,58,74,.8))"></div>
-<div class="hero-in"><div class="sub">Tu sonrisa en buenas manos</div><h1>Sonríe con confianza</h1><p class="claim">Odontología de calidad y sin dolor, en el corazón de Valencia.</p><div class="hero-btns"><a class="btn btn-gold" href="contacto.html">Pedir primera visita gratis</a><a class="btn btn-ghost" href="tratamientos.html">Ver tratamientos</a></div></div>
-<div class="scroll-cue">▼</div></section><section><div class="wrap"><div class="sec-head"><div class="eyebrow">Por qué Aria</div><h2>Una clínica pensada para ti</h2><p>Cuidamos cada detalle para que tu experiencia sea cómoda desde la primera visita.</p></div><div class="cards c4"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="n">Sin dolor</div><p class="p">Técnicas mínimamente invasivas y sedación consciente para tu tranquilidad.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 2v18M4 6.5l8 4.5 8-4.5"/></svg></div><div class="n">Tecnología 3D</div><p class="p">Escáner intraoral y diagnóstico por imagen para tratamientos precisos.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h3.5a2 2 0 010 4H10"/></svg></div><div class="n">Financiación</div><p class="p">Hasta 24 meses sin intereses para que cuides tu salud sin agobios.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C11 4 8 4 7.5 5.5S9.5 8 12 8zM12 8c1-4 4-4 4.5-2.5S14.5 8 12 8z"/></svg></div><div class="n">1ª visita gratis</div><p class="p">Diagnóstico completo y presupuesto cerrado sin compromiso.</p></div></div></div></section><section class="tint"><div class="wrap"><div class="sec-head"><div class="eyebrow">Tratamientos</div><h2>Lo que podemos hacer por tu sonrisa</h2></div><div class="cards"><a href="tratamientos.html"><div class="mcard"><div class="mi"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=700&q=80" alt="Implantes dentales"></div><div class="mb"><div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6M10 4v3M14 4v3"/><path d="M9 8h6l-.7 8c-.15 2.5-3.45 2.5-3.6 0z"/><path d="M9.5 11h5M9.9 14h4.2"/></svg></div><h3>Implantes dentales</h3><p>Recupera tus dientes fijos con implantes de titanio y carga en el día cuando es posible.</p></div></div></a><a href="tratamientos.html"><div class="mcard"><div class="mi"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="Ortodoncia invisible"></div><div class="mb"><div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="16" y1="6" x2="16" y2="18"/></svg></div><h3>Ortodoncia invisible</h3><p>Alinea tu sonrisa sin que se note, con férulas transparentes a medida.</p></div></div></a><a href="tratamientos.html"><div class="mcard"><div class="mi"><img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=700&q=80" alt="Estética dental"></div><div class="mb"><div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg></div><h3>Estética dental</h3><p>Blanqueamiento y carillas para una sonrisa natural y luminosa.</p></div></div></a></div>
-<div style="text-align:center;margin-top:34px"><a class="btn btn-dark" href="tratamientos.html">Ver todos los tratamientos</a></div></div></section><section class="dark-sec"><div class="wrap"><div class="sec-head"><div class="eyebrow">Cómo trabajamos</div><h2>Tu tratamiento, paso a paso</h2></div><div class="steps"><div class="step"><div class="sn">1</div><h4>Pides cita</h4><p>Llámanos o rellena el formulario. Primera visita gratis.</p></div><div class="step"><div class="sn">2</div><h4>Diagnóstico</h4><p>Estudio con escáner 3D y plan de tratamiento claro.</p></div><div class="step"><div class="sn">3</div><h4>Tratamiento</h4><p>Con tecnología y el mejor equipo, a tu ritmo.</p></div><div class="step"><div class="sn">4</div><h4>Seguimiento</h4><p>Revisiones y cuidado continuo de tu salud bucal.</p></div></div></div></section><section class="tint"><div class="wrap"><div class="sec-head"><div class="eyebrow">Reseñas</div><h2>Lo que dicen de nosotros</h2></div><div class="quotes"><div class="quote"><div class="stars">★★★★★</div><p>«Me trataron un implante sin dolor y con un trato exquisito. Repetiré sin duda.»</p><div class="who">Carmen P. · Google</div></div><div class="quote"><div class="stars">★★★★★</div><p>«La ortodoncia invisible me cambió la sonrisa. Profesionales de verdad.»</p><div class="who">Rubén A. · Google</div></div><div class="quote"><div class="stars">★★★★★</div><p>«Por fin una clínica que te explica todo y no te presiona. 100% recomendable.»</p><div class="who">Lucía T. · Google</div></div></div></div></section><section class="tint"><div class="wrap"><div class="sec-head"><div class="eyebrow">Galería</div><h2>Nuestra clínica</h2><p>Instalaciones modernas, cómodas y pensadas para tu tranquilidad.</p></div><div class="gal"><a><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Nuestra clínica" loading="lazy"></a><a><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Nuestra clínica" loading="lazy"></a><a><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80" alt="Nuestra clínica" loading="lazy"></a><a><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" alt="Nuestra clínica" loading="lazy"></a></div></div></section><section class="band"><div class="band-bg" style="background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80')"></div><div class="band-in"><div class="eyebrow">Reserva</div><h2>Tu primera visita es gratis</h2><p>Diagnóstico completo, radiografía y presupuesto cerrado sin compromiso.</p><div class="hero-btns"><a class="btn btn-gold" href="contacto.html">Pedir cita</a><a class="btn btn-ghost" href="tel:34963222333">Llamar +34 963 222 333</a></div></div></section><section id="ubicacion" class=""><div class="wrap"><div class="sec-head"><div class="eyebrow">Dónde estamos</div><h2>Cómo llegar</h2></div>
-<div class="loc"><div><h3 style="font-size:1.4rem;margin-bottom:10px">Horario</h3><div class="hrow"><b>Lunes</b><span>09:00 – 20:00</span></div><div class="hrow"><b>Martes</b><span>09:00 – 20:00</span></div><div class="hrow"><b>Miércoles</b><span>09:00 – 20:00</span></div><div class="hrow"><b>Jueves</b><span>09:00 – 20:00</span></div><div class="hrow"><b>Viernes</b><span>09:00 – 20:00</span></div><div class="hrow"><b>Sábado</b><span>Urgencias</span></div><div class="hrow"><b>Domingo</b><span>Cerrado</span></div>
-<p style="margin-top:18px;color:var(--muted)">Av. del Reino de València, 25 · Valencia</p><p style="color:var(--muted)">Tel. <a href="tel:34963222333" style="color:var(--gold)">+34 963 222 333</a> · <a href="mailto:citas@dentalaria.es" style="color:var(--gold)">citas@dentalaria.es</a></p></div>
-<iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3078.5!2d-0.3760!3d39.4640!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1ses!2ses!4v1700000000000" loading="lazy" title="Mapa de Clínica Dental Aria" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section><footer><div class="wrap"><div class="foot-grid">
-<div><div class="fl">Odontología · Valencia</div><h4>Clínica Dental Aria</h4><p style="max-width:340px">Odontología de confianza en Valencia. Primera visita y diagnóstico sin coste.</p></div>
-<div><h4 style="font-size:1.15rem">Contacto</h4><p>Av. del Reino de València, 25 · Valencia</p><p><a href="tel:34963222333">+34 963 222 333</a></p><p><a href="mailto:citas@dentalaria.es">citas@dentalaria.es</a></p></div>
-<div><h4 style="font-size:1.15rem">Enlaces</h4><p><a href="tratamientos.html">Tratamientos</a></p><p><a href="nosotros.html">Nosotros</a></p><p><a href="contacto.html">Pedir cita</a></p></div></div>
-<div class="foot-bot">© 2026 Clínica Dental Aria · Odontología · Valencia · Web por Aureum Digital Studio · <a href="#">Aviso legal</a> · <a href="#">Privacidad</a></div></div></footer><a class="wa-float" href="https://wa.me/34963222333" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.15A11.87 11.87 0 010 5.75 11.9 11.9 0 0112.05 0 11.9 11.9 0 0124 5.9a11.9 11.9 0 01-11.95 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2l.36.2a9.9 9.9 0 005.1 1.4 9.9 9.9 0 000-19.8A9.9 9.9 0 002.2 12a9.86 9.86 0 001.5 5.25l.24.38-1 3.63 3.66-.96zM17.4 14.3c-.15-.25-.55-.4-1.15-.7s-1.35-.65-1.55-.72c-.2-.08-.36-.11-.5.11s-.58.72-.71.87c-.13.15-.26.17-.5.06a8.1 8.1 0 01-2.36-1.46 9 9 0 01-1.63-2.03c-.17-.29 0-.44.12-.58.11-.12.25-.3.37-.46.12-.15.16-.26.24-.43.08-.17.04-.32-.02-.44-.06-.11-.5-1.35-.72-1.85-.18-.46-.36-.4-.5-.4l-.42-.01a.8.8 0 00-.58.27 2.44 2.44 0 00-.76 1.82c0 1.07.78 2.11.9 2.26.1.15 1.54 2.35 3.73 3.3 2.19.95 2.19.63 2.58.6.4-.04 1.28-.52 1.46-1.03.18-.5.18-.94.13-1.03z"/></svg></a><div class="sticky-cta"><a class="c1" href="tel:34963222333">Llamar</a><a class="c2" href="contacto.html">Pedir cita</a></div><script>
-document.addEventListener('scroll',()=>{const h=document.querySelector('header.nav');if(h){window.scrollY>60?h.classList.add('solid'):h.classList.remove('solid');}});
-function toggleMenu(){document.getElementById('mob').classList.toggle('open');}
-document.querySelectorAll('.mobile a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mob').classList.remove('open')));
-function fakeSubmit(e,m){e.preventDefault();alert(m);e.target.reset();return false;}
-</script></body></html>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.eyebrow{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-d);display:inline-flex;align-items:center;gap:.7em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:15px 30px;border-radius:100px;font-family:'Inter';font-weight:600;font-size:.92rem;cursor:pointer;border:1.5px solid transparent;transition:transform .35s var(--ease),background .35s,color .35s,box-shadow .35s;will-change:transform}
+.btn-primary{background:var(--teal-d);color:#fff;box-shadow:0 14px 30px -14px rgba(12,124,136,.8)}
+.btn-primary:hover{background:var(--navy);transform:translateY(-3px)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-3px)}
+.btn svg{width:17px;height:17px}
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:.4s var(--ease)}
+header .bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+header.scrolled{background:rgba(246,250,251,.86);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:11px}
+.logo .mk{width:40px;height:40px;border-radius:12px;background:var(--teal-d);color:#fff;display:grid;place-items:center;font-family:'Outfit';font-weight:700;font-size:1.3rem}
+.logo .nm{font-family:'Outfit';font-weight:700;font-size:1.3rem;color:var(--ink);line-height:1}
+.logo .nm small{display:block;font-family:'Inter';font-weight:600;font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);margin-top:3px}
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:130}
+.burger span{width:26px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+nav{position:fixed;top:0;right:0;height:100%;width:min(360px,86vw);background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:88px 34px 40px;transform:translateX(105%);transition:transform .5s var(--ease);z-index:120;box-shadow:-30px 0 60px -30px rgba(15,58,71,.4)}
+nav.open{transform:none}
+nav a.lnk{font-family:'Outfit';font-size:1.4rem;font-weight:500;color:var(--ink);transition:.3s}
+nav a.lnk:hover{color:var(--teal-d)}
+nav .btn{margin-top:10px}
+.nav-close{position:absolute;top:22px;right:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease)}
+.nav-close:hover{border-color:var(--teal);color:var(--teal-d);transform:rotate(90deg)}
+.nav-close svg{width:20px;height:20px}
+.nav-overlay{position:fixed;inset:0;background:rgba(15,48,57,.4);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s var(--ease);z-index:110}
+.nav-overlay.open{opacity:1;visibility:visible}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,var(--mint) 0%,var(--bg) 70%)}
+.hero::before{content:"";position:absolute;width:70vw;height:70vw;max-width:760px;max-height:760px;border-radius:50%;background:radial-gradient(circle,rgba(18,160,174,.16),transparent 65%);top:-16%;right:-12%;filter:blur(10px)}
+.hero-inner{position:relative;z-index:3;max-width:820px;margin-inline:auto;padding:120px 0 60px;display:flex;flex-direction:column;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);margin:.32em 0 .3em;font-weight:700}
+.hero h1 i{font-style:normal;color:var(--teal-d)}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--soft);max-width:52ch;margin:0 auto 2em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-badges{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;margin-top:34px;color:var(--soft);font-size:.9rem}
+.hero-badges span{display:inline-flex;align-items:center;gap:8px}
+.hero-badges svg{width:18px;height:18px;color:var(--teal)}
+.trust{background:var(--navy);color:#fff}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 46px;padding-block:20px}
+.trust .item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(255,255,255,.9)}
+.trust .item svg{width:19px;height:19px;color:var(--gold);flex:none}
+section.block{padding-block:clamp(64px,8vw,110px)}
+.head{max-width:60ch;margin:0 auto 52px;text-align:center}
+.head h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:.28em 0}
+.head p{color:var(--soft);font-size:1.05rem}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.soft{background:var(--mint)}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why .c{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;text-align:center;transition:.4s var(--ease)}
+.why .c:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.why .ic{width:56px;height:56px;border-radius:16px;background:var(--mint);color:var(--teal-d);display:grid;place-items:center;margin:0 auto 16px}
+.why .ic svg{width:26px;height:26px}
+.why h3{font-size:1.2rem;margin-bottom:6px}
+.why p{color:var(--soft);font-size:.92rem}
+.tx{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.45s var(--ease)}
+.tcard:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.tcard .im{aspect-ratio:5/4;overflow:hidden;background:var(--mint-2)}
+.tcard .im img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.tcard:hover .im img{transform:scale(1.06)}
+.tcard .bd{padding:24px 24px 28px}
+.tcard h3{font-size:1.35rem;margin-bottom:6px}
+.tcard p{color:var(--soft);font-size:.93rem}
+.tcard .lk{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--teal-d);font-weight:600;font-size:.88rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)}
+.split-img img{width:100%;height:100%;object-fit:cover}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+.feat:last-of-type{border:0}
+.feat .fi{width:40px;height:40px;min-width:40px;border-radius:11px;background:var(--mint);color:var(--teal-d);display:grid;place-items:center}
+.feat .fi svg{width:20px;height:20px}
+.feat b{display:block;font-family:'Outfit';font-weight:600;color:var(--ink);font-size:1.02rem}
+.feat span{color:var(--soft);font-size:.92rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{text-align:center}
+.step .sn{width:54px;height:54px;border-radius:50%;background:var(--surface);border:1.5px solid var(--teal);color:var(--teal-d);display:grid;place-items:center;font-family:'Outfit';font-weight:700;font-size:1.3rem;margin:0 auto 16px}
+.step h4{font-size:1.15rem;margin-bottom:6px}
+.step p{color:var(--soft);font-size:.9rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center}
+.stat .num{font-family:'Outfit';font-weight:700;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--teal-d);line-height:1}
+.stat .lbl{color:var(--soft);font-size:.9rem;margin-top:6px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.rev .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+.rev p{font-size:1.05rem;color:var(--ink);margin-bottom:16px}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--mint-2);color:var(--teal-d);display:grid;place-items:center;font-weight:700;font-family:'Outfit'}
+.rev .who b{font-size:.92rem}.rev .who small{display:block;color:var(--soft);font-size:.8rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px}
+.gal figure{overflow:hidden;border-radius:14px;background:var(--mint-2)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal .tall{grid-row:span 2}.gal .wide{grid-column:span 2}
+.cta{position:relative;text-align:center;background:linear-gradient(135deg,var(--navy),var(--teal-d));color:#fff;overflow:hidden}
+.cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3rem);margin-bottom:.35em;max-width:20ch;margin-inline:auto}
+.cta p{color:rgba(255,255,255,.85);margin-bottom:1.6em;max-width:52ch;margin-inline:auto}
+.cta .btn-primary{background:#fff;color:var(--navy)}
+.cta .btn-primary:hover{background:var(--mint)}
+.cta .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.cta .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;color:#fff}
+.contact{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start}
+.hrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.hrow b{font-weight:600}.hrow span{color:var(--soft)}
+.cinfo{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.cinfo a{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.cinfo svg{width:18px;height:18px;color:var(--teal-d)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:grid;gap:15px;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.78rem;font-weight:600;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:11px;font-family:'Inter';font-size:.95rem;background:var(--bg);color:var(--ink);transition:.3s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(18,160,174,.14)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-ok{display:none;background:var(--mint);border:1px solid var(--teal);color:var(--teal-d);padding:13px;border-radius:11px;font-size:.9rem;text-align:center}
+.map{margin-top:8px;height:300px}
+.map iframe{width:100%;height:100%;border:0;border-radius:var(--r);filter:grayscale(.12)}
+footer{background:var(--navy);color:rgba(255,255,255,.78);padding-block:56px 26px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1.2fr;gap:34px;margin-bottom:36px}
+.foot .logo .nm{color:#fff}.foot .logo .mk{background:#fff;color:var(--teal-d)}
+.foot p{font-size:.92rem;color:rgba(255,255,255,.65);margin-top:14px;max-width:32ch}
+footer h4{font-family:'Inter';font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:9px}
+footer a{color:rgba(255,255,255,.7);font-size:.92rem}footer a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.82rem;color:rgba(255,255,255,.5)}
+.foot-bot b{color:var(--gold);font-weight:600}
+.wa-float{position:fixed;right:16px;bottom:80px;z-index:41;width:54px;height:54px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.22)}.wa-float svg{width:28px;height:28px;fill:#fff}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 -4px 20px rgba(0,0,0,.12)}
+.sticky-cta a{padding:15px;text-align:center;font-size:.86rem;font-weight:600}
+.sticky-cta .c1{background:var(--navy);color:#fff}.sticky-cta .c2{background:var(--teal-d);color:#fff}
+@media(max-width:900px){
+  .why{grid-template-columns:1fr 1fr}.tx,.revs{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:30px 24px}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}
+  .split,.contact{grid-template-columns:1fr;gap:36px}.split-img{max-width:440px;margin-inline:auto}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .why,.tx,.revs{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .gal .wide{grid-column:span 2}.gal .tall{grid-row:span 1}.row2{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap bar">
+    <a href="index.html" class="logo"><span class="mk">A</span><span class="nm">Clínica Aria<small>Odontología · Valencia</small></span></a>
+    <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <a class="lnk" href="#porque">Por qué Aria</a>
+      <a class="lnk" href="#tratamientos">Tratamientos</a>
+      <a class="lnk" href="#proceso">Cómo trabajamos</a>
+      <a class="lnk" href="#opiniones">Opiniones</a>
+      <a class="lnk" href="#contacto">Contacto</a>
+      <a class="btn btn-primary" href="#contacto">Pedir primera visita</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Dentista en Valencia · Primera visita gratis</span>
+    <h1 class="reveal d1">Sonríe con la <i>tranquilidad</i><br>de estar en buenas manos</h1>
+    <p class="lead reveal d2">Odontología cercana y sin dolor, con tecnología 3D y un equipo que te explica todo con calma. Tu primera visita y el diagnóstico, sin coste.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#contacto" class="btn btn-primary">Pedir primera visita gratis
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#tratamientos" class="btn btn-ghost">Ver tratamientos</a>
+    </div>
+    <div class="hero-badges reveal d3">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 2.5 1-6.3L3 8.9 9 8z"/></svg>4,9/5 · +320 reseñas</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Equipo colegiado</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Financiación a 24 meses</span>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/></svg>Escáner 3D y diagnóstico digital</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Presupuesto cerrado, sin sorpresas</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Tratamientos sin dolor</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>1ª visita gratis</div>
+  </div>
+</div>
+
+<section class="block" id="porque">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Por qué Aria</span>
+      <h2>Una clínica pensada para ti</h2>
+      <p>Cuidamos cada detalle para que tu experiencia sea cómoda desde que entras por la puerta.</p>
+    </div>
+    <div class="why">
+      <div class="c reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Sin dolor</h3><p>Técnicas mínimamente invasivas y sedación consciente para tu tranquilidad.</p></div>
+      <div class="c reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 2v18M4 6.5l8 4.5 8-4.5"/></svg></div><h3>Tecnología 3D</h3><p>Escáner intraoral y diagnóstico por imagen para tratamientos precisos.</p></div>
+      <div class="c reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5h3.5a2 2 0 010 4H10M12 7v10"/></svg></div><h3>Financiación</h3><p>Hasta 24 meses sin intereses para cuidar tu salud sin agobios.</p></div>
+      <div class="c reveal d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5"/></svg></div><h3>1ª visita gratis</h3><p>Diagnóstico completo y presupuesto cerrado, sin compromiso.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block soft" id="tratamientos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Tratamientos</span>
+      <h2>Lo que podemos hacer por tu sonrisa</h2>
+      <p>Cada tratamiento empieza con un diagnóstico y un plan pensado solo para ti.</p>
+    </div>
+    <div class="tx">
+      <article class="tcard reveal"><div class="im"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=700&q=80" alt="Implantes dentales" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/dentist,implant,teeth'"></div><div class="bd"><h3>Implantes dentales</h3><p>Recupera tus dientes fijos con implantes de titanio y carga en el día cuando es posible.</p><span class="lk">Más información →</span></div></article>
+      <article class="tcard reveal d1"><div class="im"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="Ortodoncia invisible" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/orthodontics,smile,teeth'"></div><div class="bd"><h3>Ortodoncia invisible</h3><p>Alinea tu sonrisa sin que se note, con férulas transparentes hechas a medida.</p><span class="lk">Más información →</span></div></article>
+      <article class="tcard reveal d2"><div class="im"><img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=700&q=80" alt="Estética dental" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/dental,smile,whitening'"></div><div class="bd"><h3>Estética dental</h3><p>Blanqueamiento y carillas para una sonrisa natural y luminosa.</p><span class="lk">Más información →</span></div></article>
+      <article class="tcard reveal"><div class="im"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80" alt="Odontología general" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/dentist,clinic,dental'"></div><div class="bd"><h3>Odontología general</h3><p>Revisiones, limpiezas, empastes y todo el cuidado del día a día.</p><span class="lk">Más información →</span></div></article>
+      <article class="tcard reveal d1"><div class="im"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80" alt="Odontopediatría" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/child,dentist,kid'"></div><div class="bd"><h3>Odontopediatría</h3><p>Cuidamos la sonrisa de los más pequeños con paciencia y buen rollo.</p><span class="lk">Más información →</span></div></article>
+      <article class="tcard reveal d2"><div class="im"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=700&q=80" alt="Periodoncia" onerror="this.onerror=null;this.src='https://loremflickr.com/700/560/dental,hygiene,gums'"></div><div class="bd"><h3>Periodoncia e higiene</h3><p>Tratamiento de encías y limpiezas profesionales para una boca sana.</p><span class="lk">Más información →</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="confianza">
+  <div class="wrap split">
+    <div class="split-img reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Equipo de la Clínica Dental Aria" onerror="this.onerror=null;this.src='https://loremflickr.com/900/1100/dental,clinic,team'"></div>
+    <div class="reveal d1">
+      <span class="eyebrow">La tranquilidad de una clínica de verdad</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.9rem);margin:.3em 0 .6em">Cuidamos tu salud, no solo tu sonrisa</h2>
+      <div class="feat"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>Equipo colegiado</b><span>Odontólogos titulados y en formación continua. Tu caso, en manos expertas.</span></div></div>
+      <div class="feat"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>Protocolos de esterilización</b><span>Material de un solo uso y controles sanitarios estrictos en cada cita.</span></div></div>
+      <div class="feat"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>Presupuesto cerrado</b><span>Sabes lo que vas a pagar antes de empezar. Sin letra pequeña.</span></div></div>
+      <div class="feat"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>Trato cercano</b><span>Te escuchamos y te acompañamos antes, durante y después del tratamiento.</span></div></div>
+      <div style="margin-top:24px"><a href="#contacto" class="btn btn-primary">Habla con el equipo</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block soft" id="proceso">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Tu tratamiento, paso a paso</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="sn">1</div><h4>Pides cita</h4><p>Llámanos o rellena el formulario. La primera visita es gratis.</p></div>
+      <div class="step reveal d1"><div class="sn">2</div><h4>Diagnóstico</h4><p>Estudio con escáner 3D y un plan de tratamiento claro.</p></div>
+      <div class="step reveal d2"><div class="sn">3</div><h4>Tratamiento</h4><p>Con la mejor tecnología y a tu ritmo, siempre sin dolor.</p></div>
+      <div class="step reveal d3"><div class="sn">4</div><h4>Seguimiento</h4><p>Revisiones y cuidado continuo de tu salud bucal.</p></div>
+    </div>
+    <div class="stats reveal" style="margin-top:64px">
+      <div class="stat"><div class="num">15+</div><div class="lbl">Años en Valencia</div></div>
+      <div class="stat"><div class="num">12.000+</div><div class="lbl">Pacientes atendidos</div></div>
+      <div class="stat"><div class="num">4,9★</div><div class="lbl">Valoración media</div></div>
+      <div class="stat"><div class="num">0€</div><div class="lbl">Tu primera visita</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="opiniones">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Opiniones</span>
+      <h2>Lo que dicen nuestros pacientes</h2>
+    </div>
+    <div class="revs">
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Me pusieron un implante sin dolor y con un trato exquisito. Repetiré sin duda.»</p><div class="who"><div class="av">CP</div><div><b>Carmen P.</b><small>Google · Implante</small></div></div></div>
+      <div class="rev reveal d1"><div class="stars">★★★★★</div><p>«La ortodoncia invisible me cambió la sonrisa. Profesionales de verdad.»</p><div class="who"><div class="av">RA</div><div><b>Rubén A.</b><small>Google · Ortodoncia</small></div></div></div>
+      <div class="rev reveal d2"><div class="stars">★★★★★</div><p>«Por fin una clínica que te explica todo y no te presiona. 100% recomendable.»</p><div class="who"><div class="av">LT</div><div><b>Lucía T.</b><small>Google · Estética</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Nuestra clínica</span>
+      <h2>Instalaciones pensadas para tu comodidad</h2>
+    </div>
+    <div class="gal">
+      <figure class="wide tall reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Sala de tratamiento" onerror="this.onerror=null;this.src='https://loremflickr.com/900/800/dental,clinic,modern'"></figure>
+      <figure class="reveal d1"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=500&q=80" alt="Recepción" onerror="this.onerror=null;this.src='https://loremflickr.com/500/400/dental,reception'"></figure>
+      <figure class="reveal d2"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="Equipo médico" onerror="this.onerror=null;this.src='https://loremflickr.com/500/400/dentist,doctor'"></figure>
+      <figure class="wide reveal d1"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Consulta dental" onerror="this.onerror=null;this.src='https://loremflickr.com/900/400/dental,chair,clinic'"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block cta">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center;color:var(--mint)">Da el primer paso</span>
+    <h2 class="reveal d1">Tu primera visita es gratis</h2>
+    <p class="reveal d2">Diagnóstico completo, radiografía y presupuesto cerrado, sin compromiso. Reserva en un minuto.</p>
+    <div class="hero-cta reveal d3" style="justify-content:center">
+      <a href="#contacto" class="btn btn-primary">Pedir cita</a>
+      <a href="tel:+34963222333" class="btn btn-ghost">Llamar · 963 222 333</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacto">
+  <div class="wrap contact">
+    <div class="reveal">
+      <span class="eyebrow">Pide tu cita</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);margin:.3em 0 .5em">Estamos a un paso de tu sonrisa</h2>
+      <p style="color:var(--soft);margin-bottom:22px">Rellena el formulario o llámanos. Te confirmamos la cita en menos de 24 h.</p>
+      <h4 style="font-family:'Outfit';font-size:1.1rem;margin-bottom:6px">Horario</h4>
+      <div class="hrow"><b>Lunes – Viernes</b><span>09:00 – 20:00</span></div>
+      <div class="hrow"><b>Sábado</b><span>Urgencias</span></div>
+      <div class="hrow"><b>Domingo</b><span>Cerrado</span></div>
+      <div class="cinfo">
+        <a href="https://maps.google.com/?q=Av.+del+Reino+de+València+25+Valencia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Av. del Reino de València, 25 · Valencia</a>
+        <a href="tel:+34963222333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 5a2 2 0 012-2z"/></svg>+34 963 222 333</a>
+        <a href="mailto:citas@dentalaria.es"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>citas@dentalaria.es</a>
+      </div>
+      <div class="map"><iframe title="Ubicación Clínica Dental Aria" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+del+Reino+de+Valencia+25+Valencia&output=embed"></iframe></div>
+    </div>
+    <form id="cform" novalidate>
+      <div class="field"><label for="n">Nombre y apellidos</label><input id="n" name="Nombre" type="text" placeholder="Tu nombre" required></div>
+      <div class="row2">
+        <div class="field"><label for="t">Teléfono</label><input id="t" name="Teléfono" type="tel" placeholder="600 000 000" required></div>
+        <div class="field"><label for="tr">Motivo</label><select id="tr" name="Motivo"><option>Primera visita gratis</option><option>Implantes</option><option>Ortodoncia invisible</option><option>Estética dental</option><option>Revisión / limpieza</option><option>Urgencia</option></select></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f">Día preferido</label><input id="f" name="Fecha" type="date"></div>
+        <div class="field"><label for="h">Franja</label><select id="h" name="Franja"><option>Mañana</option><option>Tarde</option><option>Indiferente</option></select></div>
+      </div>
+      <div class="field"><label for="m">Comentario (opcional)</label><textarea id="m" name="Comentario" rows="2" placeholder="Cuéntanos qué necesitas"></textarea></div>
+      <button type="submit" class="btn btn-primary">Solicitar cita</button>
+      <div class="form-ok" id="ok">✅ ¡Solicitud recibida! Te llamamos para confirmar. Gracias.</div>
+      <p style="text-align:center;color:var(--soft);font-size:.78rem">Al enviar aceptas nuestra política de privacidad.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="index.html" class="logo"><span class="mk">A</span><span class="nm" style="color:#fff">Clínica Aria</span></a><p>Odontología de confianza en Valencia. Primera visita y diagnóstico sin coste.</p></div>
+      <div><h4>Enlaces</h4><ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Pedir cita</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="tel:+34963222333">+34 963 222 333</a></li><li><a href="mailto:citas@dentalaria.es">citas@dentalaria.es</a></li><li>Av. del Reino de València, 25</li><li>46022 Valencia</li></ul></div>
+    </div>
+    <div class="foot-bot"><span>© <span id="y"></span> Clínica Dental Aria · Valencia.</span><span>Diseño web por <b>Aureum</b> · <a href="#">Aviso legal</a> · <a href="#">Privacidad</a></span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34963222333" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.15A11.87 11.87 0 010 5.75 11.9 11.9 0 0112.05 0 11.9 11.9 0 0124 5.9a11.9 11.9 0 01-11.95 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2l.36.2a9.9 9.9 0 005.1 1.4 9.9 9.9 0 000-19.8A9.9 9.9 0 002.2 12a9.86 9.86 0 001.5 5.25l.24.38-1 3.63 3.66-.96zM17.4 14.3c-.15-.25-.55-.4-1.15-.7s-1.35-.65-1.55-.72c-.2-.08-.36-.11-.5.11s-.58.72-.71.87c-.13.15-.26.17-.5.06a8.1 8.1 0 01-2.36-1.46 9 9 0 01-1.63-2.03c-.17-.29 0-.44.12-.58.11-.12.25-.3.37-.46.12-.15.16-.26.24-.43.08-.17.04-.32-.02-.44-.06-.11-.5-1.35-.72-1.85-.18-.46-.36-.4-.5-.4l-.42-.01a.8.8 0 00-.58.27 2.44 2.44 0 00-.76 1.82c0 1.07.78 2.11.9 2.26.1.15 1.54 2.35 3.73 3.3 2.19.95 2.19.63 2.58.6.4-.04 1.28-.52 1.46-1.03.18-.5.18-.94.13-1.03z"/></svg></a>
+<div class="sticky-cta"><a class="c1" href="tel:+34963222333">Llamar</a><a class="c2" href="#contacto">Pedir cita</a></div>
+
+<script>
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true}); hdr.classList.toggle('scrolled',scrollY>30);
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav'),ov=document.getElementById('navOverlay'),nc=document.getElementById('navClose');
+  function openNav(){nav.classList.add('open');ov.classList.add('open');document.body.style.overflow='hidden'}
+  function closeNav(){nav.classList.remove('open');ov.classList.remove('open');document.body.style.overflow=''}
+  burger.onclick=openNav; nc.onclick=closeNav; ov.onclick=closeNav;
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))closeNav()});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
+  var f=document.getElementById('cform'); if(f){var fe=document.getElementById('f'); if(fe)fe.min=new Date().toISOString().split('T')[0];
+    f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}document.getElementById('ok').style.display='block';f.querySelector('button').textContent='Solicitud enviada ✓';f.reset();});}
+})();
+</script>
+</body>
+</html>

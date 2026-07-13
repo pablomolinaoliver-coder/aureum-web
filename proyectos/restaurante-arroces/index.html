@@ -35,22 +35,27 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:cent
 header.scrolled{background:rgba(251,249,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-block:12px}
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;letter-spacing:.06em;display:flex;flex-direction:column;line-height:.9}
 .logo span{font-family:'Jost';font-size:.52rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-nav{display:flex;align-items:center;gap:30px}
-nav a.lnk{font-size:.88rem;color:var(--muted);transition:.3s;position:relative}
-nav a.lnk:hover{color:var(--ink)}
-nav a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--sea);transition:.3s var(--ease)}
-nav a.lnk:hover::after{width:100%}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+nav{position:fixed;top:0;right:0;height:100%;width:min(370px,86vw);background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:88px 34px 40px;transform:translateX(105%);transition:transform .55s var(--ease);z-index:120;box-shadow:-30px 0 60px -30px rgba(38,48,47,.35)}
+nav.open{transform:none}
+nav a.lnk{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--ink);transition:.3s}
+nav a.lnk:hover{color:var(--sea)}
+nav .btn{margin-top:8px}
+.nav-close{position:absolute;top:24px;right:26px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease)}
+.nav-close:hover{border-color:var(--sea);color:var(--sea);transform:rotate(90deg)}
+.nav-close svg{width:20px;height:20px}
+.nav-overlay{position:fixed;inset:0;background:rgba(38,48,47,.4);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s var(--ease);z-index:110}
+.nav-overlay.open{opacity:1;visibility:visible}
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:100}
 .burger span{width:25px;height:2px;background:var(--ink);transition:.3s}
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;text-align:center}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,249,244,.2),rgba(38,48,47,.18) 40%,rgba(38,48,47,.62));background-blend-mode:normal}
 .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;transform:scale(1.08);will-change:transform;z-index:-1}
-.hero-inner{position:relative;z-index:3;padding-bottom:8vh;padding-top:120px;color:#fff}
+.hero-inner{position:relative;z-index:3;padding-top:120px;color:#fff;display:flex;flex-direction:column;align-items:center}
 .hero .eyebrow{color:#fff}.hero .eyebrow::before,.hero .eyebrow::after{background:var(--gold)}
-.hero h1{font-size:clamp(3rem,8vw,6rem);margin:.25em 0 .35em;color:#fff;max-width:16ch}
+.hero h1{font-size:clamp(3rem,8vw,6rem);margin:.25em auto .35em;color:#fff;max-width:18ch}
 .hero h1 i{color:#F0E2BE;font-weight:500}
-.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.3rem);color:rgba(255,255,255,.9);max-width:48ch;margin-bottom:2em}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero p.lead{font-size:clamp(1.05rem,1.5vw,1.3rem);color:rgba(255,255,255,.9);max-width:48ch;margin:0 auto 2em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .hero-cta .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
 .hero-cta .btn-ghost:hover{border-color:#fff;color:#fff}
 .strip{background:var(--surface);border-bottom:1px solid var(--line)}
@@ -65,6 +70,9 @@ section.block{padding-block:clamp(70px,9vw,124px)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
 .menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px}
+.menu-cat{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:var(--sea);margin:34px 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.menu-cat.first{margin-top:0}
+.menu-group{margin-bottom:8px}
 .dish{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
 .dish .nm{font-weight:500;font-size:1.06rem}
 .dish .ds{color:var(--muted);font-size:.85rem}
@@ -101,7 +109,7 @@ footer{background:#26302F;color:rgba(255,255,255,.72);padding-block:50px 28px}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.84rem}
 .resv-float{position:fixed;right:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:.5em;padding:14px 22px;border-radius:100px;background:var(--sea);color:#fff;font-weight:500;box-shadow:0 14px 32px -10px rgba(44,143,160,.7)}
 .resv-float svg{width:18px;height:18px}
-@media(max-width:900px){nav .lnk{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(251,249,244,.98);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk{display:block;font-size:1.4rem}.menu-cols,.split,.resv{grid-template-columns:1fr;gap:0 0}.split{gap:34px}.split-img{max-width:440px;margin-inline:auto}.gal{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}.resv{gap:34px}}
+@media(max-width:900px){.menu-cols,.split,.resv{grid-template-columns:1fr;gap:0 0}.split{gap:34px}.split-img{max-width:440px;margin-inline:auto}.gal{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:34px 26px}.resv{gap:34px}}
 @media(max-width:600px){.gal{grid-template-columns:1fr;grid-auto-rows:220px}.gal .wide{grid-column:span 1}.gal .tall{grid-row:span 1}.row2,.foot{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
 </style>
@@ -109,14 +117,16 @@ footer{background:#26302F;color:rgba(255,255,255,.72);padding-block:50px 28px}
 <body>
 <header id="hdr">
   <a href="#" class="logo">Marea<span>Arrocería · frente al mar</span></a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
   <nav id="nav">
+    <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="lnk" href="#carta">Arroces</a>
     <a class="lnk" href="#galeria">Galería</a>
     <a class="lnk" href="#sala">El restaurante</a>
     <a class="btn btn-primary" href="#reservas">Reservar mesa</a>
   </nav>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero">
   <div class="hero-photo" aria-hidden="true"></div>
@@ -149,21 +159,68 @@ footer{background:#26302F;color:rgba(255,255,255,.72);padding-block:50px 28px}
       <h2 class="reveal d1">La carta del arroz</h2>
       <p class="reveal d2">Todos nuestros arroces se elaboran al momento (mínimo 2 personas) con caldo y sofrito de la casa.</p>
     </div>
+    <!-- PARA EMPEZAR -->
+    <h3 class="menu-cat first reveal">Para empezar</h3>
     <div class="menu-cols">
-      <div class="reveal">
+      <div class="menu-group reveal">
+        <div class="dish"><div><div class="nm">Ensalada del huerto</div><div class="ds">Tomate de temporada, cebolla dulce y ventresca</div></div><span class="dots"></span><span class="pr">11€</span></div>
+        <div class="dish"><div><div class="nm">Clóchinas al vapor</div><div class="ds">Mejillón valenciano con limón (temporada)</div></div><span class="dots"></span><span class="pr">12€</span></div>
+        <div class="dish"><div><div class="nm">Gambas de Dénia a la plancha</div><div class="ds">Con su jugo y flor de sal</div></div><span class="dots"></span><span class="pr">24€</span></div>
+        <div class="dish"><div><div class="nm">Pulpo a la brasa</div><div class="ds">Sobre parmentier ahumado y pimentón</div></div><span class="dots"></span><span class="pr">19€</span></div>
+      </div>
+      <div class="menu-group reveal d1">
+        <div class="dish"><div><div class="nm">Tabla de marisco de la lonja</div><div class="ds">Selección del día para compartir</div></div><span class="dots"></span><span class="pr">26€</span></div>
+        <div class="dish"><div><div class="nm">Calamares de playa a la andaluza</div><div class="ds">Enharinados al momento y mayonesa de lima</div></div><span class="dots"></span><span class="pr">15€</span></div>
+        <div class="dish"><div><div class="nm">Croquetas caseras de sepia</div><div class="ds">Cremosas, en su tinta. 6 unidades</div></div><span class="dots"></span><span class="pr">9€</span></div>
+        <div class="dish"><div><div class="nm">Esgarraet</div><div class="ds">Pimiento asado, bacalao y aceite de la tierra</div></div><span class="dots"></span><span class="pr">10€</span></div>
+      </div>
+    </div>
+
+    <!-- ARROCES -->
+    <h3 class="menu-cat reveal">Arroces y paellas <span style="font-size:.9rem;font-style:normal;color:var(--muted)">· mín. 2 pers. · precio por persona</span></h3>
+    <div class="menu-cols">
+      <div class="menu-group reveal">
         <div class="dish"><div><div class="nm">Arroz del senyoret</div><div class="ds">Pelado: gamba, sepia y rape. El favorito de la casa</div></div><span class="dots"></span><span class="pr">23€</span></div>
         <div class="dish"><div><div class="nm">Paella de marisco</div><div class="ds">Gamba roja, mejillón, calamar y cigala</div></div><span class="dots"></span><span class="pr">26€</span></div>
         <div class="dish"><div><div class="nm">Arroz a banda</div><div class="ds">Con fumet de roca y alioli de azafrán</div></div><span class="dots"></span><span class="pr">21€</span></div>
         <div class="dish"><div><div class="nm">Arroz negro</div><div class="ds">Sepia, su tinta y alioli suave</div></div><span class="dots"></span><span class="pr">22€</span></div>
-      </div>
-      <div class="reveal d1">
         <div class="dish"><div><div class="nm">Arroz meloso de bogavante</div><div class="ds">Caldoso, intenso, para compartir</div></div><span class="dots"></span><span class="pr">29€</span></div>
+      </div>
+      <div class="menu-group reveal d1">
         <div class="dish"><div><div class="nm">Paella valenciana</div><div class="ds">Pollo, conejo, garrofó y judía verde</div></div><span class="dots"></span><span class="pr">19€</span></div>
         <div class="dish"><div><div class="nm">Fideuá de marisco</div><div class="ds">Fideo fino y alioli casero</div></div><span class="dots"></span><span class="pr">21€</span></div>
         <div class="dish"><div><div class="nm">Arroz de verduras de la huerta</div><div class="ds">De temporada · opción vegana</div></div><span class="dots"></span><span class="pr">17€</span></div>
+        <div class="dish"><div><div class="nm">Arroz de bacalao y coliflor</div><div class="ds">Seco, tradicional de invierno</div></div><span class="dots"></span><span class="pr">18€</span></div>
+        <div class="dish"><div><div class="nm">Arroz de pato y setas</div><div class="ds">Meloso, con foie a la plancha</div></div><span class="dots"></span><span class="pr">20€</span></div>
       </div>
     </div>
-    <p class="menu-note reveal">Para empezar: ensalada del huerto, clóchinas, gambas de Dénia, pulpo a la brasa y la mejor tabla de marisco.</p>
+
+    <!-- DEL MAR -->
+    <h3 class="menu-cat reveal">Del mar, a la brasa</h3>
+    <div class="menu-cols">
+      <div class="menu-group reveal">
+        <div class="dish"><div><div class="nm">Lubina salvaje a la sal</div><div class="ds">Pieza entera, all i oli de cítricos</div></div><span class="dots"></span><span class="pr">24€</span></div>
+        <div class="dish"><div><div class="nm">Dorada a la espalda</div><div class="ds">Refrito de ajo y guindilla</div></div><span class="dots"></span><span class="pr">21€</span></div>
+      </div>
+      <div class="menu-group reveal d1">
+        <div class="dish"><div><div class="nm">Suquet de rape y gamba</div><div class="ds">Guiso marinero con patata y picada</div></div><span class="dots"></span><span class="pr">23€</span></div>
+        <div class="dish"><div><div class="nm">Bogavante a la brasa</div><div class="ds">Medio bogavante, mantequilla de hierbas</div></div><span class="dots"></span><span class="pr">28€</span></div>
+      </div>
+    </div>
+
+    <!-- POSTRES -->
+    <h3 class="menu-cat reveal">Postres caseros</h3>
+    <div class="menu-cols">
+      <div class="menu-group reveal">
+        <div class="dish"><div><div class="nm">Tarta de queso al horno</div><div class="ds">Cremosa por dentro, estilo La Viña</div></div><span class="dots"></span><span class="pr">6,50€</span></div>
+        <div class="dish"><div><div class="nm">Coca de llanda con helado</div><div class="ds">Bizcocho tradicional y helado de vainilla</div></div><span class="dots"></span><span class="pr">6€</span></div>
+      </div>
+      <div class="menu-group reveal d1">
+        <div class="dish"><div><div class="nm">Naranja de Valencia con canela</div><div class="ds">Con miel de romero y aceite virgen</div></div><span class="dots"></span><span class="pr">5€</span></div>
+        <div class="dish"><div><div class="nm">Flan de huevo de la abuela</div><div class="ds">Con nata y caramelo casero</div></div><span class="dots"></span><span class="pr">5,50€</span></div>
+      </div>
+    </div>
+    <p class="menu-note reveal">Disponemos de menú del día (mediodía, de martes a viernes) y carta de vinos de la tierra. Consulta alérgenos con nuestro equipo.</p>
   </div>
 </section>
 
@@ -251,9 +308,11 @@ footer{background:#26302F;color:rgba(255,255,255,.72);padding-block:50px 28px}
   document.getElementById('y').textContent=new Date().getFullYear();
   var hdr=document.getElementById('hdr');
   addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
-  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
-  burger.onclick=function(){nav.classList.toggle('open')};
-  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))nav.classList.remove('open')});
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav'),navOverlay=document.getElementById('navOverlay'),navClose=document.getElementById('navClose');
+  function openNav(){nav.classList.add('open');navOverlay.classList.add('open');document.body.style.overflow='hidden'}
+  function closeNav(){nav.classList.remove('open');navOverlay.classList.remove('open');document.body.style.overflow=''}
+  burger.onclick=openNav;navClose.onclick=closeNav;navOverlay.onclick=closeNav;
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))closeNav()});
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
   var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target,end=+el.dataset.count,suf=el.dataset.suffix||'';if(reduced){el.textContent=end+suf;cio.unobserve(el);return}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(end*e)+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});

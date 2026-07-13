@@ -11,7 +11,8 @@ section{padding:78px 0}
 .sec-head{text-align:center;max-width:680px;margin:0 auto 46px}
 .sec-head h2{font-size:2.6rem;margin:10px 0 12px}
 .sec-head p{color:var(--muted)}
-.btn{display:inline-block;padding:15px 30px;border-radius:3px;font-weight:600;letter-spacing:.06em;font-size:.84rem;text-transform:uppercase;transition:.25s;cursor:pointer;border:1px solid var(--gold);font-family:var(--body)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:15px 34px;border-radius:100px;font-weight:600;letter-spacing:.08em;font-size:.82rem;text-transform:uppercase;transition:.35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid var(--gold);font-family:var(--body)}
+.btn:hover{transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff} .btn-gold:hover{background:transparent;color:var(--gold)}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)} .btn-ghost:hover{background:#fff;color:var(--dark);border-color:#fff}
 .btn-dark{background:var(--dark);color:#fff;border-color:var(--dark)} .btn-dark:hover{background:transparent;color:var(--dark)}
@@ -24,15 +25,18 @@ header.solid .logo{color:var(--dark)}
 .links{display:none;align-items:center;gap:28px}
 .links a{color:#fff;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;font-family:var(--body)}
 header.solid .links a{color:var(--ink)}
-.links a.cta{color:#fff;background:var(--gold);padding:11px 20px;border-radius:3px}
+.links a.cta{color:#fff;background:var(--gold);padding:11px 22px;border-radius:100px}
 .links a:hover{color:var(--gold)} header.solid .links a.cta{color:#fff}
 .burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
 .burger span{width:26px;height:2px;background:#fff;transition:.3s} header.solid .burger span{background:var(--dark)}
-.mobile{position:fixed;inset:0;background:var(--dark);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateX(100%);transition:.35s}
+.mobile{position:fixed;top:0;right:0;bottom:0;width:min(360px,86vw);background:var(--dark);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateX(105%);transition:.45s cubic-bezier(.22,1,.36,1);box-shadow:-30px 0 60px -30px rgba(0,0,0,.7)}
 .mobile.open{transform:translateX(0)}
 .mobile a{color:#fff;font-family:var(--disp),serif;font-size:1.8rem}
-.mobile a.cta{font-family:var(--body);font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--gold);padding:12px 26px;color:var(--gold)}
-.mclose{position:absolute;top:24px;right:26px;font-size:2rem;color:#fff;background:none;border:0;cursor:pointer}
+.mobile a.cta{font-family:var(--body);font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--gold);padding:12px 28px;color:var(--gold);border-radius:100px;margin-top:8px}
+.mclose{position:absolute;top:22px;right:24px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.5rem;color:#fff;background:none;cursor:pointer;transition:.35s cubic-bezier(.22,1,.36,1)}
+.mclose:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+.mobile-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s;z-index:59}
+.mobile-ov.open{opacity:1;visibility:visible}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:var(--dark)}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
 .hero-ov{position:absolute;inset:0;z-index:1}
@@ -143,7 +147,7 @@ footer a:hover{color:var(--gold)} footer p{font-size:.92rem;margin-bottom:8px}
 .mcard .mpr{font-family:var(--disp),serif;font-size:1.3rem;color:var(--gold);margin-top:12px}
 @media(min-width:768px){
  .feat3{grid-template-columns:repeat(3,1fr)}
- .links{display:flex} .burger{display:none}
+
  .split{grid-template-columns:1fr 1fr} .split.rev>div:first-child{order:2}
  .gal{grid-template-columns:repeat(4,1fr)}
  .cards{grid-template-columns:repeat(3,1fr)} .cards.c4{grid-template-columns:repeat(4,1fr)}
@@ -159,7 +163,7 @@ footer a:hover{color:var(--gold)} footer p{font-size:.92rem;margin-bottom:8px}
 <a href="index.html" class="logo"><span class="mono">M</span><span>MARENOSTRUM<small>Real Estate · Valencia</small></span></a>
 <nav class="links"><a href="index.html">Inicio</a><a href="propiedades.html">Propiedades</a><a href="vender.html">Vender</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a class="cta" href="contacto.html">Contacto</a></nav>
 <button class="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button></div></header>
-<div class="mobile" id="mob"><button class="mclose" onclick="toggleMenu()">&times;</button><a href="index.html">Inicio</a><a href="propiedades.html">Propiedades</a><a href="vender.html">Vender</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a class="cta" href="contacto.html">Contacto</a></div><div style="height:88px;background:var(--dark)"></div><section><div class="wrap"><div class="sec-head"><div class="eyebrow">Vender con nosotros</div><h2>¿Cuánto vale tu propiedad?</h2><p>Recibe una valoración profesional y gratuita en menos de 48 horas, sin compromiso.</p></div>
+<div class="mobile-ov" id="mobOv" onclick="toggleMenu()"></div><div class="mobile" id="mob"><button class="mclose" onclick="toggleMenu()">&times;</button><a href="index.html">Inicio</a><a href="propiedades.html">Propiedades</a><a href="vender.html">Vender</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a class="cta" href="contacto.html">Contacto</a></div><div style="height:88px;background:var(--dark)"></div><section><div class="wrap"><div class="sec-head"><div class="eyebrow">Vender con nosotros</div><h2>¿Cuánto vale tu propiedad?</h2><p>Recibe una valoración profesional y gratuita en menos de 48 horas, sin compromiso.</p></div>
 <form class="form" onsubmit="return fakeSubmit(event,'¡Gracias! Prepararemos tu valoración y te contactaremos en menos de 48 horas.')">
 <div class="fr two"><div><label>Tipo de propiedad</label><select><option>Villa / Chalet</option><option>Piso</option><option>Ático</option><option>Casa de campo</option><option>Local / Otro</option></select></div><div><label>Zona</label><input required placeholder="Ej. La Cañada, Ruzafa..."></div></div>
 <div class="fr three"><div><label>Metros (m²)</label><input type="number" placeholder="120"></div><div><label>Habitaciones</label><input type="number" placeholder="3"></div><div><label>Baños</label><input type="number" placeholder="2"></div></div>
@@ -172,7 +176,7 @@ footer a:hover{color:var(--gold)} footer p{font-size:.92rem;margin-bottom:8px}
 <div><h4 style="font-size:1.15rem">Enlaces</h4><p><a href="propiedades.html">Propiedades</a></p><p><a href="vender.html">Vender</a></p><p><a href="contacto.html">Contacto</a></p></div></div>
 <div class="foot-bot">© 2026 MARENOSTRUM · Real Estate · Valencia · Web por Aureum Digital Studio · <a href="#">Aviso legal</a> · <a href="#">Privacidad</a></div></div></footer><a class="wa-float" href="https://wa.me/34963333444" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.15A11.87 11.87 0 010 5.75 11.9 11.9 0 0112.05 0 11.9 11.9 0 0124 5.9a11.9 11.9 0 01-11.95 11.9 12 12 0 01-5.7-1.45L.06 24zM6.6 20.2l.36.2a9.9 9.9 0 005.1 1.4 9.9 9.9 0 000-19.8A9.9 9.9 0 002.2 12a9.86 9.86 0 001.5 5.25l.24.38-1 3.63 3.66-.96zM17.4 14.3c-.15-.25-.55-.4-1.15-.7s-1.35-.65-1.55-.72c-.2-.08-.36-.11-.5.11s-.58.72-.71.87c-.13.15-.26.17-.5.06a8.1 8.1 0 01-2.36-1.46 9 9 0 01-1.63-2.03c-.17-.29 0-.44.12-.58.11-.12.25-.3.37-.46.12-.15.16-.26.24-.43.08-.17.04-.32-.02-.44-.06-.11-.5-1.35-.72-1.85-.18-.46-.36-.4-.5-.4l-.42-.01a.8.8 0 00-.58.27 2.44 2.44 0 00-.76 1.82c0 1.07.78 2.11.9 2.26.1.15 1.54 2.35 3.73 3.3 2.19.95 2.19.63 2.58.6.4-.04 1.28-.52 1.46-1.03.18-.5.18-.94.13-1.03z"/></svg></a><div class="sticky-cta"><a class="c1" href="tel:34963333444">Llamar</a><a class="c2" href="contacto.html">Contactar</a></div><script>
 document.addEventListener('scroll',()=>{const h=document.querySelector('header.nav');if(h){window.scrollY>60?h.classList.add('solid'):h.classList.remove('solid');}});
-function toggleMenu(){document.getElementById('mob').classList.toggle('open');}
-document.querySelectorAll('.mobile a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mob').classList.remove('open')));
+function toggleMenu(){var m=document.getElementById('mob'),o=document.getElementById('mobOv');var op=m.classList.toggle('open');if(o)o.classList.toggle('open',op);document.body.style.overflow=op?'hidden':'';}
+document.querySelectorAll('.mobile a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mob').classList.remove('open');var o=document.getElementById('mobOv');if(o)o.classList.remove('open');document.body.style.overflow='';}));
 function fakeSubmit(e,m){e.preventDefault();alert(m);e.target.reset();return false;}
 </script></body></html>

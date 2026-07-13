@@ -66,12 +66,17 @@ header.scrolled{ background:rgba(20,17,13,.85); backdrop-filter:blur(14px); bord
 .logo{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.6rem; letter-spacing:.02em; display:flex; flex-direction:column; line-height:.95; }
 .logo b{ color:var(--gold); }
 .logo span{ font-family:'Jost'; font-size:.52rem; letter-spacing:.34em; color:var(--muted); text-transform:uppercase; margin-top:3px; }
-nav{ display:flex; align-items:center; gap:32px; }
-nav a.lnk{ font-size:.88rem; font-weight:400; letter-spacing:.05em; color:var(--muted); position:relative; transition:.3s; }
-nav a.lnk:hover{ color:var(--cream); }
-nav a.lnk::after{ content:''; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--gold); transition:.3s var(--ease); }
-nav a.lnk:hover::after{ width:100%; }
-.burger{ display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px; }
+nav{ position:fixed; top:0; right:0; height:100%; width:min(370px,86vw); background:var(--surface); border-left:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding:88px 34px 40px; transform:translateX(105%); transition:transform .55s var(--ease); z-index:120; box-shadow:-30px 0 60px -30px rgba(0,0,0,.6); }
+nav.open{ transform:none; }
+nav a.lnk{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:500; color:var(--cream); transition:.3s; }
+nav a.lnk:hover{ color:var(--gold); }
+nav .nav-cta{ margin-top:8px; }
+.nav-close{ position:absolute; top:24px; right:26px; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:none; color:var(--cream); cursor:pointer; display:grid; place-items:center; transition:.35s var(--ease); }
+.nav-close:hover{ border-color:var(--gold); color:var(--gold); transform:rotate(90deg); }
+.nav-close svg{ width:20px; height:20px; }
+.nav-overlay{ position:fixed; inset:0; background:rgba(20,17,13,.55); backdrop-filter:blur(3px); opacity:0; visibility:hidden; transition:.4s var(--ease); z-index:110; }
+.nav-overlay.open{ opacity:1; visibility:visible; }
+.burger{ display:flex; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px; z-index:100; }
 .burger span{ width:26px; height:2px; background:var(--cream); transition:.3s; }
 
 /* hero */
@@ -195,11 +200,6 @@ footer{ border-top:1px solid var(--line); background:var(--bg); padding-block:52
 
 /* responsive */
 @media (max-width:980px){
-  nav .lnk, .nav-cta{ display:none; }
-  .burger{ display:flex; }
-  nav.open{ position:fixed; inset:0; background:rgba(20,17,13,.97); backdrop-filter:blur(16px); flex-direction:column; justify-content:center; gap:26px; z-index:90; }
-  nav.open .lnk{ display:block; font-size:1.5rem; color:var(--cream); }
-  nav.open .nav-cta{ display:inline-flex; }
   .about-grid, .resv-grid{ grid-template-columns:1fr; gap:38px; }
   .about-img{ max-width:460px; margin-inline:auto; }
   .menu-cols{ grid-template-columns:1fr; gap:0 0; }
@@ -229,7 +229,9 @@ footer{ border-top:1px solid var(--line); background:var(--bg); padding-block:52
 <!-- HEADER -->
 <header id="hdr">
   <a href="#inicio" class="logo">Mar y <b>Olivo</b><span>Cocina Mediterránea</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   <nav id="nav">
+    <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="lnk" href="#historia">Historia</a>
     <a class="lnk" href="#carta">La carta</a>
     <a class="lnk" href="#galeria">Galería</a>
@@ -237,8 +239,8 @@ footer{ border-top:1px solid var(--line); background:var(--bg); padding-block:52
     <a class="lnk" href="#reservas">Contacto</a>
     <a class="btn btn-primary nav-cta" href="#reservas">Reservar mesa</a>
   </nav>
-  <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -457,9 +459,13 @@ footer{ border-top:1px solid var(--line); background:var(--bg); padding-block:52
   const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 30);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-  const burger = document.getElementById('burger'), nav = document.getElementById('nav');
-  burger.addEventListener('click', () => nav.classList.toggle('open'));
-  nav.addEventListener('click', e => { if(e.target.classList.contains('lnk')||e.target.classList.contains('nav-cta')) nav.classList.remove('open'); });
+  const burger = document.getElementById('burger'), nav = document.getElementById('nav'), navOverlay = document.getElementById('navOverlay'), navClose = document.getElementById('navClose');
+  const openNav = () => { nav.classList.add('open'); navOverlay.classList.add('open'); document.body.style.overflow='hidden'; };
+  const closeNav = () => { nav.classList.remove('open'); navOverlay.classList.remove('open'); document.body.style.overflow=''; };
+  burger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  navOverlay.addEventListener('click', closeNav);
+  nav.addEventListener('click', e => { if(e.target.classList.contains('lnk')||e.target.classList.contains('nav-cta')) closeNav(); });
 
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });

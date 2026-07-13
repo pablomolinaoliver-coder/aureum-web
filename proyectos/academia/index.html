@@ -34,10 +34,17 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:cent
 header.scrolled{background:rgba(255,248,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-block:11px}
 .logo{font-family:'Quicksand';font-weight:700;font-size:1.35rem;display:flex;align-items:center;gap:.5em;color:var(--ink)}
 .logo .b{width:38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:1.1rem}
-nav{display:flex;align-items:center;gap:26px}
-nav a.lnk{font-family:'Quicksand';font-weight:600;font-size:.95rem;color:var(--muted);transition:.3s}
-nav a.lnk:hover{color:var(--ink)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+nav{position:fixed;top:0;right:0;height:100%;width:min(360px,86vw);background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:88px 34px 40px;transform:translateX(105%);transition:transform .5s var(--ease);z-index:120;box-shadow:-30px 0 60px -30px rgba(59,51,46,.3)}
+nav.open{transform:none}
+nav a.lnk{font-family:'Quicksand';font-weight:700;font-size:1.5rem;color:var(--ink);transition:.3s}
+nav a.lnk:hover{color:var(--coral-d)}
+nav .btn{margin-top:8px}
+.nav-close{position:absolute;top:22px;right:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease)}
+.nav-close:hover{border-color:var(--coral);color:var(--coral-d);transform:rotate(90deg)}
+.nav-close svg{width:20px;height:20px}
+.nav-overlay{position:fixed;inset:0;background:rgba(59,51,46,.4);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s var(--ease);z-index:110}
+.nav-overlay.open{opacity:1;visibility:visible}
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:130}
 .burger span{width:25px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
 .hero{position:relative;padding-top:130px;padding-bottom:80px;overflow:hidden}
 .hero::before{content:"";position:absolute;width:50vw;height:50vw;max-width:600px;max-height:600px;border-radius:50%;background:radial-gradient(circle,rgba(242,181,68,.22),transparent 65%);top:-15%;right:-12%;z-index:0}
@@ -73,7 +80,7 @@ section.block{padding-block:clamp(64px,8vw,116px)}
 .soft{background:var(--cream2)}
 .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .feat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;text-align:center}
-.feat .em{font-size:2.4rem;line-height:1;margin-bottom:12px}
+.feat .ic{width:58px;height:58px;border-radius:16px;background:var(--cream2);color:var(--coral-d);display:grid;place-items:center;margin:0 auto 16px}.feat .ic svg{width:27px;height:27px}
 .feat h3{font-size:1.3rem;margin-bottom:.4em}
 .feat p{color:var(--muted);font-size:.95rem}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
@@ -92,7 +99,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
 .foot h4{font-family:'Quicksand';font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .foot a,.foot p{display:block;color:var(--muted);font-size:.94rem;padding:4px 0}
 .foot-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--muted);font-size:.85rem}
-@media(max-width:900px){nav .lnk{display:none}.burger{display:flex}nav.open{position:fixed;inset:0;background:rgba(255,248,240,.98);flex-direction:column;justify-content:center;gap:26px;z-index:90}nav.open .lnk{display:block;font-size:1.4rem}.hero-grid{grid-template-columns:1fr;gap:38px}.levels{grid-template-columns:1fr}.feats{grid-template-columns:1fr}.tst-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr;gap:32px 24px}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:38px}.levels{grid-template-columns:1fr}.feats{grid-template-columns:1fr}.tst-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr;gap:32px 24px}}
 @media(max-width:600px){.foot{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
 </style>
@@ -100,14 +107,16 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
 <body>
 <header id="hdr">
   <a href="#" class="logo"><span class="b">C</span>Academia Crecer</a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
   <nav id="nav">
+    <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="lnk" href="#clases">Clases</a>
     <a class="lnk" href="#metodo">Cómo lo hacemos</a>
     <a class="lnk" href="#familias">Familias</a>
     <a class="btn btn-primary" href="#contacto" style="padding:11px 22px">Clase de prueba gratis</a>
   </nav>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero">
   <div class="wrap hero-grid">
@@ -126,7 +135,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
       </div>
     </div>
     <div class="hero-img reveal d1">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Profesora ayudando a alumnos en clase">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Profesora ayudando a alumnos en clase" onerror="this.onerror=null;this.src='https://loremflickr.com/1000/850/classroom,students,teacher'">
       <div class="hero-card"><span class="big">+90%</span><small>aprueban<br>el curso</small></div>
     </div>
   </div>
@@ -157,7 +166,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
         </div>
       </div>
     </div>
-    <p class="reveal" style="text-align:center;color:var(--muted);margin-top:32px">¿No ves tu asignatura? Pregúntanos, seguro que también la damos 😊</p>
+    <p class="reveal" style="text-align:center;color:var(--muted);margin-top:32px">¿No ves tu asignatura? Pregúntanos, seguro que también la damos.</p>
   </div>
 </section>
 
@@ -168,9 +177,9 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
       <h2 class="reveal d1">Cercanía, paciencia y un plan para cada alumno</h2>
     </div>
     <div class="feats">
-      <div class="feat reveal"><div class="em">👋</div><h3>Grupos reducidos</h3><p>Máximo 6 alumnos por clase. Tiempo de sobra para resolver todas las dudas, sin agobios.</p></div>
-      <div class="feat reveal d1"><div class="em">🎯</div><h3>Plan personalizado</h3><p>Empezamos viendo en qué falla cada uno y armamos un plan a su ritmo, reforzando lo que de verdad necesita.</p></div>
-      <div class="feat reveal d2"><div class="em">💬</div><h3>Hablamos con la familia</h3><p>Os contamos cómo va vuestro hijo cada mes. Sin sustos en las evaluaciones.</p></div>
+      <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 20v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Grupos reducidos</h3><p>Máximo 6 alumnos por clase. Tiempo de sobra para resolver todas las dudas, sin agobios.</p></div>
+      <div class="feat reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Plan personalizado</h3><p>Empezamos viendo en qué falla cada uno y armamos un plan a su ritmo, reforzando lo que de verdad necesita.</p></div>
+      <div class="feat reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Hablamos con la familia</h3><p>Os contamos cómo va vuestro hijo cada mes. Sin sustos en las evaluaciones.</p></div>
     </div>
     <div class="stats" style="margin-top:64px">
       <div class="stat reveal"><div class="num" data-count="500" data-suffix="+">0</div><div class="lbl">Alumnos en estos años</div></div>
@@ -198,7 +207,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
 <section class="block cta" id="contacto">
   <div class="wrap">
     <div class="box reveal">
-      <h2>La primera clase es de prueba y gratis 🎈</h2>
+      <h2>La primera clase es de prueba y gratis</h2>
       <p>Ven, conócenos y mira cómo trabajamos. Sin compromiso. Solo queremos que tu hijo se sienta a gusto y empiece a mejorar.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a href="tel:+34960000000" class="btn btn-ghost" style="background:#fff;border-color:#fff;color:var(--coral-d)">Llamar: 96 000 00 00</a>
@@ -215,7 +224,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
       <div><h4>Clases</h4><a href="#clases">ESO</a><a href="#clases">Bachillerato</a><a href="#clases">EBAU / Selectividad</a></div>
       <div><h4>Contacto</h4><a href="tel:+34960000000">96 000 00 00</a><a href="mailto:hola@academiacrecer.es">hola@academiacrecer.es</a><p>Calle de Ejemplo 21, Valencia</p></div>
     </div>
-    <div class="foot-bottom"><span>© <span id="y"></span> Academia Crecer. Hecho con cariño.</span><span>Aviso legal · Privacidad</span></div>
+    <div class="foot-bottom"><span>© <span id="y"></span> Academia Crecer · Valencia. Todos los derechos reservados.</span><span>Aviso legal · Privacidad</span></div>
   </div>
 </footer>
 
@@ -225,9 +234,11 @@ footer{background:#fff;border-top:1px solid var(--line);padding-block:48px 26px}
   document.getElementById('y').textContent=new Date().getFullYear();
   var hdr=document.getElementById('hdr');
   addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
-  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
-  burger.onclick=function(){nav.classList.toggle('open')};
-  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk'))nav.classList.remove('open')});
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav'),navOverlay=document.getElementById('navOverlay'),navClose=document.getElementById('navClose');
+  function openNav(){nav.classList.add('open');navOverlay.classList.add('open');document.body.style.overflow='hidden'}
+  function closeNav(){nav.classList.remove('open');navOverlay.classList.remove('open');document.body.style.overflow=''}
+  burger.onclick=openNav;navClose.onclick=closeNav;navOverlay.onclick=closeNav;
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('lnk')||e.target.classList.contains('btn'))closeNav()});
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){reduced?el.classList.add('in'):io.observe(el)});
   var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target,end=+el.dataset.count,suf=el.dataset.suffix||'';if(reduced){el.textContent=end+suf;cio.unobserve(el);return}var t0=performance.now();(function tick(t){var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(end*e)+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());cio.unobserve(el)})},{threshold:.5});

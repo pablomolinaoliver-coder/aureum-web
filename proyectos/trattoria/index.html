@@ -94,18 +94,36 @@ footer .logo{color:#fff;align-items:center;margin-bottom:10px}
 [data-rv].in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){[data-rv]{opacity:1!important;transform:none!important}}
 @media(max-width:900px){.split,.menu-grid{grid-template-columns:1fr}.quotes,.info{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}nav .lnk{display:none}}
+
+/* --- menú móvil (drawer con X) --- */
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:130}
+.burger span{width:26px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.nav-close{position:absolute;top:22px;right:24px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(43,36,32,.12);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.35s cubic-bezier(.22,1,.36,1)}
+.nav-close:hover{border-color:var(--tomato);color:var(--tomato);transform:rotate(90deg)}
+.nav-close svg{width:20px;height:20px}
+.nav-overlay{position:fixed;inset:0;background:rgba(43,36,32,.5);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s;z-index:110}
+.nav-overlay.open{opacity:1;visibility:visible}
+@media(max-width:900px){
+  .burger{display:flex}
+  header nav{position:fixed;top:0;right:0;height:100%;width:min(340px,84vw);background:var(--surface);border-left:1px solid rgba(43,36,32,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:88px 30px 40px;transform:translateX(105%);transition:transform .5s cubic-bezier(.22,1,.36,1);z-index:120;box-shadow:-30px 0 60px -30px rgba(0,0,0,.5)}
+  header nav.open{transform:none}
+  header nav .lnk{display:block!important;font-size:1.45rem}
+}
 </style>
 </head>
 <body>
 <header id="top">
   <a class="logo" href="#top">Fornella<span>Trattoria · Forno a legna</span></a>
-  <nav>
+  <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <button class="nav-close" id="navClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="lnk" href="#nosotros">La casa</a>
     <a class="lnk" href="#carta">Carta</a>
     <a class="lnk" href="#galeria">Galería</a>
     <a class="btn btn-primary" href="#reservas">Reservar mesa</a>
   </nav>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero">
   <div class="hero-photo" aria-hidden="true"></div>
@@ -241,6 +259,11 @@ footer .logo{color:#fff;align-items:center;margin-bottom:10px}
   }else{els.forEach(function(el){el.classList.add('in')})}
   document.getElementById('y').textContent=new Date().getFullYear();
 })();
+
+(function(){var b=document.getElementById('burger'),n=document.getElementById('nav'),o=document.getElementById('navOverlay'),x=document.getElementById('navClose');
+if(!b||!n)return;function op(){n.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}
+function cl(){n.classList.remove('open');o.classList.remove('open');document.body.style.overflow=''}
+b.onclick=op;x.onclick=cl;o.onclick=cl;n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl)});})();
 </script>
 </body>
 </html>

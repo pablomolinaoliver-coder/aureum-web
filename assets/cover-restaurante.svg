@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" role="img" aria-label="Restaurantes">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2a20"/><stop offset="1" stop-color="#5a3f2c"/></linearGradient>
+<pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0v48" fill="none" stroke="rgba(244,237,224,.06)" stroke-width="1"/></pattern></defs>
+<rect width="900" height="600" fill="url(#g)"/><rect width="900" height="600" fill="url(#p)"/>
+<circle cx="740" cy="110" r="200" fill="rgba(174,139,76,.16)"/>
+<rect x="60" y="430" width="70" height="3" fill="#AE8B4C"/>
+<text x="60" y="500" font-family="Georgia,serif" font-size="42" fill="#F4EDE0" font-weight="600">Restaurantes</text>
+<text x="60" y="536" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="rgba(244,237,224,.55)" letter-spacing="3">AUREUM DIGITAL STUDIO</text>
+</svg>

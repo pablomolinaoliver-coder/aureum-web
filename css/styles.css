@@ -704,3 +704,24 @@ body:has(#main-content > section.on-dark:first-child) .site-header:not(.scrolled
   font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(244,237,224,.92);
   color:var(--petroleo);padding:.42em .9em;border-radius:100px}
 .work-card .body .foot .btn svg{width:16px;height:16px}
+
+
+/* =============================================================
+   NAV: el menú lateral entra ya en tablet (≤980px), porque la
+   navegación tiene 9 elementos y desbordaba entre 721 y 980px.
+   ============================================================= */
+@media (max-width:980px){
+  .nav{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--petroleo);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;
+    transform:translateX(100%);transition:transform .4s var(--ease);z-index:110;box-shadow:var(--shadow-lg);overflow-y:auto}
+  .nav.open{transform:none}
+  .nav a{color:rgba(250,250,248,.9)!important;font-size:1.15rem}
+  .nav .btn{margin-left:0}
+  .nav-toggle{display:flex;z-index:120}
+  .nav-toggle.open span{background:#fff!important}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+/* Evita desbordes horizontales en móvil */
+html,body{max-width:100%;overflow-x:hidden}
